@@ -1,0 +1,7072 @@
+openapi: 3.0.0
+info:
+  contact: {}
+  license:
+    name: ISC
+  title: moon-vault-api
+  version: 1.0.0
+servers:
+- url: https://vault-api.usemoon.ai
+paths:
+  /oneinch/tokens:
+    post:
+      operationId: Tokens
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - oneinch
+  /oneinch/protocols:
+    post:
+      operationId: Protocols
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - oneinch
+  /oneinch/quote:
+    post:
+      operationId: Quote
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - oneinch
+  /oneinch/{accountName}/swap:
+    post:
+      operationId: Swap
+      parameters:
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetSwapDto'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - oneinch
+  /oneinch/approve-spender:
+    post:
+      operationId: ApproveSpender
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - oneinch
+  /oneinch/approve-call-data:
+    post:
+      operationId: ApproveCallData
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - oneinch
+  /accounts/{accountName}/nonce:
+    get:
+      operationId: GetNonce
+      parameters:
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts/{accountName}/balance:
+    get:
+      operationId: GetBalance
+      parameters:
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: chainId
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts/{accountName}/transfer-eth:
+    post:
+      operationId: TransferEth
+      parameters:
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts/{accountName}/sign-message:
+    post:
+      operationId: SignMessage
+      parameters:
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignMessage'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts/{accountName}/sign-transaction:
+    post:
+      operationId: SignTransaction
+      parameters:
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts/{accountName}/sign-typed-data:
+    post:
+      operationId: SignTypedData
+      parameters:
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignTypedData'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts:
+    get:
+      operationId: ListAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+    post:
+      operationId: CreateAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAccountInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts/{accountName}:
+    delete:
+      operationId: DeleteAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+    get:
+      operationId: GetAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts/{accountName}/deploy:
+    post:
+      operationId: DeployContract
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeployInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /accounts/{accountName}/broadcast-tx:
+    post:
+      operationId: BroadcastTx
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BroadcastInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Accounts
+  /aave/{name}/lend:
+    post:
+      operationId: Lend
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AaveInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Aave
+  /aave/{name}/borrow:
+    post:
+      operationId: Borrow
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AaveInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Aave
+  /aave/{name}/user-reserve-data:
+    post:
+      operationId: UserReserveData
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AaveInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Aave
+  /aave/{name}/repay:
+    post:
+      operationId: Repay
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AaveInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Aave
+  /bitcoin:
+    get:
+      operationId: ListBitcoinAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Bitcoin
+    post:
+      operationId: CreateBitcoinAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BitcoinInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Bitcoin
+  /bitcoin/{accountName}:
+    get:
+      operationId: GetBitcoinAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Bitcoin
+  /bitcoin/{accountName}/sign-tx:
+    post:
+      operationId: SignBitcoinTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BitcoinTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Bitcoin
+  /bitcoincash:
+    get:
+      operationId: ListBitcoinCashAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - bitcoincash
+    post:
+      operationId: CreateBitcoinCashAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BitcoinCashInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - bitcoincash
+  /bitcoincash/{accountName}:
+    get:
+      operationId: GetBitcoinCashAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - bitcoincash
+  /bitcoincash/{accountName}/sign-tx:
+    post:
+      operationId: SignBitcoinCashTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BitcoinCashTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - bitcoincash
+  /conveyorfinance/{name}/swap:
+    post:
+      operationId: Swap
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenSwapParams'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConveyorFinanceControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ConveyorFinance
+  /cosmos:
+    get:
+      operationId: ListCosmosAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Cosmos
+    post:
+      operationId: CreateCosmosAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CosmosInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Cosmos
+  /cosmos/{accountName}:
+    get:
+      operationId: GetCosmosAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Cosmos
+  /cosmos/{accountName}/sign-tx:
+    post:
+      operationId: SignCosmosTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CosmosTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Cosmos
+  /dogecoin:
+    get:
+      operationId: ListDogeCoinAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - DogeCoin
+    post:
+      operationId: CreateDogeCoinAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DogeCoinInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - DogeCoin
+  /dogecoin/{accountName}:
+    get:
+      operationId: GetDogeCoinAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - DogeCoin
+  /dogecoin/{accountName}/sign-tx:
+    post:
+      operationId: SignDogeCoinTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DogeCoinTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - DogeCoin
+  /ens/resolve:
+    post:
+      operationId: Resolve
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnsResolveInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ENS
+  /eos:
+    get:
+      operationId: ListEosAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - eos
+    post:
+      operationId: CreateEosAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EosInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - eos
+  /eos/{accountName}:
+    get:
+      operationId: GetEosAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - eos
+  /eos/{accountName}/sign-tx:
+    post:
+      operationId: SignEosTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EosTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - eos
+  /erc1155/{name}/balance-of:
+    post:
+      operationId: BalanceOf
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc1155Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ERC1155
+  /erc1155/{name}/balance-of-batch:
+    post:
+      operationId: BalanceOfBatch
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc1155Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ERC1155
+  /erc1155/{name}/set-approval-for-all:
+    post:
+      operationId: SetApprovalForAll
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc1155Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ERC1155
+  /erc1155/{name}/is-approved-for-all:
+    post:
+      operationId: IsApprovedForAll
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc1155Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ERC1155
+  /erc1155/{name}/safe-transfer-from:
+    post:
+      operationId: SafeTransferFrom
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc1155Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ERC1155
+  /erc1155/{name}/safe-batch-transfer-from:
+    post:
+      operationId: SafeBatchTransferFrom
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc1155Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ERC1155
+  /erc20/{name}/name:
+    post:
+      operationId: NameErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc20/{name}/symbol:
+    post:
+      operationId: SymbolErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc20/{name}/decimals:
+    post:
+      operationId: DecimalsErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc20/{name}/total-supply:
+    post:
+      operationId: TotalSupplyErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc20/{name}/balance-of:
+    post:
+      operationId: BalanceOfErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc20/{name}/allowance:
+    post:
+      operationId: AllowanceErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc20/{name}/transfer:
+    post:
+      operationId: TransferErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc20/{name}/approve:
+    post:
+      operationId: ApproveErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc20/{name}/transfer-from:
+    post:
+      operationId: TransferFromErc20
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc20
+  /erc4337/{accountName}/address:
+    post:
+      operationId: GetAddress
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc4337
+  /erc4337/{accountName}/sign-broadcast-userop-tx:
+    post:
+      operationId: SignBroadcastUserOpTx
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc4337
+  /erc721/{name}/token-uri:
+    post:
+      operationId: TokenUri
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/transfer:
+    post:
+      operationId: Transfer
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/transfer-from:
+    post:
+      operationId: TransferFrom
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/approve:
+    post:
+      operationId: Approve
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/get-approved:
+    post:
+      operationId: GetApproved
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/is-approved-for-all:
+    post:
+      operationId: IsApprovedForAll
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/name:
+    post:
+      operationId: Name
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/symbol:
+    post:
+      operationId: Symbol
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/balance-of:
+    post:
+      operationId: BalanceOf
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/owner-of:
+    post:
+      operationId: OwnerOf
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/safe-transfer-from:
+    post:
+      operationId: SafeTransferFrom
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /erc721/{name}/set-approval-for-all:
+    post:
+      operationId: SetApprovalForAll
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Erc721Request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Erc721
+  /litecoin:
+    get:
+      operationId: ListLitecoinAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Litecoin
+    post:
+      operationId: CreateLitecoinAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LitecoinInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Litecoin
+  /litecoin/{accountName}:
+    get:
+      operationId: GetLitecoinAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Litecoin
+  /litecoin/{accountName}/sign-tx:
+    post:
+      operationId: SignLitecoinTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LitecoinTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Litecoin
+  /onramper/currencies:
+    get:
+      operationId: OnRamperGetSupportedCurrencies
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: type
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportedCurrenciesResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /onramper/payment-types:
+    get:
+      operationId: OnRamperGetSupportedPaymentTypes
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: fiat
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: country
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: type
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportedPaymentTypesCurrencyResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /onramper/payment-types/fiat:
+    get:
+      operationId: OnRamperGetSupportedPaymentTypesFiat
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: fiat
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: country
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportedPaymentTypesCurrencyResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /onramper/defaults:
+    get:
+      operationId: OnRamperGetSupportedDefaultsAll
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: country
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: type
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportedDefaultResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /onramper/assets:
+    get:
+      operationId: OnRamperGetSupportedAssets
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: source
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: country
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportedAssetResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /onramper/onramps:
+    get:
+      operationId: OnRamperGetSupportedOnRampsAll
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSupportedOnRampsResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /onramper/quotes/buy:
+    get:
+      operationId: OnRamperGetQuotesBuy
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: fiat
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: crypto
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: amount
+        required: true
+        schema:
+          format: double
+          type: number
+        style: form
+      - explode: true
+        in: query
+        name: paymentMethod
+        required: false
+        schema:
+          default: creditcard
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: uuid
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: clientName
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: country
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quotes'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /onramper/quotes/sell:
+    get:
+      operationId: OnRamperGetQuotesSell
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: fiat
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: crypto
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: amount
+        required: true
+        schema:
+          format: double
+          type: number
+        style: form
+      - explode: true
+        in: query
+        name: paymentMethod
+        required: false
+        schema:
+          default: creditcard
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: uuid
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: clientName
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: country
+        required: false
+        schema:
+          default: ""
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SellQuotes'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /onramper/fund/${accountName}:
+    post:
+      operationId: OnRamperCheckout
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - onramper
+  /payment/chains:
+    get:
+      operationId: PaymentGetAvailableChains
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+  /payment:
+    get:
+      operationId: PaymentGetAllPaymentIntents
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/PaymentIntentResponse'
+                type: array
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+    post:
+      operationId: PaymentCreatePaymentIntent
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePaymentIntentInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+  /payment/{id}:
+    delete:
+      operationId: PaymentDeletePaymentIntent
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+    get:
+      operationId: PaymentGetPaymentIntent
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+    put:
+      operationId: PaymentUpdatePaymentIntent
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePaymentIntentInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+  /payment/webhook/{id}:
+    post:
+      operationId: MoralisWebhook
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IWebhook'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+  /payment/tatum/webhook/{id}:
+    post:
+      operationId: TatumWebhook
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+  /ping:
+    get:
+      operationId: GetMessage
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PingResponse'
+          description: Ok
+      security: []
+  /ripple:
+    get:
+      operationId: ListRippleAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ripple
+    post:
+      operationId: CreateRippleAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RippleInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ripple
+  /ripple/{accountName}:
+    get:
+      operationId: GetRippleAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ripple
+  /ripple/{accountName}/sign-tx:
+    post:
+      operationId: SignRippleTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RippleTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - ripple
+  /solana:
+    get:
+      operationId: ListSolanaAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Solana
+    post:
+      operationId: CreateSolanaAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SolanaInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Solana
+  /solana/{accountName}:
+    get:
+      operationId: GetSolanaAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Solana
+  /solana/{accountName}/sign-tx:
+    post:
+      operationId: SignSolanaTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SolanaTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Solana
+  /tron:
+    get:
+      operationId: ListTronAccounts
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Tron
+    post:
+      operationId: CreateTronAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TronInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Tron
+  /tron/{accountName}:
+    get:
+      operationId: GetTronAccount
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Tron
+  /tron/{accountName}/sign-tx:
+    post:
+      operationId: SignTronTransaction
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: accountName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TronTransactionInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - Tron
+  /uniswap/{name}/add-liquidity:
+    post:
+      operationId: AddLiquidity
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UniswapInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - UniSwap
+  /uniswap/{name}/remove-liquidity:
+    post:
+      operationId: RemoveLiquidity
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UniswapInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - UniSwap
+  /uniswap/{name}/swap-exact-tokens-for-tokens:
+    post:
+      operationId: SwapExactTokensForTokens
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UniswapInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - UniSwap
+  /uniswap/{name}/swap-exact-eth-for-tokens:
+    post:
+      operationId: SwapExactETHForTokens
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UniswapInput'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - UniSwap
+  /yearn/{name}/add-liquidity:
+    post:
+      operationId: AddLiquidity
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - yearn
+  /yearn/{name}/remove-liquidity:
+    post:
+      operationId: RemoveLiquidity
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - yearn
+  /yearn/{name}/add-liquidity-weth:
+    post:
+      operationId: AddLiquidityWeth
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - yearn
+  /yearn/{name}/remove-liquidity-weth:
+    post:
+      operationId: RemoveLiquidityWeth
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountControllerResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - yearn
+components:
+  examples: {}
+  headers: {}
+  parameters: {}
+  requestBodies: {}
+  responses: {}
+  schemas:
+    GetSwapDto:
+      additionalProperties: false
+      example:
+        amount: amount
+        mainRouteParts: mainRouteParts
+        dst: dst
+        allowPartialFill: true
+        receiver: receiver
+        src: src
+        fee: fee
+        complexityLevel: complexityLevel
+        gasLimit: gasLimit
+        referrer: referrer
+        includeProtocols: true
+        chainId: 6.027456183070403
+        permit: permit
+        parts: parts
+        from: from
+        includeTokensInfo: true
+        disableEstimate: true
+        slippage: 0.8008281904610115
+        protocols: protocols
+        compatibility: true
+        connectorTokens: connectorTokens
+        gasPrice: gasPrice
+      properties:
+        src:
+          type: string
+        dst:
+          type: string
+        amount:
+          type: string
+        from:
+          type: string
+        slippage:
+          format: double
+          type: number
+        protocols:
+          type: string
+        fee:
+          type: string
+        disableEstimate:
+          type: boolean
+        permit:
+          type: string
+        includeTokensInfo:
+          type: boolean
+        includeProtocols:
+          type: boolean
+        compatibility:
+          type: boolean
+        allowPartialFill:
+          type: boolean
+        parts:
+          type: string
+        mainRouteParts:
+          type: string
+        connectorTokens:
+          type: string
+        complexityLevel:
+          type: string
+        gasLimit:
+          type: string
+        gasPrice:
+          type: string
+        referrer:
+          type: string
+        receiver:
+          type: string
+        chainId:
+          format: double
+          type: number
+      required:
+      - amount
+      - dst
+      - from
+      - slippage
+      - src
+      type: object
+    NonceResponse:
+      additionalProperties: false
+      properties:
+        nonce:
+          format: double
+          type: number
+      required:
+      - nonce
+      type: object
+    BalanceResponse:
+      additionalProperties: false
+      properties:
+        balance:
+          type: string
+      required:
+      - balance
+      type: object
+    Tx:
+      additionalProperties: false
+      example:
+        gas_price: gas_price
+        blob_hashes:
+        - blob_hashes
+        - blob_hashes
+        chain_id: 5.637376656633329
+        data: data
+        gas_fee_cap: gas_fee_cap
+        type: 5.962133916683182
+        blob_gas_fee_cap: blob_gas_fee_cap
+        nonce: 2.3021358869347655
+        r: r
+        gas_tip_cap: gas_tip_cap
+        s: s
+        v: v
+        gas: gas
+        blob_gas: blob_gas
+        from: from
+        to: to
+        value: value
+      properties:
+        type:
+          format: double
+          type: number
+        chain_id:
+          format: double
+          type: number
+        data:
+          type: string
+        gas:
+          type: string
+        gas_price:
+          type: string
+        gas_tip_cap:
+          nullable: true
+          type: string
+        gas_fee_cap:
+          nullable: true
+          type: string
+        value:
+          type: string
+        nonce:
+          format: double
+          type: number
+        from:
+          type: string
+        to:
+          nullable: true
+          type: string
+        blob_gas:
+          nullable: true
+          type: string
+        blob_gas_fee_cap:
+          nullable: true
+          type: string
+        blob_hashes:
+          items:
+            type: string
+          nullable: true
+          type: array
+        v:
+          type: string
+        r:
+          type: string
+        s:
+          type: string
+      type: object
+    TxMap:
+      additionalProperties:
+        $ref: '#/components/schemas/Tx'
+      properties: {}
+      type: object
+    TransactionRequest:
+      additionalProperties: false
+      example:
+        data: data
+        maxPriorityFeePerGas: maxPriorityFeePerGas
+        from: from
+        to: to
+        maxFeePerGas: maxFeePerGas
+        nonce: nonce
+        value: value
+      properties:
+        nonce:
+          type: string
+        data:
+          type: string
+        value:
+          type: string
+        to:
+          type: string
+        from:
+          type: string
+        maxFeePerGas:
+          type: string
+        maxPriorityFeePerGas:
+          type: string
+      type: object
+    Transaction:
+      additionalProperties: false
+      example:
+        signed_transaction: signed_transaction
+        raw_transaction: raw_transaction
+        moon_scan_url: moon_scan_url
+        signature: signature
+        signed_message: signed_message
+        userop_transaction: userop_transaction
+        userOps:
+        - data: data
+          maxPriorityFeePerGas: maxPriorityFeePerGas
+          from: from
+          to: to
+          maxFeePerGas: maxFeePerGas
+          nonce: nonce
+          value: value
+        - data: data
+          maxPriorityFeePerGas: maxPriorityFeePerGas
+          from: from
+          to: to
+          maxFeePerGas: maxFeePerGas
+          nonce: nonce
+          value: value
+        transaction_hash: transaction_hash
+        transaction:
+          key:
+            gas_price: gas_price
+            blob_hashes:
+            - blob_hashes
+            - blob_hashes
+            chain_id: 5.637376656633329
+            data: data
+            gas_fee_cap: gas_fee_cap
+            type: 5.962133916683182
+            blob_gas_fee_cap: blob_gas_fee_cap
+            nonce: 2.3021358869347655
+            r: r
+            gas_tip_cap: gas_tip_cap
+            s: s
+            v: v
+            gas: gas
+            blob_gas: blob_gas
+            from: from
+            to: to
+            value: value
+      properties:
+        moon_scan_url:
+          type: string
+        transaction_hash:
+          type: string
+        signed_transaction:
+          type: string
+        signed_message:
+          type: string
+        raw_transaction:
+          type: string
+        signature:
+          type: string
+        transaction:
+          additionalProperties:
+            $ref: '#/components/schemas/Tx'
+          properties: {}
+          type: object
+        userOps:
+          items:
+            $ref: '#/components/schemas/TransactionRequest'
+          type: array
+        userop_transaction:
+          type: string
+      required:
+      - signed_transaction
+      - transaction_hash
+      type: object
+    AccountResponse:
+      additionalProperties: false
+      properties:
+        keys:
+          items:
+            type: string
+          type: array
+        address:
+          type: string
+      type: object
+    SignMessage:
+      additionalProperties: false
+      example:
+        data: data
+        name: name
+        header: true
+        signtype: true
+        encoding: encoding
+      properties:
+        name:
+          type: string
+        data:
+          type: string
+        encoding:
+          type: string
+        header:
+          type: boolean
+        signtype:
+          type: boolean
+      required:
+      - data
+      type: object
+    EnsResolveResponse:
+      additionalProperties: false
+      properties:
+        address:
+          type: string
+      required:
+      - address
+      type: object
+    ENSReverseResolveResponse:
+      additionalProperties: false
+      properties:
+        domain:
+          type: string
+      required:
+      - domain
+      type: object
+    AaveReservesData:
+      additionalProperties: false
+      properties:
+        current_atoken_balance:
+          type: string
+        current_borrow_balance:
+          type: string
+        principal_borrow_balance:
+          type: string
+        borrow_rate_mode:
+          type: string
+        borrow_rate:
+          type: string
+        liquidity_rate:
+          type: string
+        origination_fee:
+          type: string
+        variable_borrow_index:
+          type: string
+        last_update_timestamp:
+          type: string
+        usage_as_collateral_enabled:
+          type: string
+      required:
+      - borrow_rate
+      - borrow_rate_mode
+      - current_atoken_balance
+      - current_borrow_balance
+      - last_update_timestamp
+      - liquidity_rate
+      - origination_fee
+      - principal_borrow_balance
+      - usage_as_collateral_enabled
+      - variable_borrow_index
+      type: object
+    Erc20Response:
+      additionalProperties: false
+      properties:
+        moon_scan_url:
+          type: string
+        transaction_hash:
+          type: string
+        signed_transaction:
+          type: string
+        signed_message:
+          type: string
+        raw_transaction:
+          type: string
+        signature:
+          type: string
+        transaction:
+          additionalProperties:
+            $ref: '#/components/schemas/Tx'
+          properties: {}
+          type: object
+        userOps:
+          items:
+            $ref: '#/components/schemas/TransactionRequest'
+          type: array
+        userop_transaction:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        decimals:
+          type: string
+        totalSupply:
+          type: string
+        contract_address:
+          type: string
+        balanceOf:
+          type: string
+        allowance:
+          type: string
+      required:
+      - signed_transaction
+      - transaction_hash
+      type: object
+    Erc1155Response:
+      additionalProperties: false
+      properties:
+        moon_scan_url:
+          type: string
+        transaction_hash:
+          type: string
+        signed_transaction:
+          type: string
+        signed_message:
+          type: string
+        raw_transaction:
+          type: string
+        signature:
+          type: string
+        transaction:
+          additionalProperties:
+            $ref: '#/components/schemas/Tx'
+          properties: {}
+          type: object
+        userOps:
+          items:
+            $ref: '#/components/schemas/TransactionRequest'
+          type: array
+        userop_transaction:
+          type: string
+        balance_of:
+          type: string
+        balance_of_batch:
+          type: string
+      required:
+      - signed_transaction
+      - transaction_hash
+      type: object
+    BroadCastRawTransactionResponse:
+      additionalProperties: false
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        data:
+          type: string
+      required:
+      - data
+      - message
+      - success
+      type: object
+    BitcoinTransactionOutput:
+      additionalProperties: false
+      properties:
+        signedTx:
+          type: string
+        transaction_hash:
+          type: string
+      type: object
+    Erc721Response:
+      additionalProperties: false
+      properties:
+        moon_scan_url:
+          type: string
+        transaction_hash:
+          type: string
+        signed_transaction:
+          type: string
+        signed_message:
+          type: string
+        raw_transaction:
+          type: string
+        signature:
+          type: string
+        transaction:
+          additionalProperties:
+            $ref: '#/components/schemas/Tx'
+          properties: {}
+          type: object
+        userOps:
+          items:
+            $ref: '#/components/schemas/TransactionRequest'
+          type: array
+        userop_transaction:
+          type: string
+        name:
+          type: string
+        symbol:
+          type: string
+        balance_of:
+          type: string
+        owner_of:
+          type: string
+        token_uri:
+          type: string
+        contract_address:
+          type: string
+        isApprovedForAll:
+          type: string
+      required:
+      - signed_transaction
+      - transaction_hash
+      type: object
+    AccountControllerResponse:
+      additionalProperties: false
+      example:
+        data: null
+        success: true
+        message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/AccountControllerResponse_data'
+        success:
+          type: boolean
+        message:
+          type: string
+      type: object
+    InputBody:
+      additionalProperties: false
+      example:
+        broadcast: true
+        token_ids: token_ids
+        data: data
+        chain_id: chain_id
+        encoding: encoding
+        contract_address: contract_address
+        nonce: nonce
+        input: input
+        approved: true
+        token_id: token_id
+        EOA: true
+        gas: gas
+        to: to
+        value: value
+        gasPrice: gasPrice
+      properties:
+        to:
+          type: string
+        data:
+          type: string
+        input:
+          type: string
+        value:
+          type: string
+        nonce:
+          type: string
+        gas:
+          type: string
+        gasPrice:
+          type: string
+        chain_id:
+          type: string
+        encoding:
+          type: string
+        EOA:
+          type: boolean
+        contract_address:
+          type: string
+        token_id:
+          type: string
+        token_ids:
+          type: string
+        approved:
+          type: boolean
+        broadcast:
+          type: boolean
+      type: object
+    SignTypedData:
+      additionalProperties: false
+      example:
+        data: data
+      properties:
+        data:
+          type: string
+      required:
+      - data
+      type: object
+    CreateAccountInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+      properties:
+        private_key:
+          type: string
+      type: object
+    DeployInput:
+      additionalProperties: false
+      example:
+        bytecode: bytecode
+        chain_id: chain_id
+        abi: abi
+        constructor_args: constructor_args
+      properties:
+        chain_id:
+          type: string
+        abi:
+          type: string
+        bytecode:
+          type: string
+        constructor_args:
+          type: string
+      required:
+      - abi
+      - bytecode
+      type: object
+    BroadcastInput:
+      additionalProperties: false
+      example:
+        rawTransaction: rawTransaction
+        chainId: chainId
+      properties:
+        chainId:
+          type: string
+        rawTransaction:
+          type: string
+      required:
+      - chainId
+      - rawTransaction
+      type: object
+    AaveInput:
+      additionalProperties: false
+      example:
+        broadcast: true
+        token_ids: token_ids
+        amount: amount
+        data: data
+        chain_id: chain_id
+        ref_code: ref_code
+        interest_rate_mode: interest_rate_mode
+        encoding: encoding
+        contract_address: contract_address
+        nonce: nonce
+        input: input
+        approved: true
+        token_id: token_id
+        EOA: true
+        gas: gas
+        atoken_to_redeeem: atoken_to_redeeem
+        lending_pool: lending_pool
+        to: to
+        value: value
+        gasPrice: gasPrice
+      properties:
+        to:
+          type: string
+        data:
+          type: string
+        input:
+          type: string
+        value:
+          type: string
+        nonce:
+          type: string
+        gas:
+          type: string
+        gasPrice:
+          type: string
+        chain_id:
+          type: string
+        encoding:
+          type: string
+        EOA:
+          type: boolean
+        contract_address:
+          type: string
+        token_id:
+          type: string
+        token_ids:
+          type: string
+        approved:
+          type: boolean
+        broadcast:
+          type: boolean
+        lending_pool:
+          type: string
+        amount:
+          type: string
+        atoken_to_redeeem:
+          type: string
+        ref_code:
+          type: string
+        interest_rate_mode:
+          type: string
+      type: object
+    BitcoinInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    BitcoinTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    BitcoinCashInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    BitcoinCashTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    TransactionResponse:
+      additionalProperties: false
+      example:
+        currentBlockNumber: 1.4658129805029452
+        tx:
+          data: data
+          gas: gas
+          from: from
+          to: to
+          value: value
+          nonce: 0.8008281904610115
+        chainId: 6.027456183070403
+        message: message
+        info:
+          conveyorGas: conveyorGas
+          affiliateGas: affiliateGas
+          amountOutMin: amountOutMin
+          amountOut: amountOut
+          affiliateAggregator: affiliateAggregator
+      properties:
+        message:
+          type: string
+        tx:
+          $ref: '#/components/schemas/TransactionResponse_tx'
+        info:
+          $ref: '#/components/schemas/TransactionResponse_info'
+        chainId:
+          format: double
+          type: number
+        currentBlockNumber:
+          format: double
+          type: number
+      required:
+      - chainId
+      - currentBlockNumber
+      - info
+      - message
+      - tx
+      type: object
+    ConveyorFinanceControllerResponse:
+      additionalProperties: false
+      example:
+        input:
+          broadcast: true
+          token_ids: token_ids
+          data: data
+          chain_id: chain_id
+          encoding: encoding
+          contract_address: contract_address
+          nonce: nonce
+          input: input
+          approved: true
+          token_id: token_id
+          EOA: true
+          gas: gas
+          to: to
+          value: value
+          gasPrice: gasPrice
+        data:
+          signed_transaction: signed_transaction
+          raw_transaction: raw_transaction
+          moon_scan_url: moon_scan_url
+          signature: signature
+          signed_message: signed_message
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
+            key:
+              gas_price: gas_price
+              blob_hashes:
+              - blob_hashes
+              - blob_hashes
+              chain_id: 5.637376656633329
+              data: data
+              gas_fee_cap: gas_fee_cap
+              type: 5.962133916683182
+              blob_gas_fee_cap: blob_gas_fee_cap
+              nonce: 2.3021358869347655
+              r: r
+              gas_tip_cap: gas_tip_cap
+              s: s
+              v: v
+              gas: gas
+              blob_gas: blob_gas
+              from: from
+              to: to
+              value: value
+        tx:
+          data: data
+          gas: gas
+          from: from
+          to: to
+          value: value
+          nonce: 0.8008281904610115
+        success: true
+        convey:
+          currentBlockNumber: 1.4658129805029452
+          tx:
+            data: data
+            gas: gas
+            from: from
+            to: to
+            value: value
+            nonce: 0.8008281904610115
+          chainId: 6.027456183070403
+          message: message
+          info:
+            conveyorGas: conveyorGas
+            affiliateGas: affiliateGas
+            amountOutMin: amountOutMin
+            amountOut: amountOut
+            affiliateAggregator: affiliateAggregator
+        signed:
+          signed_transaction: signed_transaction
+          raw_transaction: raw_transaction
+          moon_scan_url: moon_scan_url
+          signature: signature
+          signed_message: signed_message
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
+            key:
+              gas_price: gas_price
+              blob_hashes:
+              - blob_hashes
+              - blob_hashes
+              chain_id: 5.637376656633329
+              data: data
+              gas_fee_cap: gas_fee_cap
+              type: 5.962133916683182
+              blob_gas_fee_cap: blob_gas_fee_cap
+              nonce: 2.3021358869347655
+              r: r
+              gas_tip_cap: gas_tip_cap
+              s: s
+              v: v
+              gas: gas
+              blob_gas: blob_gas
+              from: from
+              to: to
+              value: value
+        message: message
+      properties:
+        input:
+          $ref: '#/components/schemas/InputBody'
+        convey:
+          $ref: '#/components/schemas/TransactionResponse'
+        data:
+          $ref: '#/components/schemas/Transaction'
+        tx:
+          $ref: '#/components/schemas/TransactionResponse_tx'
+        signed:
+          $ref: '#/components/schemas/Transaction'
+        success:
+          type: boolean
+        message:
+          type: string
+      required:
+      - message
+      - success
+      type: object
+    TokenSwapParams:
+      additionalProperties: false
+      example:
+        broadcast: true
+        tokenOut: tokenOut
+        token_ids: token_ids
+        data: data
+        chain_id: chain_id
+        encoding: encoding
+        contract_address: contract_address
+        nonce: nonce
+        tokenIn: tokenIn
+        input: input
+        referrer: referrer
+        approved: true
+        token_id: token_id
+        EOA: true
+        gas: gas
+        recipient: recipient
+        amountIn: amountIn
+        to: to
+        tokenOutDecimals: 6.027456183070403
+        slippage: slippage
+        value: value
+        tokenInDecimals: 0.8008281904610115
+        gasPrice: gasPrice
+      properties:
+        to:
+          type: string
+        data:
+          type: string
+        input:
+          type: string
+        value:
+          type: string
+        nonce:
+          type: string
+        gas:
+          type: string
+        gasPrice:
+          type: string
+        chain_id:
+          type: string
+        encoding:
+          type: string
+        EOA:
+          type: boolean
+        contract_address:
+          type: string
+        token_id:
+          type: string
+        token_ids:
+          type: string
+        approved:
+          type: boolean
+        broadcast:
+          type: boolean
+        tokenIn:
+          type: string
+        tokenOut:
+          type: string
+        tokenInDecimals:
+          format: double
+          type: number
+        tokenOutDecimals:
+          format: double
+          type: number
+        amountIn:
+          type: string
+        slippage:
+          type: string
+        recipient:
+          type: string
+        referrer:
+          type: string
+      required:
+      - amountIn
+      - recipient
+      - referrer
+      - slippage
+      - tokenIn
+      - tokenInDecimals
+      - tokenOut
+      - tokenOutDecimals
+      type: object
+    CosmosInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    CosmosTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    DogeCoinInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    DogeCoinTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    EnsResolveInput:
+      additionalProperties: false
+      example:
+        chain_id: chain_id
+        domain: domain
+      properties:
+        domain:
+          type: string
+        chain_id:
+          type: string
+      required:
+      - chain_id
+      - domain
+      type: object
+    EosInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    EosTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    Erc1155Request:
+      additionalProperties: false
+      example:
+        broadcast: true
+        token_ids: token_ids
+        data: data
+        chain_id: chain_id
+        encoding: encoding
+        contract_address: contract_address
+        nonce: nonce
+        input: input
+        approved: true
+        token_id: token_id
+        EOA: true
+        gas: gas
+        to: to
+        value: value
+        gasPrice: gasPrice
+      properties:
+        to:
+          type: string
+        data:
+          type: string
+        input:
+          type: string
+        value:
+          type: string
+        nonce:
+          type: string
+        gas:
+          type: string
+        gasPrice:
+          type: string
+        chain_id:
+          type: string
+        encoding:
+          type: string
+        EOA:
+          type: boolean
+        contract_address:
+          type: string
+        token_id:
+          type: string
+        token_ids:
+          type: string
+        approved:
+          type: boolean
+        broadcast:
+          type: boolean
+      type: object
+    Erc721Request:
+      additionalProperties: false
+      example:
+        broadcast: true
+        token_ids: token_ids
+        data: data
+        chain_id: chain_id
+        encoding: encoding
+        contract_address: contract_address
+        nonce: nonce
+        input: input
+        approved: true
+        token_id: token_id
+        EOA: true
+        gas: gas
+        to: to
+        value: value
+        gasPrice: gasPrice
+      properties:
+        to:
+          type: string
+        data:
+          type: string
+        input:
+          type: string
+        value:
+          type: string
+        nonce:
+          type: string
+        gas:
+          type: string
+        gasPrice:
+          type: string
+        chain_id:
+          type: string
+        encoding:
+          type: string
+        EOA:
+          type: boolean
+        contract_address:
+          type: string
+        token_id:
+          type: string
+        token_ids:
+          type: string
+        approved:
+          type: boolean
+        broadcast:
+          type: boolean
+      type: object
+    LitecoinInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    LitecoinTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    CryptoCurrency:
+      example:
+        symbol: symbol
+        address: address
+        code: code
+        chainId: 0.8008281904610115
+        decimals: 6.027456183070403
+        icon: icon
+        name: name
+        id: id
+        networkDisplayName: networkDisplayName
+        network: network
+      properties:
+        networkDisplayName:
+          type: string
+        icon:
+          type: string
+        chainId:
+          format: double
+          type: number
+        address:
+          type: string
+        decimals:
+          format: double
+          type: number
+        network:
+          type: string
+        symbol:
+          type: string
+        name:
+          type: string
+        code:
+          type: string
+        id:
+          type: string
+      required:
+      - address
+      - chainId
+      - code
+      - decimals
+      - icon
+      - id
+      - name
+      - network
+      - networkDisplayName
+      - symbol
+      type: object
+    FiatCurrency:
+      example:
+        symbol: symbol
+        code: code
+        icon: icon
+        name: name
+        id: id
+      properties:
+        icon:
+          type: string
+        symbol:
+          type: string
+        name:
+          type: string
+        code:
+          type: string
+        id:
+          type: string
+      required:
+      - code
+      - icon
+      - id
+      - name
+      - symbol
+      type: object
+    Message:
+      example:
+        fiat:
+        - symbol: symbol
+          code: code
+          icon: icon
+          name: name
+          id: id
+        - symbol: symbol
+          code: code
+          icon: icon
+          name: name
+          id: id
+        crypto:
+        - symbol: symbol
+          address: address
+          code: code
+          chainId: 0.8008281904610115
+          decimals: 6.027456183070403
+          icon: icon
+          name: name
+          id: id
+          networkDisplayName: networkDisplayName
+          network: network
+        - symbol: symbol
+          address: address
+          code: code
+          chainId: 0.8008281904610115
+          decimals: 6.027456183070403
+          icon: icon
+          name: name
+          id: id
+          networkDisplayName: networkDisplayName
+          network: network
+      properties:
+        fiat:
+          items:
+            $ref: '#/components/schemas/FiatCurrency'
+          type: array
+        crypto:
+          items:
+            $ref: '#/components/schemas/CryptoCurrency'
+          type: array
+      required:
+      - crypto
+      - fiat
+      type: object
+    SupportedCurrenciesResponse:
+      example:
+        message:
+          fiat:
+          - symbol: symbol
+            code: code
+            icon: icon
+            name: name
+            id: id
+          - symbol: symbol
+            code: code
+            icon: icon
+            name: name
+            id: id
+          crypto:
+          - symbol: symbol
+            address: address
+            code: code
+            chainId: 0.8008281904610115
+            decimals: 6.027456183070403
+            icon: icon
+            name: name
+            id: id
+            networkDisplayName: networkDisplayName
+            network: network
+          - symbol: symbol
+            address: address
+            code: code
+            chainId: 0.8008281904610115
+            decimals: 6.027456183070403
+            icon: icon
+            name: name
+            id: id
+            networkDisplayName: networkDisplayName
+            network: network
+      properties:
+        message:
+          $ref: '#/components/schemas/Message'
+      required:
+      - message
+      type: object
+    PaymentType:
+      example:
+        paymentTypeId: paymentTypeId
+        icon: icon
+        name: name
+      properties:
+        icon:
+          type: string
+        name:
+          type: string
+        paymentTypeId:
+          type: string
+      required:
+      - icon
+      - name
+      - paymentTypeId
+      type: object
+    SupportedPaymentTypesMessage:
+      example:
+        applepay:
+          paymentTypeId: paymentTypeId
+          icon: icon
+          name: name
+        googlepay:
+          paymentTypeId: paymentTypeId
+          icon: icon
+          name: name
+        creditcard:
+          paymentTypeId: paymentTypeId
+          icon: icon
+          name: name
+      properties:
+        googlepay:
+          $ref: '#/components/schemas/PaymentType'
+        applepay:
+          $ref: '#/components/schemas/PaymentType'
+        creditcard:
+          $ref: '#/components/schemas/PaymentType'
+      required:
+      - applepay
+      - creditcard
+      - googlepay
+      type: object
+    SupportedPaymentTypesCurrencyResponse:
+      example:
+        message:
+          applepay:
+            paymentTypeId: paymentTypeId
+            icon: icon
+            name: name
+          googlepay:
+            paymentTypeId: paymentTypeId
+            icon: icon
+            name: name
+          creditcard:
+            paymentTypeId: paymentTypeId
+            icon: icon
+            name: name
+      properties:
+        message:
+          $ref: '#/components/schemas/SupportedPaymentTypesMessage'
+      required:
+      - message
+      type: object
+    SupportedDefaultResponse:
+      example:
+        defaults:
+          id:
+            amount: 0.8008281904610115
+            provider: provider
+            paymentMethod: paymentMethod
+            source: source
+            target: target
+        recommended:
+          amount: 0.8008281904610115
+          provider: provider
+          paymentMethod: paymentMethod
+          source: source
+          target: target
+      properties:
+        defaults:
+          $ref: '#/components/schemas/SupportedDefaultResponse_defaults'
+        recommended:
+          $ref: '#/components/schemas/SupportedDefaultResponse_defaults_id'
+      required:
+      - defaults
+      - recommended
+      type: object
+    SupportedAssetResponse:
+      example:
+        country: country
+        assets:
+        - paymentMethods:
+          - paymentMethods
+          - paymentMethods
+          fiat: fiat
+          crypto:
+          - crypto
+          - crypto
+        - paymentMethods:
+          - paymentMethods
+          - paymentMethods
+          fiat: fiat
+          crypto:
+          - crypto
+          - crypto
+      properties:
+        country:
+          type: string
+        assets:
+          items:
+            $ref: '#/components/schemas/SupportedAssetResponse_assets_inner'
+          type: array
+      required:
+      - assets
+      - country
+      type: object
+    GetSupportedOnRampsResponse:
+      example:
+        message:
+        - displayName: displayName
+          icon: icon
+          id: id
+          icons:
+            svg: svg
+            png:
+              "160x160": 160x160
+              "32x32": 32x32
+        - displayName: displayName
+          icon: icon
+          id: id
+          icons:
+            svg: svg
+            png:
+              "160x160": 160x160
+              "32x32": 32x32
+      properties:
+        message:
+          items:
+            $ref: '#/components/schemas/GetSupportedOnRampsResponse_message_inner'
+          type: array
+      required:
+      - message
+      type: object
+    AvailablePaymentMethod:
+      example:
+        paymentTypeId: paymentTypeId
+        icon: icon
+        name: name
+      properties:
+        icon:
+          type: string
+        name:
+          type: string
+        paymentTypeId:
+          type: string
+      required:
+      - icon
+      - name
+      - paymentTypeId
+      type: object
+    Quote:
+      example:
+        transactionFee: 6.027456183070403
+        availablePaymentMethods:
+        - paymentTypeId: paymentTypeId
+          icon: icon
+          name: name
+        - paymentTypeId: paymentTypeId
+          icon: icon
+          name: name
+        rate: 5.962133916683182
+        networkFee: 1.4658129805029452
+        ramp: ramp
+        payout: 0.8008281904610115
+        paymentMethod: paymentMethod
+        recommendations:
+        - recommendations
+        - recommendations
+        quoteId: quoteId
+      properties:
+        recommendations:
+          items:
+            type: string
+          type: array
+        paymentMethod:
+          type: string
+        quoteId:
+          type: string
+        ramp:
+          type: string
+        availablePaymentMethods:
+          items:
+            $ref: '#/components/schemas/AvailablePaymentMethod'
+          type: array
+        payout:
+          format: double
+          type: number
+        transactionFee:
+          format: double
+          type: number
+        networkFee:
+          format: double
+          type: number
+        rate:
+          format: double
+          type: number
+      required:
+      - availablePaymentMethods
+      - networkFee
+      - paymentMethod
+      - payout
+      - quoteId
+      - ramp
+      - rate
+      - recommendations
+      - transactionFee
+      type: object
+    Quotes:
+      items:
+        $ref: '#/components/schemas/Quote'
+      type: array
+    SellQuote:
+      example:
+        transactionFee: 6.027456183070403
+        rate: 5.962133916683182
+        networkFee: 1.4658129805029452
+        ramp: ramp
+        payout: 0.8008281904610115
+        paymentMethod: paymentMethod
+        recommendations:
+        - recommendations
+        - recommendations
+        quoteId: quoteId
+      properties:
+        recommendations:
+          items:
+            type: string
+          type: array
+        quoteId:
+          type: string
+        paymentMethod:
+          type: string
+        ramp:
+          type: string
+        payout:
+          format: double
+          type: number
+        transactionFee:
+          format: double
+          type: number
+        networkFee:
+          format: double
+          type: number
+        rate:
+          format: double
+          type: number
+      required:
+      - networkFee
+      - paymentMethod
+      - payout
+      - quoteId
+      - ramp
+      - rate
+      - recommendations
+      - transactionFee
+      type: object
+    SellQuotes:
+      items:
+        $ref: '#/components/schemas/SellQuote'
+      type: array
+    TransactionInput:
+      example:
+        amount: 6.027456183070403
+        wallet:
+          address: address
+        destination: destination
+        partnerContext: partnerContext
+        source: source
+        type: type
+        uuid: uuid
+        network: network
+        originatingHost: originatingHost
+        metaData:
+          quoteId: quoteId
+        paymentMethod: paymentMethod
+        supportedParams:
+          partnerData:
+            redirectUrl:
+              success: success
+          theme:
+            isDark: true
+            themeName: themeName
+            borderRadius: 0.8008281904610115
+            primaryTextColor: primaryTextColor
+            primaryColor: primaryColor
+            cardColor: cardColor
+            secondaryTextColor: secondaryTextColor
+            secondaryColor: secondaryColor
+        onramp: onramp
+      properties:
+        supportedParams:
+          $ref: '#/components/schemas/TransactionInput_supportedParams'
+        wallet:
+          $ref: '#/components/schemas/TransactionInput_wallet'
+        metaData:
+          $ref: '#/components/schemas/TransactionInput_metaData'
+        originatingHost:
+          type: string
+        partnerContext:
+          type: string
+        uuid:
+          type: string
+        network:
+          type: string
+        paymentMethod:
+          type: string
+        type:
+          type: string
+        amount:
+          format: double
+          type: number
+        destination:
+          type: string
+        source:
+          type: string
+        onramp:
+          type: string
+      required:
+      - amount
+      - destination
+      - metaData
+      - network
+      - onramp
+      - originatingHost
+      - partnerContext
+      - paymentMethod
+      - source
+      - supportedParams
+      - type
+      - uuid
+      - wallet
+      type: object
+    PaymentIntentResponse:
+      example:
+        metadata:
+          key: metadata
+        amount: 0.8008281904610115
+        success: true
+        destination: destination
+        qr_code: qr_code
+        currency: currency
+        id: id
+        message: message
+        uri: uri
+        status: status
+        network: network
+      properties:
+        metadata:
+          additionalProperties:
+            type: string
+          properties: {}
+          type: object
+        uri:
+          type: string
+        qr_code:
+          type: string
+        status:
+          type: string
+        destination:
+          type: string
+        amount:
+          format: double
+          type: number
+        network:
+          type: string
+        currency:
+          type: string
+        id:
+          type: string
+        message:
+          type: string
+        success:
+          type: boolean
+      required:
+      - success
+      type: object
+    CreatePaymentIntentInput:
+      example:
+        metadata:
+          key: metadata
+        amount: 0.8008281904610115
+        currency: currency
+        network: network
+      properties:
+        metadata:
+          additionalProperties:
+            type: string
+          properties: {}
+          type: object
+        network:
+          type: string
+        amount:
+          format: double
+          type: number
+        currency:
+          type: string
+      required:
+      - amount
+      - metadata
+      type: object
+    Block:
+      additionalProperties: false
+      example:
+        number: number
+        hash: hash
+        timestamp: timestamp
+      properties:
+        number:
+          type: string
+        hash:
+          type: string
+        timestamp:
+          type: string
+      required:
+      - hash
+      - number
+      - timestamp
+      type: object
+    TriggerOutput:
+      example:
+        name: name
+        value: ""
+      properties:
+        value: {}
+        name:
+          type: string
+      required:
+      - name
+      - value
+      type: object
+    Log:
+      additionalProperties: false
+      example:
+        topic1: topic1
+        topic2: topic2
+        logIndex: logIndex
+        address: address
+        topic0: topic0
+        data: data
+        topic3: topic3
+        triggers:
+        - name: name
+          value: ""
+        - name: name
+          value: ""
+        transactionHash: transactionHash
+      properties:
+        triggers:
+          items:
+            $ref: '#/components/schemas/TriggerOutput'
+          type: array
+        logIndex:
+          type: string
+        transactionHash:
+          type: string
+        address:
+          type: string
+        data:
+          type: string
+        topic0:
+          nullable: true
+          type: string
+        topic1:
+          nullable: true
+          type: string
+        topic2:
+          nullable: true
+          type: string
+        topic3:
+          nullable: true
+          type: string
+      required:
+      - address
+      - data
+      - logIndex
+      - topic0
+      - topic1
+      - topic2
+      - topic3
+      - transactionHash
+      type: object
+    InternalTransaction:
+      additionalProperties: false
+      example:
+        gas: gas
+        from: from
+        to: to
+        value: value
+        transactionHash: transactionHash
+      properties:
+        from:
+          nullable: true
+          type: string
+        to:
+          nullable: true
+          type: string
+        value:
+          nullable: true
+          type: string
+        transactionHash:
+          type: string
+        gas:
+          nullable: true
+          type: string
+      required:
+      - from
+      - gas
+      - to
+      - transactionHash
+      - value
+      type: object
+    AbiInput:
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        indexed:
+          type: boolean
+        components:
+          items:
+            $ref: '#/components/schemas/AbiInput'
+          type: array
+        internalType:
+          type: string
+      required:
+      - name
+      - type
+      type: object
+    AbiOutput:
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        components:
+          items:
+            $ref: '#/components/schemas/AbiOutput'
+          type: array
+        internalType:
+          type: string
+      required:
+      - name
+      - type
+      type: object
+    AbiItem:
+      additionalProperties: false
+      description: The abi to parse the log object of the contract
+      example: {}
+      properties:
+        anonymous:
+          type: boolean
+        constant:
+          type: boolean
+        inputs:
+          items:
+            $ref: '#/components/schemas/AbiInput'
+          type: array
+        name:
+          type: string
+        outputs:
+          items:
+            $ref: '#/components/schemas/AbiOutput'
+          type: array
+        payable:
+          type: boolean
+        stateMutability:
+          type: string
+        type:
+          type: string
+        gas:
+          format: double
+          type: number
+      required:
+      - type
+      type: object
+    IERC20Transfer:
+      additionalProperties: false
+      example:
+        logIndex: logIndex
+        tokenSymbol: tokenSymbol
+        tokenDecimals: tokenDecimals
+        contract: contract
+        tokenName: tokenName
+        valueWithDecimals: valueWithDecimals
+        from: from
+        to: to
+        triggers:
+        - name: name
+          value: ""
+        - name: name
+          value: ""
+        value: value
+        transactionHash: transactionHash
+      properties:
+        transactionHash:
+          type: string
+        contract:
+          type: string
+        logIndex:
+          type: string
+        from:
+          type: string
+        to:
+          type: string
+        value:
+          type: string
+        tokenDecimals:
+          type: string
+        tokenName:
+          type: string
+        tokenSymbol:
+          type: string
+        valueWithDecimals:
+          type: string
+        triggers:
+          items:
+            $ref: '#/components/schemas/TriggerOutput'
+          type: array
+      required:
+      - contract
+      - from
+      - logIndex
+      - to
+      - tokenDecimals
+      - tokenName
+      - tokenSymbol
+      - transactionHash
+      - value
+      type: object
+    IERC20Approval:
+      additionalProperties: false
+      example:
+        owner: owner
+        logIndex: logIndex
+        tokenSymbol: tokenSymbol
+        spender: spender
+        tokenDecimals: tokenDecimals
+        contract: contract
+        tokenName: tokenName
+        valueWithDecimals: valueWithDecimals
+        triggers:
+        - name: name
+          value: ""
+        - name: name
+          value: ""
+        value: value
+        transactionHash: transactionHash
+      properties:
+        transactionHash:
+          type: string
+        contract:
+          type: string
+        logIndex:
+          type: string
+        owner:
+          type: string
+        spender:
+          type: string
+        value:
+          type: string
+        tokenDecimals:
+          type: string
+        tokenName:
+          type: string
+        tokenSymbol:
+          type: string
+        valueWithDecimals:
+          type: string
+        triggers:
+          items:
+            $ref: '#/components/schemas/TriggerOutput'
+          type: array
+      required:
+      - contract
+      - logIndex
+      - owner
+      - spender
+      - tokenDecimals
+      - tokenName
+      - tokenSymbol
+      - transactionHash
+      - value
+      type: object
+    INFTTransfer:
+      additionalProperties: false
+      example:
+        amount: amount
+        logIndex: logIndex
+        tokenSymbol: tokenSymbol
+        tokenId: tokenId
+        tokenContractType: tokenContractType
+        contract: contract
+        tokenName: tokenName
+        from: from
+        to: to
+        triggers:
+        - name: name
+          value: ""
+        - name: name
+          value: ""
+        transactionHash: transactionHash
+        operator: operator
+      properties:
+        transactionHash:
+          type: string
+        contract:
+          type: string
+        logIndex:
+          type: string
+        tokenContractType:
+          type: string
+        tokenName:
+          type: string
+        tokenSymbol:
+          type: string
+        triggers:
+          items:
+            $ref: '#/components/schemas/TriggerOutput'
+          type: array
+        operator:
+          nullable: true
+          type: string
+        from:
+          type: string
+        to:
+          type: string
+        tokenId:
+          type: string
+        amount:
+          type: string
+      required:
+      - amount
+      - contract
+      - from
+      - logIndex
+      - operator
+      - to
+      - tokenContractType
+      - tokenId
+      - tokenName
+      - tokenSymbol
+      - transactionHash
+      type: object
+    INativeBalance:
+      additionalProperties: false
+      example:
+        address: address
+        balance: balance
+      properties:
+        address:
+          type: string
+        balance:
+          type: string
+      required:
+      - address
+      - balance
+      type: object
+    INFTApprovalERC721:
+      additionalProperties: false
+      example:
+        owner: owner
+        approved: approved
+        logIndex: logIndex
+        tokenId: tokenId
+        tokenSymbol: tokenSymbol
+        tokenContractType: tokenContractType
+        contract: contract
+        tokenName: tokenName
+        transactionHash: transactionHash
+      properties:
+        transactionHash:
+          type: string
+        contract:
+          type: string
+        logIndex:
+          type: string
+        owner:
+          type: string
+        approved:
+          type: string
+        tokenId:
+          type: string
+        tokenContractType:
+          type: string
+        tokenName:
+          type: string
+        tokenSymbol:
+          type: string
+      required:
+      - approved
+      - contract
+      - logIndex
+      - owner
+      - tokenContractType
+      - tokenId
+      - tokenName
+      - tokenSymbol
+      - transactionHash
+      type: object
+    INFTApprovalERC1155:
+      additionalProperties: false
+      example:
+        approved: true
+        logIndex: logIndex
+        tokenSymbol: tokenSymbol
+        tokenContractType: tokenContractType
+        contract: contract
+        tokenName: tokenName
+        transactionHash: transactionHash
+        account: account
+        operator: operator
+      properties:
+        transactionHash:
+          type: string
+        contract:
+          type: string
+        logIndex:
+          type: string
+        account:
+          type: string
+        operator:
+          type: string
+        approved:
+          type: boolean
+        tokenContractType:
+          type: string
+        tokenName:
+          type: string
+        tokenSymbol:
+          type: string
+      required:
+      - account
+      - approved
+      - contract
+      - logIndex
+      - operator
+      - tokenContractType
+      - tokenName
+      - tokenSymbol
+      - transactionHash
+      type: object
+    IOldNFTApproval:
+      additionalProperties: false
+      example:
+        ERC721:
+        - owner: owner
+          approved: approved
+          logIndex: logIndex
+          tokenId: tokenId
+          tokenSymbol: tokenSymbol
+          tokenContractType: tokenContractType
+          contract: contract
+          tokenName: tokenName
+          transactionHash: transactionHash
+        - owner: owner
+          approved: approved
+          logIndex: logIndex
+          tokenId: tokenId
+          tokenSymbol: tokenSymbol
+          tokenContractType: tokenContractType
+          contract: contract
+          tokenName: tokenName
+          transactionHash: transactionHash
+        ERC1155:
+        - approved: true
+          logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          tokenContractType: tokenContractType
+          contract: contract
+          tokenName: tokenName
+          transactionHash: transactionHash
+          account: account
+          operator: operator
+        - approved: true
+          logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          tokenContractType: tokenContractType
+          contract: contract
+          tokenName: tokenName
+          transactionHash: transactionHash
+          account: account
+          operator: operator
+      properties:
+        ERC721:
+          items:
+            $ref: '#/components/schemas/INFTApprovalERC721'
+          type: array
+        ERC1155:
+          items:
+            $ref: '#/components/schemas/INFTApprovalERC1155'
+          type: array
+      required:
+      - ERC1155
+      - ERC721
+      type: object
+    INFTApproval:
+      additionalProperties: false
+      example:
+        logIndex: logIndex
+        tokenSymbol: tokenSymbol
+        tokenId: tokenId
+        tokenContractType: tokenContractType
+        contract: contract
+        approvedAll: true
+        tokenName: tokenName
+        transactionHash: transactionHash
+        account: account
+        operator: operator
+      properties:
+        transactionHash:
+          type: string
+        contract:
+          type: string
+        logIndex:
+          type: string
+        tokenContractType:
+          type: string
+        tokenName:
+          type: string
+        tokenSymbol:
+          type: string
+        account:
+          type: string
+        operator:
+          type: string
+        approvedAll:
+          type: boolean
+        tokenId:
+          nullable: true
+          type: string
+      required:
+      - account
+      - approvedAll
+      - contract
+      - logIndex
+      - operator
+      - tokenContractType
+      - tokenId
+      - tokenName
+      - tokenSymbol
+      - transactionHash
+      type: object
+    IWebhook:
+      additionalProperties: false
+      example:
+        nftApprovals:
+          ERC721:
+          - owner: owner
+            approved: approved
+            logIndex: logIndex
+            tokenId: tokenId
+            tokenSymbol: tokenSymbol
+            tokenContractType: tokenContractType
+            contract: contract
+            tokenName: tokenName
+            transactionHash: transactionHash
+          - owner: owner
+            approved: approved
+            logIndex: logIndex
+            tokenId: tokenId
+            tokenSymbol: tokenSymbol
+            tokenContractType: tokenContractType
+            contract: contract
+            tokenName: tokenName
+            transactionHash: transactionHash
+          ERC1155:
+          - approved: true
+            logIndex: logIndex
+            tokenSymbol: tokenSymbol
+            tokenContractType: tokenContractType
+            contract: contract
+            tokenName: tokenName
+            transactionHash: transactionHash
+            account: account
+            operator: operator
+          - approved: true
+            logIndex: logIndex
+            tokenSymbol: tokenSymbol
+            tokenContractType: tokenContractType
+            contract: contract
+            tokenName: tokenName
+            transactionHash: transactionHash
+            account: account
+            operator: operator
+        streamId: streamId
+        nftTransfers:
+        - amount: amount
+          logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          tokenId: tokenId
+          tokenContractType: tokenContractType
+          contract: contract
+          tokenName: tokenName
+          from: from
+          to: to
+          triggers:
+          - name: name
+            value: ""
+          - name: name
+            value: ""
+          transactionHash: transactionHash
+          operator: operator
+        - amount: amount
+          logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          tokenId: tokenId
+          tokenContractType: tokenContractType
+          contract: contract
+          tokenName: tokenName
+          from: from
+          to: to
+          triggers:
+          - name: name
+            value: ""
+          - name: name
+            value: ""
+          transactionHash: transactionHash
+          operator: operator
+        abi:
+        - {}
+        - {}
+        txsInternal:
+        - gas: gas
+          from: from
+          to: to
+          value: value
+          transactionHash: transactionHash
+        - gas: gas
+          from: from
+          to: to
+          value: value
+          transactionHash: transactionHash
+        erc20Approvals:
+        - owner: owner
+          logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          spender: spender
+          tokenDecimals: tokenDecimals
+          contract: contract
+          tokenName: tokenName
+          valueWithDecimals: valueWithDecimals
+          triggers:
+          - name: name
+            value: ""
+          - name: name
+            value: ""
+          value: value
+          transactionHash: transactionHash
+        - owner: owner
+          logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          spender: spender
+          tokenDecimals: tokenDecimals
+          contract: contract
+          tokenName: tokenName
+          valueWithDecimals: valueWithDecimals
+          triggers:
+          - name: name
+            value: ""
+          - name: name
+            value: ""
+          value: value
+          transactionHash: transactionHash
+        confirmed: true
+        txs:
+        - signed_transaction: signed_transaction
+          raw_transaction: raw_transaction
+          moon_scan_url: moon_scan_url
+          signature: signature
+          signed_message: signed_message
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
+            key:
+              gas_price: gas_price
+              blob_hashes:
+              - blob_hashes
+              - blob_hashes
+              chain_id: 5.637376656633329
+              data: data
+              gas_fee_cap: gas_fee_cap
+              type: 5.962133916683182
+              blob_gas_fee_cap: blob_gas_fee_cap
+              nonce: 2.3021358869347655
+              r: r
+              gas_tip_cap: gas_tip_cap
+              s: s
+              v: v
+              gas: gas
+              blob_gas: blob_gas
+              from: from
+              to: to
+              value: value
+        - signed_transaction: signed_transaction
+          raw_transaction: raw_transaction
+          moon_scan_url: moon_scan_url
+          signature: signature
+          signed_message: signed_message
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
+            key:
+              gas_price: gas_price
+              blob_hashes:
+              - blob_hashes
+              - blob_hashes
+              chain_id: 5.637376656633329
+              data: data
+              gas_fee_cap: gas_fee_cap
+              type: 5.962133916683182
+              blob_gas_fee_cap: blob_gas_fee_cap
+              nonce: 2.3021358869347655
+              r: r
+              gas_tip_cap: gas_tip_cap
+              s: s
+              v: v
+              gas: gas
+              blob_gas: blob_gas
+              from: from
+              to: to
+              value: value
+        retries: 0.8008281904610115
+        nftTokenApprovals:
+        - logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          tokenId: tokenId
+          tokenContractType: tokenContractType
+          contract: contract
+          approvedAll: true
+          tokenName: tokenName
+          transactionHash: transactionHash
+          account: account
+          operator: operator
+        - logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          tokenId: tokenId
+          tokenContractType: tokenContractType
+          contract: contract
+          approvedAll: true
+          tokenName: tokenName
+          transactionHash: transactionHash
+          account: account
+          operator: operator
+        chainId: chainId
+        nativeBalances:
+        - address: address
+          balance: balance
+        - address: address
+          balance: balance
+        erc20Transfers:
+        - logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          tokenDecimals: tokenDecimals
+          contract: contract
+          tokenName: tokenName
+          valueWithDecimals: valueWithDecimals
+          from: from
+          to: to
+          triggers:
+          - name: name
+            value: ""
+          - name: name
+            value: ""
+          value: value
+          transactionHash: transactionHash
+        - logIndex: logIndex
+          tokenSymbol: tokenSymbol
+          tokenDecimals: tokenDecimals
+          contract: contract
+          tokenName: tokenName
+          valueWithDecimals: valueWithDecimals
+          from: from
+          to: to
+          triggers:
+          - name: name
+            value: ""
+          - name: name
+            value: ""
+          value: value
+          transactionHash: transactionHash
+        block:
+          number: number
+          hash: hash
+          timestamp: timestamp
+        tag: tag
+        logs:
+        - topic1: topic1
+          topic2: topic2
+          logIndex: logIndex
+          address: address
+          topic0: topic0
+          data: data
+          topic3: topic3
+          triggers:
+          - name: name
+            value: ""
+          - name: name
+            value: ""
+          transactionHash: transactionHash
+        - topic1: topic1
+          topic2: topic2
+          logIndex: logIndex
+          address: address
+          topic0: topic0
+          data: data
+          topic3: topic3
+          triggers:
+          - name: name
+            value: ""
+          - name: name
+            value: ""
+          transactionHash: transactionHash
+      properties:
+        block:
+          $ref: '#/components/schemas/Block'
+        chainId:
+          type: string
+        logs:
+          items:
+            $ref: '#/components/schemas/Log'
+          type: array
+        txs:
+          items:
+            $ref: '#/components/schemas/Transaction'
+          type: array
+        txsInternal:
+          items:
+            $ref: '#/components/schemas/InternalTransaction'
+          type: array
+        abi:
+          items:
+            $ref: '#/components/schemas/AbiItem'
+          type: array
+        retries:
+          format: double
+          type: number
+        confirmed:
+          type: boolean
+        tag:
+          type: string
+        streamId:
+          type: string
+        erc20Transfers:
+          items:
+            $ref: '#/components/schemas/IERC20Transfer'
+          type: array
+        erc20Approvals:
+          items:
+            $ref: '#/components/schemas/IERC20Approval'
+          type: array
+        nftTransfers:
+          items:
+            $ref: '#/components/schemas/INFTTransfer'
+          type: array
+        nativeBalances:
+          items:
+            $ref: '#/components/schemas/INativeBalance'
+          type: array
+        nftApprovals:
+          $ref: '#/components/schemas/IOldNFTApproval'
+        nftTokenApprovals:
+          items:
+            $ref: '#/components/schemas/INFTApproval'
+          type: array
+      required:
+      - abi
+      - block
+      - chainId
+      - confirmed
+      - erc20Approvals
+      - erc20Transfers
+      - logs
+      - nativeBalances
+      - nftApprovals
+      - nftTokenApprovals
+      - nftTransfers
+      - retries
+      - streamId
+      - tag
+      - txs
+      - txsInternal
+      type: object
+    PingResponse:
+      additionalProperties: false
+      example:
+        message: message
+      properties:
+        message:
+          type: string
+      required:
+      - message
+      type: object
+    RippleInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    RippleTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    SolanaInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    SolanaTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    TronInput:
+      additionalProperties: false
+      example:
+        private_key: private_key
+        network: network
+      properties:
+        network:
+          type: string
+        private_key:
+          type: string
+      type: object
+    TronTransactionInput:
+      additionalProperties: false
+      example:
+        compress: true
+        to: to
+        value: 0.8008281904610115
+        network: network
+      properties:
+        to:
+          type: string
+        value:
+          format: double
+          type: number
+        network:
+          type: string
+        compress:
+          type: boolean
+      type: object
+    UniswapInput:
+      additionalProperties: false
+      example:
+        broadcast: true
+        token_ids: token_ids
+        data: data
+        chain_id: chain_id
+        token_a: token_a
+        encoding: encoding
+        contract_address: contract_address
+        token_b: token_b
+        nonce: nonce
+        input: input
+        approved: true
+        token_id: token_id
+        EOA: true
+        gas: gas
+        to: to
+        amount_b: amount_b
+        value: value
+        amount_a: amount_a
+        gasPrice: gasPrice
+      properties:
+        to:
+          type: string
+        data:
+          type: string
+        input:
+          type: string
+        value:
+          type: string
+        nonce:
+          type: string
+        gas:
+          type: string
+        gasPrice:
+          type: string
+        chain_id:
+          type: string
+        encoding:
+          type: string
+        EOA:
+          type: boolean
+        contract_address:
+          type: string
+        token_id:
+          type: string
+        token_ids:
+          type: string
+        approved:
+          type: boolean
+        broadcast:
+          type: boolean
+        token_a:
+          type: string
+        token_b:
+          type: string
+        amount_a:
+          type: string
+        amount_b:
+          type: string
+      type: object
+    AccountControllerResponse_data:
+      anyOf:
+      - $ref: '#/components/schemas/NonceResponse'
+      - $ref: '#/components/schemas/BalanceResponse'
+      - $ref: '#/components/schemas/Transaction'
+      - $ref: '#/components/schemas/AccountResponse'
+      - $ref: '#/components/schemas/SignMessage'
+      - $ref: '#/components/schemas/EnsResolveResponse'
+      - $ref: '#/components/schemas/ENSReverseResolveResponse'
+      - $ref: '#/components/schemas/AaveReservesData'
+      - $ref: '#/components/schemas/Erc20Response'
+      - $ref: '#/components/schemas/Erc1155Response'
+      - $ref: '#/components/schemas/BroadCastRawTransactionResponse'
+      - $ref: '#/components/schemas/BitcoinTransactionOutput'
+      - $ref: '#/components/schemas/Erc721Response'
+    TransactionResponse_tx:
+      example:
+        data: data
+        gas: gas
+        from: from
+        to: to
+        value: value
+        nonce: 0.8008281904610115
+      properties:
+        data:
+          type: string
+        value:
+          type: string
+        nonce:
+          format: double
+          type: number
+        gas:
+          type: string
+        to:
+          type: string
+        from:
+          type: string
+      required:
+      - data
+      - from
+      - gas
+      - nonce
+      - to
+      - value
+      type: object
+    TransactionResponse_info:
+      example:
+        conveyorGas: conveyorGas
+        affiliateGas: affiliateGas
+        amountOutMin: amountOutMin
+        amountOut: amountOut
+        affiliateAggregator: affiliateAggregator
+      properties:
+        conveyorGas:
+          type: string
+        affiliateGas:
+          type: string
+        affiliateAggregator:
+          type: string
+        amountOut:
+          type: string
+        amountOutMin:
+          type: string
+      required:
+      - affiliateAggregator
+      - affiliateGas
+      - amountOut
+      - amountOutMin
+      - conveyorGas
+      type: object
+    SupportedDefaultResponse_defaults_id:
+      example:
+        amount: 0.8008281904610115
+        provider: provider
+        paymentMethod: paymentMethod
+        source: source
+        target: target
+      properties:
+        provider:
+          type: string
+        paymentMethod:
+          type: string
+        amount:
+          format: double
+          type: number
+        target:
+          type: string
+        source:
+          type: string
+      required:
+      - amount
+      - paymentMethod
+      - provider
+      - source
+      - target
+      type: object
+    SupportedDefaultResponse_defaults:
+      example:
+        id:
+          amount: 0.8008281904610115
+          provider: provider
+          paymentMethod: paymentMethod
+          source: source
+          target: target
+      properties:
+        id:
+          $ref: '#/components/schemas/SupportedDefaultResponse_defaults_id'
+      required:
+      - id
+      type: object
+    SupportedAssetResponse_assets_inner:
+      example:
+        paymentMethods:
+        - paymentMethods
+        - paymentMethods
+        fiat: fiat
+        crypto:
+        - crypto
+        - crypto
+      properties:
+        crypto:
+          items:
+            type: string
+          type: array
+        paymentMethods:
+          items:
+            type: string
+          type: array
+        fiat:
+          type: string
+      required:
+      - crypto
+      - fiat
+      - paymentMethods
+      type: object
+    GetSupportedOnRampsResponse_message_inner_icons_png:
+      example:
+        "160x160": 160x160
+        "32x32": 32x32
+      properties:
+        "160x160":
+          type: string
+        "32x32":
+          type: string
+      required:
+      - 160x160
+      - 32x32
+      type: object
+    GetSupportedOnRampsResponse_message_inner_icons:
+      example:
+        svg: svg
+        png:
+          "160x160": 160x160
+          "32x32": 32x32
+      properties:
+        png:
+          $ref: '#/components/schemas/GetSupportedOnRampsResponse_message_inner_icons_png'
+        svg:
+          type: string
+      required:
+      - png
+      - svg
+      type: object
+    GetSupportedOnRampsResponse_message_inner:
+      example:
+        displayName: displayName
+        icon: icon
+        id: id
+        icons:
+          svg: svg
+          png:
+            "160x160": 160x160
+            "32x32": 32x32
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        icons:
+          $ref: '#/components/schemas/GetSupportedOnRampsResponse_message_inner_icons'
+        icon:
+          type: string
+      required:
+      - displayName
+      - icon
+      - icons
+      - id
+      type: object
+    TransactionInput_supportedParams_partnerData_redirectUrl:
+      example:
+        success: success
+      properties:
+        success:
+          type: string
+      required:
+      - success
+      type: object
+    TransactionInput_supportedParams_partnerData:
+      example:
+        redirectUrl:
+          success: success
+      properties:
+        redirectUrl:
+          $ref: '#/components/schemas/TransactionInput_supportedParams_partnerData_redirectUrl'
+      required:
+      - redirectUrl
+      type: object
+    TransactionInput_supportedParams_theme:
+      example:
+        isDark: true
+        themeName: themeName
+        borderRadius: 0.8008281904610115
+        primaryTextColor: primaryTextColor
+        primaryColor: primaryColor
+        cardColor: cardColor
+        secondaryTextColor: secondaryTextColor
+        secondaryColor: secondaryColor
+      properties:
+        borderRadius:
+          format: double
+          nullable: true
+          type: number
+        cardColor:
+          type: string
+        secondaryTextColor:
+          type: string
+        primaryTextColor:
+          type: string
+        secondaryColor:
+          type: string
+        primaryColor:
+          type: string
+        themeName:
+          type: string
+        isDark:
+          type: boolean
+      required:
+      - borderRadius
+      - cardColor
+      - isDark
+      - primaryColor
+      - primaryTextColor
+      - secondaryColor
+      - secondaryTextColor
+      - themeName
+      type: object
+    TransactionInput_supportedParams:
+      example:
+        partnerData:
+          redirectUrl:
+            success: success
+        theme:
+          isDark: true
+          themeName: themeName
+          borderRadius: 0.8008281904610115
+          primaryTextColor: primaryTextColor
+          primaryColor: primaryColor
+          cardColor: cardColor
+          secondaryTextColor: secondaryTextColor
+          secondaryColor: secondaryColor
+      properties:
+        partnerData:
+          $ref: '#/components/schemas/TransactionInput_supportedParams_partnerData'
+        theme:
+          $ref: '#/components/schemas/TransactionInput_supportedParams_theme'
+      required:
+      - partnerData
+      - theme
+      type: object
+    TransactionInput_wallet:
+      example:
+        address: address
+      properties:
+        address:
+          type: string
+      required:
+      - address
+      type: object
+    TransactionInput_metaData:
+      example:
+        quoteId: quoteId
+      properties:
+        quoteId:
+          type: string
+      required:
+      - quoteId
+      type: object
+  securitySchemes:
+    BearerAuth:
+      in: header
+      name: Authorization
+      type: apiKey
+    OAuth2:
+      flows:
+        password:
+          scopes:
+            authorization_code: grants authorization_code
+          tokenUrl: https://vault-api.usemoon.ai/auth/oauth/openai/oauth
+      type: oauth2
+    ApiKeyAuth:
+      in: header
+      name: x-api-key
+      type: apiKey
