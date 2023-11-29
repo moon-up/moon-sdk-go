@@ -22,7 +22,7 @@ var _ MappedNullable = &ConveyorFinanceControllerResponse{}
 type ConveyorFinanceControllerResponse struct {
 	Input *InputBody `json:"input,omitempty"`
 	Convey *TransactionResponse `json:"convey,omitempty"`
-	Data *Transaction `json:"data,omitempty"`
+	Data *TransactionData `json:"data,omitempty"`
 	Tx *TransactionResponseTx `json:"tx,omitempty"`
 	Signed *Transaction `json:"signed,omitempty"`
 	Success bool `json:"success"`
@@ -115,9 +115,9 @@ func (o *ConveyorFinanceControllerResponse) SetConvey(v TransactionResponse) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ConveyorFinanceControllerResponse) GetData() Transaction {
+func (o *ConveyorFinanceControllerResponse) GetData() TransactionData {
 	if o == nil || IsNil(o.Data) {
-		var ret Transaction
+		var ret TransactionData
 		return ret
 	}
 	return *o.Data
@@ -125,7 +125,7 @@ func (o *ConveyorFinanceControllerResponse) GetData() Transaction {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConveyorFinanceControllerResponse) GetDataOk() (*Transaction, bool) {
+func (o *ConveyorFinanceControllerResponse) GetDataOk() (*TransactionData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -141,8 +141,8 @@ func (o *ConveyorFinanceControllerResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given Transaction and assigns it to the Data field.
-func (o *ConveyorFinanceControllerResponse) SetData(v Transaction) {
+// SetData gets a reference to the given TransactionData and assigns it to the Data field.
+func (o *ConveyorFinanceControllerResponse) SetData(v TransactionData) {
 	o.Data = &v
 }
 

@@ -4,15 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MoonScanUrl** | Pointer to **string** |  | [optional] 
-**TransactionHash** | **string** |  | 
-**SignedTransaction** | **string** |  | 
-**SignedMessage** | Pointer to **string** |  | [optional] 
-**RawTransaction** | Pointer to **string** |  | [optional] 
-**Signature** | Pointer to **string** |  | [optional] 
-**Transaction** | Pointer to [**map[string]Tx**](Tx.md) |  | [optional] 
-**UserOps** | Pointer to [**[]TransactionRequest**](TransactionRequest.md) |  | [optional] 
-**UseropTransaction** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **float64** |  | [optional] 
+**ChainId** | Pointer to **float64** |  | [optional] 
+**Data** | Pointer to **string** |  | [optional] 
+**Gas** | Pointer to **string** |  | [optional] 
+**GasPrice** | Pointer to **string** |  | [optional] 
+**GasTipCap** | Pointer to **NullableString** |  | [optional] 
+**GasFeeCap** | Pointer to **NullableString** |  | [optional] 
+**Value** | Pointer to **string** |  | [optional] 
+**Nonce** | Pointer to **float64** |  | [optional] 
+**From** | Pointer to **string** |  | [optional] 
+**To** | Pointer to **NullableString** |  | [optional] 
+**BlobGas** | Pointer to **NullableString** |  | [optional] 
+**BlobGasFeeCap** | Pointer to **NullableString** |  | [optional] 
+**BlobHashes** | Pointer to **[]string** |  | [optional] 
+**V** | Pointer to **string** |  | [optional] 
+**R** | Pointer to **string** |  | [optional] 
+**S** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Symbol** | Pointer to **string** |  | [optional] 
 **Decimals** | Pointer to **string** |  | [optional] 
@@ -25,7 +33,7 @@ Name | Type | Description | Notes
 
 ### NewErc20Response
 
-`func NewErc20Response(transactionHash string, signedTransaction string, ) *Erc20Response`
+`func NewErc20Response() *Erc20Response`
 
 NewErc20Response instantiates a new Erc20Response object
 This constructor will assign default values to properties that have it defined,
@@ -40,220 +48,490 @@ NewErc20ResponseWithDefaults instantiates a new Erc20Response object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMoonScanUrl
+### GetType
 
-`func (o *Erc20Response) GetMoonScanUrl() string`
+`func (o *Erc20Response) GetType() float64`
 
-GetMoonScanUrl returns the MoonScanUrl field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetMoonScanUrlOk
+### GetTypeOk
 
-`func (o *Erc20Response) GetMoonScanUrlOk() (*string, bool)`
+`func (o *Erc20Response) GetTypeOk() (*float64, bool)`
 
-GetMoonScanUrlOk returns a tuple with the MoonScanUrl field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMoonScanUrl
+### SetType
 
-`func (o *Erc20Response) SetMoonScanUrl(v string)`
+`func (o *Erc20Response) SetType(v float64)`
 
-SetMoonScanUrl sets MoonScanUrl field to given value.
+SetType sets Type field to given value.
 
-### HasMoonScanUrl
+### HasType
 
-`func (o *Erc20Response) HasMoonScanUrl() bool`
+`func (o *Erc20Response) HasType() bool`
 
-HasMoonScanUrl returns a boolean if a field has been set.
+HasType returns a boolean if a field has been set.
 
-### GetTransactionHash
+### GetChainId
 
-`func (o *Erc20Response) GetTransactionHash() string`
+`func (o *Erc20Response) GetChainId() float64`
 
-GetTransactionHash returns the TransactionHash field if non-nil, zero value otherwise.
+GetChainId returns the ChainId field if non-nil, zero value otherwise.
 
-### GetTransactionHashOk
+### GetChainIdOk
 
-`func (o *Erc20Response) GetTransactionHashOk() (*string, bool)`
+`func (o *Erc20Response) GetChainIdOk() (*float64, bool)`
 
-GetTransactionHashOk returns a tuple with the TransactionHash field if it's non-nil, zero value otherwise
+GetChainIdOk returns a tuple with the ChainId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTransactionHash
+### SetChainId
 
-`func (o *Erc20Response) SetTransactionHash(v string)`
+`func (o *Erc20Response) SetChainId(v float64)`
 
-SetTransactionHash sets TransactionHash field to given value.
+SetChainId sets ChainId field to given value.
 
+### HasChainId
 
-### GetSignedTransaction
+`func (o *Erc20Response) HasChainId() bool`
 
-`func (o *Erc20Response) GetSignedTransaction() string`
+HasChainId returns a boolean if a field has been set.
 
-GetSignedTransaction returns the SignedTransaction field if non-nil, zero value otherwise.
+### GetData
 
-### GetSignedTransactionOk
+`func (o *Erc20Response) GetData() string`
 
-`func (o *Erc20Response) GetSignedTransactionOk() (*string, bool)`
+GetData returns the Data field if non-nil, zero value otherwise.
 
-GetSignedTransactionOk returns a tuple with the SignedTransaction field if it's non-nil, zero value otherwise
+### GetDataOk
+
+`func (o *Erc20Response) GetDataOk() (*string, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSignedTransaction
+### SetData
 
-`func (o *Erc20Response) SetSignedTransaction(v string)`
+`func (o *Erc20Response) SetData(v string)`
 
-SetSignedTransaction sets SignedTransaction field to given value.
+SetData sets Data field to given value.
 
+### HasData
 
-### GetSignedMessage
+`func (o *Erc20Response) HasData() bool`
 
-`func (o *Erc20Response) GetSignedMessage() string`
+HasData returns a boolean if a field has been set.
 
-GetSignedMessage returns the SignedMessage field if non-nil, zero value otherwise.
+### GetGas
 
-### GetSignedMessageOk
+`func (o *Erc20Response) GetGas() string`
 
-`func (o *Erc20Response) GetSignedMessageOk() (*string, bool)`
+GetGas returns the Gas field if non-nil, zero value otherwise.
 
-GetSignedMessageOk returns a tuple with the SignedMessage field if it's non-nil, zero value otherwise
+### GetGasOk
+
+`func (o *Erc20Response) GetGasOk() (*string, bool)`
+
+GetGasOk returns a tuple with the Gas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSignedMessage
+### SetGas
 
-`func (o *Erc20Response) SetSignedMessage(v string)`
+`func (o *Erc20Response) SetGas(v string)`
 
-SetSignedMessage sets SignedMessage field to given value.
+SetGas sets Gas field to given value.
 
-### HasSignedMessage
+### HasGas
 
-`func (o *Erc20Response) HasSignedMessage() bool`
+`func (o *Erc20Response) HasGas() bool`
 
-HasSignedMessage returns a boolean if a field has been set.
+HasGas returns a boolean if a field has been set.
 
-### GetRawTransaction
+### GetGasPrice
 
-`func (o *Erc20Response) GetRawTransaction() string`
+`func (o *Erc20Response) GetGasPrice() string`
 
-GetRawTransaction returns the RawTransaction field if non-nil, zero value otherwise.
+GetGasPrice returns the GasPrice field if non-nil, zero value otherwise.
 
-### GetRawTransactionOk
+### GetGasPriceOk
 
-`func (o *Erc20Response) GetRawTransactionOk() (*string, bool)`
+`func (o *Erc20Response) GetGasPriceOk() (*string, bool)`
 
-GetRawTransactionOk returns a tuple with the RawTransaction field if it's non-nil, zero value otherwise
+GetGasPriceOk returns a tuple with the GasPrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRawTransaction
+### SetGasPrice
 
-`func (o *Erc20Response) SetRawTransaction(v string)`
+`func (o *Erc20Response) SetGasPrice(v string)`
 
-SetRawTransaction sets RawTransaction field to given value.
+SetGasPrice sets GasPrice field to given value.
 
-### HasRawTransaction
+### HasGasPrice
 
-`func (o *Erc20Response) HasRawTransaction() bool`
+`func (o *Erc20Response) HasGasPrice() bool`
 
-HasRawTransaction returns a boolean if a field has been set.
+HasGasPrice returns a boolean if a field has been set.
 
-### GetSignature
+### GetGasTipCap
 
-`func (o *Erc20Response) GetSignature() string`
+`func (o *Erc20Response) GetGasTipCap() string`
 
-GetSignature returns the Signature field if non-nil, zero value otherwise.
+GetGasTipCap returns the GasTipCap field if non-nil, zero value otherwise.
 
-### GetSignatureOk
+### GetGasTipCapOk
 
-`func (o *Erc20Response) GetSignatureOk() (*string, bool)`
+`func (o *Erc20Response) GetGasTipCapOk() (*string, bool)`
 
-GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
+GetGasTipCapOk returns a tuple with the GasTipCap field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSignature
+### SetGasTipCap
 
-`func (o *Erc20Response) SetSignature(v string)`
+`func (o *Erc20Response) SetGasTipCap(v string)`
 
-SetSignature sets Signature field to given value.
+SetGasTipCap sets GasTipCap field to given value.
 
-### HasSignature
+### HasGasTipCap
 
-`func (o *Erc20Response) HasSignature() bool`
+`func (o *Erc20Response) HasGasTipCap() bool`
 
-HasSignature returns a boolean if a field has been set.
+HasGasTipCap returns a boolean if a field has been set.
 
-### GetTransaction
+### SetGasTipCapNil
 
-`func (o *Erc20Response) GetTransaction() map[string]Tx`
+`func (o *Erc20Response) SetGasTipCapNil(b bool)`
 
-GetTransaction returns the Transaction field if non-nil, zero value otherwise.
+ SetGasTipCapNil sets the value for GasTipCap to be an explicit nil
 
-### GetTransactionOk
+### UnsetGasTipCap
+`func (o *Erc20Response) UnsetGasTipCap()`
 
-`func (o *Erc20Response) GetTransactionOk() (*map[string]Tx, bool)`
+UnsetGasTipCap ensures that no value is present for GasTipCap, not even an explicit nil
+### GetGasFeeCap
 
-GetTransactionOk returns a tuple with the Transaction field if it's non-nil, zero value otherwise
+`func (o *Erc20Response) GetGasFeeCap() string`
+
+GetGasFeeCap returns the GasFeeCap field if non-nil, zero value otherwise.
+
+### GetGasFeeCapOk
+
+`func (o *Erc20Response) GetGasFeeCapOk() (*string, bool)`
+
+GetGasFeeCapOk returns a tuple with the GasFeeCap field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTransaction
+### SetGasFeeCap
 
-`func (o *Erc20Response) SetTransaction(v map[string]Tx)`
+`func (o *Erc20Response) SetGasFeeCap(v string)`
 
-SetTransaction sets Transaction field to given value.
+SetGasFeeCap sets GasFeeCap field to given value.
 
-### HasTransaction
+### HasGasFeeCap
 
-`func (o *Erc20Response) HasTransaction() bool`
+`func (o *Erc20Response) HasGasFeeCap() bool`
 
-HasTransaction returns a boolean if a field has been set.
+HasGasFeeCap returns a boolean if a field has been set.
 
-### GetUserOps
+### SetGasFeeCapNil
 
-`func (o *Erc20Response) GetUserOps() []TransactionRequest`
+`func (o *Erc20Response) SetGasFeeCapNil(b bool)`
 
-GetUserOps returns the UserOps field if non-nil, zero value otherwise.
+ SetGasFeeCapNil sets the value for GasFeeCap to be an explicit nil
 
-### GetUserOpsOk
+### UnsetGasFeeCap
+`func (o *Erc20Response) UnsetGasFeeCap()`
 
-`func (o *Erc20Response) GetUserOpsOk() (*[]TransactionRequest, bool)`
+UnsetGasFeeCap ensures that no value is present for GasFeeCap, not even an explicit nil
+### GetValue
 
-GetUserOpsOk returns a tuple with the UserOps field if it's non-nil, zero value otherwise
+`func (o *Erc20Response) GetValue() string`
+
+GetValue returns the Value field if non-nil, zero value otherwise.
+
+### GetValueOk
+
+`func (o *Erc20Response) GetValueOk() (*string, bool)`
+
+GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserOps
+### SetValue
 
-`func (o *Erc20Response) SetUserOps(v []TransactionRequest)`
+`func (o *Erc20Response) SetValue(v string)`
 
-SetUserOps sets UserOps field to given value.
+SetValue sets Value field to given value.
 
-### HasUserOps
+### HasValue
 
-`func (o *Erc20Response) HasUserOps() bool`
+`func (o *Erc20Response) HasValue() bool`
 
-HasUserOps returns a boolean if a field has been set.
+HasValue returns a boolean if a field has been set.
 
-### GetUseropTransaction
+### GetNonce
 
-`func (o *Erc20Response) GetUseropTransaction() string`
+`func (o *Erc20Response) GetNonce() float64`
 
-GetUseropTransaction returns the UseropTransaction field if non-nil, zero value otherwise.
+GetNonce returns the Nonce field if non-nil, zero value otherwise.
 
-### GetUseropTransactionOk
+### GetNonceOk
 
-`func (o *Erc20Response) GetUseropTransactionOk() (*string, bool)`
+`func (o *Erc20Response) GetNonceOk() (*float64, bool)`
 
-GetUseropTransactionOk returns a tuple with the UseropTransaction field if it's non-nil, zero value otherwise
+GetNonceOk returns a tuple with the Nonce field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseropTransaction
+### SetNonce
 
-`func (o *Erc20Response) SetUseropTransaction(v string)`
+`func (o *Erc20Response) SetNonce(v float64)`
 
-SetUseropTransaction sets UseropTransaction field to given value.
+SetNonce sets Nonce field to given value.
 
-### HasUseropTransaction
+### HasNonce
 
-`func (o *Erc20Response) HasUseropTransaction() bool`
+`func (o *Erc20Response) HasNonce() bool`
 
-HasUseropTransaction returns a boolean if a field has been set.
+HasNonce returns a boolean if a field has been set.
+
+### GetFrom
+
+`func (o *Erc20Response) GetFrom() string`
+
+GetFrom returns the From field if non-nil, zero value otherwise.
+
+### GetFromOk
+
+`func (o *Erc20Response) GetFromOk() (*string, bool)`
+
+GetFromOk returns a tuple with the From field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFrom
+
+`func (o *Erc20Response) SetFrom(v string)`
+
+SetFrom sets From field to given value.
+
+### HasFrom
+
+`func (o *Erc20Response) HasFrom() bool`
+
+HasFrom returns a boolean if a field has been set.
+
+### GetTo
+
+`func (o *Erc20Response) GetTo() string`
+
+GetTo returns the To field if non-nil, zero value otherwise.
+
+### GetToOk
+
+`func (o *Erc20Response) GetToOk() (*string, bool)`
+
+GetToOk returns a tuple with the To field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTo
+
+`func (o *Erc20Response) SetTo(v string)`
+
+SetTo sets To field to given value.
+
+### HasTo
+
+`func (o *Erc20Response) HasTo() bool`
+
+HasTo returns a boolean if a field has been set.
+
+### SetToNil
+
+`func (o *Erc20Response) SetToNil(b bool)`
+
+ SetToNil sets the value for To to be an explicit nil
+
+### UnsetTo
+`func (o *Erc20Response) UnsetTo()`
+
+UnsetTo ensures that no value is present for To, not even an explicit nil
+### GetBlobGas
+
+`func (o *Erc20Response) GetBlobGas() string`
+
+GetBlobGas returns the BlobGas field if non-nil, zero value otherwise.
+
+### GetBlobGasOk
+
+`func (o *Erc20Response) GetBlobGasOk() (*string, bool)`
+
+GetBlobGasOk returns a tuple with the BlobGas field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlobGas
+
+`func (o *Erc20Response) SetBlobGas(v string)`
+
+SetBlobGas sets BlobGas field to given value.
+
+### HasBlobGas
+
+`func (o *Erc20Response) HasBlobGas() bool`
+
+HasBlobGas returns a boolean if a field has been set.
+
+### SetBlobGasNil
+
+`func (o *Erc20Response) SetBlobGasNil(b bool)`
+
+ SetBlobGasNil sets the value for BlobGas to be an explicit nil
+
+### UnsetBlobGas
+`func (o *Erc20Response) UnsetBlobGas()`
+
+UnsetBlobGas ensures that no value is present for BlobGas, not even an explicit nil
+### GetBlobGasFeeCap
+
+`func (o *Erc20Response) GetBlobGasFeeCap() string`
+
+GetBlobGasFeeCap returns the BlobGasFeeCap field if non-nil, zero value otherwise.
+
+### GetBlobGasFeeCapOk
+
+`func (o *Erc20Response) GetBlobGasFeeCapOk() (*string, bool)`
+
+GetBlobGasFeeCapOk returns a tuple with the BlobGasFeeCap field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlobGasFeeCap
+
+`func (o *Erc20Response) SetBlobGasFeeCap(v string)`
+
+SetBlobGasFeeCap sets BlobGasFeeCap field to given value.
+
+### HasBlobGasFeeCap
+
+`func (o *Erc20Response) HasBlobGasFeeCap() bool`
+
+HasBlobGasFeeCap returns a boolean if a field has been set.
+
+### SetBlobGasFeeCapNil
+
+`func (o *Erc20Response) SetBlobGasFeeCapNil(b bool)`
+
+ SetBlobGasFeeCapNil sets the value for BlobGasFeeCap to be an explicit nil
+
+### UnsetBlobGasFeeCap
+`func (o *Erc20Response) UnsetBlobGasFeeCap()`
+
+UnsetBlobGasFeeCap ensures that no value is present for BlobGasFeeCap, not even an explicit nil
+### GetBlobHashes
+
+`func (o *Erc20Response) GetBlobHashes() []string`
+
+GetBlobHashes returns the BlobHashes field if non-nil, zero value otherwise.
+
+### GetBlobHashesOk
+
+`func (o *Erc20Response) GetBlobHashesOk() (*[]string, bool)`
+
+GetBlobHashesOk returns a tuple with the BlobHashes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlobHashes
+
+`func (o *Erc20Response) SetBlobHashes(v []string)`
+
+SetBlobHashes sets BlobHashes field to given value.
+
+### HasBlobHashes
+
+`func (o *Erc20Response) HasBlobHashes() bool`
+
+HasBlobHashes returns a boolean if a field has been set.
+
+### SetBlobHashesNil
+
+`func (o *Erc20Response) SetBlobHashesNil(b bool)`
+
+ SetBlobHashesNil sets the value for BlobHashes to be an explicit nil
+
+### UnsetBlobHashes
+`func (o *Erc20Response) UnsetBlobHashes()`
+
+UnsetBlobHashes ensures that no value is present for BlobHashes, not even an explicit nil
+### GetV
+
+`func (o *Erc20Response) GetV() string`
+
+GetV returns the V field if non-nil, zero value otherwise.
+
+### GetVOk
+
+`func (o *Erc20Response) GetVOk() (*string, bool)`
+
+GetVOk returns a tuple with the V field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetV
+
+`func (o *Erc20Response) SetV(v string)`
+
+SetV sets V field to given value.
+
+### HasV
+
+`func (o *Erc20Response) HasV() bool`
+
+HasV returns a boolean if a field has been set.
+
+### GetR
+
+`func (o *Erc20Response) GetR() string`
+
+GetR returns the R field if non-nil, zero value otherwise.
+
+### GetROk
+
+`func (o *Erc20Response) GetROk() (*string, bool)`
+
+GetROk returns a tuple with the R field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetR
+
+`func (o *Erc20Response) SetR(v string)`
+
+SetR sets R field to given value.
+
+### HasR
+
+`func (o *Erc20Response) HasR() bool`
+
+HasR returns a boolean if a field has been set.
+
+### GetS
+
+`func (o *Erc20Response) GetS() string`
+
+GetS returns the S field if non-nil, zero value otherwise.
+
+### GetSOk
+
+`func (o *Erc20Response) GetSOk() (*string, bool)`
+
+GetSOk returns a tuple with the S field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetS
+
+`func (o *Erc20Response) SetS(v string)`
+
+SetS sets S field to given value.
+
+### HasS
+
+`func (o *Erc20Response) HasS() bool`
+
+HasS returns a boolean if a field has been set.
 
 ### GetName
 

@@ -6,7 +6,7 @@ info:
   title: moon-vault-api
   version: 1.0.0
 servers:
-- url: https://vault-api.usemoon.ai
+- url: https://vault-api.usemoon.ai/
 paths:
   /oneinch/tokens:
     post:
@@ -4045,11 +4045,6 @@ components:
         s:
           type: string
       type: object
-    TxMap:
-      additionalProperties:
-        $ref: '#/components/schemas/Tx'
-      properties: {}
-      type: object
     TransactionRequest:
       additionalProperties: false
       example:
@@ -4076,7 +4071,7 @@ components:
         maxPriorityFeePerGas:
           type: string
       type: object
-    Transaction:
+    TransactionData:
       additionalProperties: false
       example:
         signed_transaction: signed_transaction
@@ -4102,7 +4097,82 @@ components:
           value: value
         transaction_hash: transaction_hash
         transaction:
-          key:
+          gas_price: gas_price
+          blob_hashes:
+          - blob_hashes
+          - blob_hashes
+          chain_id: 5.637376656633329
+          data: data
+          gas_fee_cap: gas_fee_cap
+          type: 5.962133916683182
+          blob_gas_fee_cap: blob_gas_fee_cap
+          nonce: 2.3021358869347655
+          r: r
+          gas_tip_cap: gas_tip_cap
+          s: s
+          v: v
+          gas: gas
+          blob_gas: blob_gas
+          from: from
+          to: to
+          value: value
+      properties:
+        moon_scan_url:
+          type: string
+        transaction_hash:
+          type: string
+        signed_transaction:
+          type: string
+        signed_message:
+          type: string
+        raw_transaction:
+          type: string
+        signature:
+          type: string
+        transaction:
+          $ref: '#/components/schemas/Tx'
+        userOps:
+          items:
+            $ref: '#/components/schemas/TransactionRequest'
+          type: array
+        userop_transaction:
+          type: string
+      required:
+      - signed_transaction
+      - transaction_hash
+      type: object
+    Transaction:
+      additionalProperties: false
+      example:
+        signed_transaction: signed_transaction
+        raw_transaction: raw_transaction
+        data: data
+        moon_scan_url: moon_scan_url
+        signature: signature
+        transactions:
+        - signed_transaction: signed_transaction
+          raw_transaction: raw_transaction
+          moon_scan_url: moon_scan_url
+          signature: signature
+          signed_message: signed_message
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
             gas_price: gas_price
             blob_hashes:
             - blob_hashes
@@ -4122,33 +4192,110 @@ components:
             from: from
             to: to
             value: value
+        - signed_transaction: signed_transaction
+          raw_transaction: raw_transaction
+          moon_scan_url: moon_scan_url
+          signature: signature
+          signed_message: signed_message
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
+            gas_price: gas_price
+            blob_hashes:
+            - blob_hashes
+            - blob_hashes
+            chain_id: 5.637376656633329
+            data: data
+            gas_fee_cap: gas_fee_cap
+            type: 5.962133916683182
+            blob_gas_fee_cap: blob_gas_fee_cap
+            nonce: 2.3021358869347655
+            r: r
+            gas_tip_cap: gas_tip_cap
+            s: s
+            v: v
+            gas: gas
+            blob_gas: blob_gas
+            from: from
+            to: to
+            value: value
+        userop_transaction: userop_transaction
+        userOps:
+        - data: data
+          maxPriorityFeePerGas: maxPriorityFeePerGas
+          from: from
+          to: to
+          maxFeePerGas: maxFeePerGas
+          nonce: nonce
+          value: value
+        - data: data
+          maxPriorityFeePerGas: maxPriorityFeePerGas
+          from: from
+          to: to
+          maxFeePerGas: maxFeePerGas
+          nonce: nonce
+          value: value
+        transaction_hash: transaction_hash
+        transaction:
+          gas_price: gas_price
+          blob_hashes:
+          - blob_hashes
+          - blob_hashes
+          chain_id: 5.637376656633329
+          data: data
+          gas_fee_cap: gas_fee_cap
+          type: 5.962133916683182
+          blob_gas_fee_cap: blob_gas_fee_cap
+          nonce: 2.3021358869347655
+          r: r
+          gas_tip_cap: gas_tip_cap
+          s: s
+          v: v
+          gas: gas
+          blob_gas: blob_gas
+          from: from
+          to: to
+          value: value
       properties:
-        moon_scan_url:
-          type: string
         transaction_hash:
           type: string
         signed_transaction:
           type: string
-        signed_message:
-          type: string
         raw_transaction:
+          type: string
+        data:
+          type: string
+        transactions:
+          items:
+            $ref: '#/components/schemas/TransactionData'
+          type: array
+        moon_scan_url:
           type: string
         signature:
           type: string
         transaction:
-          additionalProperties:
-            $ref: '#/components/schemas/Tx'
-          properties: {}
-          type: object
+          $ref: '#/components/schemas/Tx'
         userOps:
           items:
             $ref: '#/components/schemas/TransactionRequest'
           type: array
         userop_transaction:
           type: string
-      required:
-      - signed_transaction
-      - transaction_hash
       type: object
     AccountResponse:
       additionalProperties: false
@@ -4236,28 +4383,50 @@ components:
     Erc20Response:
       additionalProperties: false
       properties:
-        moon_scan_url:
+        type:
+          format: double
+          type: number
+        chain_id:
+          format: double
+          type: number
+        data:
           type: string
-        transaction_hash:
+        gas:
           type: string
-        signed_transaction:
+        gas_price:
           type: string
-        signed_message:
+        gas_tip_cap:
+          nullable: true
           type: string
-        raw_transaction:
+        gas_fee_cap:
+          nullable: true
           type: string
-        signature:
+        value:
           type: string
-        transaction:
-          additionalProperties:
-            $ref: '#/components/schemas/Tx'
-          properties: {}
-          type: object
-        userOps:
+        nonce:
+          format: double
+          type: number
+        from:
+          type: string
+        to:
+          nullable: true
+          type: string
+        blob_gas:
+          nullable: true
+          type: string
+        blob_gas_fee_cap:
+          nullable: true
+          type: string
+        blob_hashes:
           items:
-            $ref: '#/components/schemas/TransactionRequest'
+            type: string
+          nullable: true
           type: array
-        userop_transaction:
+        v:
+          type: string
+        r:
+          type: string
+        s:
           type: string
         name:
           type: string
@@ -4273,43 +4442,59 @@ components:
           type: string
         allowance:
           type: string
-      required:
-      - signed_transaction
-      - transaction_hash
       type: object
     Erc1155Response:
       additionalProperties: false
       properties:
-        moon_scan_url:
+        type:
+          format: double
+          type: number
+        chain_id:
+          format: double
+          type: number
+        data:
           type: string
-        transaction_hash:
+        gas:
           type: string
-        signed_transaction:
+        gas_price:
           type: string
-        signed_message:
+        gas_tip_cap:
+          nullable: true
           type: string
-        raw_transaction:
+        gas_fee_cap:
+          nullable: true
           type: string
-        signature:
+        value:
           type: string
-        transaction:
-          additionalProperties:
-            $ref: '#/components/schemas/Tx'
-          properties: {}
-          type: object
-        userOps:
+        nonce:
+          format: double
+          type: number
+        from:
+          type: string
+        to:
+          nullable: true
+          type: string
+        blob_gas:
+          nullable: true
+          type: string
+        blob_gas_fee_cap:
+          nullable: true
+          type: string
+        blob_hashes:
           items:
-            $ref: '#/components/schemas/TransactionRequest'
+            type: string
+          nullable: true
           type: array
-        userop_transaction:
+        v:
+          type: string
+        r:
+          type: string
+        s:
           type: string
         balance_of:
           type: string
         balance_of_batch:
           type: string
-      required:
-      - signed_transaction
-      - transaction_hash
       type: object
     BroadCastRawTransactionResponse:
       additionalProperties: false
@@ -4336,28 +4521,50 @@ components:
     Erc721Response:
       additionalProperties: false
       properties:
-        moon_scan_url:
+        type:
+          format: double
+          type: number
+        chain_id:
+          format: double
+          type: number
+        data:
           type: string
-        transaction_hash:
+        gas:
           type: string
-        signed_transaction:
+        gas_price:
           type: string
-        signed_message:
+        gas_tip_cap:
+          nullable: true
           type: string
-        raw_transaction:
+        gas_fee_cap:
+          nullable: true
           type: string
-        signature:
+        value:
           type: string
-        transaction:
-          additionalProperties:
-            $ref: '#/components/schemas/Tx'
-          properties: {}
-          type: object
-        userOps:
+        nonce:
+          format: double
+          type: number
+        from:
+          type: string
+        to:
+          nullable: true
+          type: string
+        blob_gas:
+          nullable: true
+          type: string
+        blob_gas_fee_cap:
+          nullable: true
+          type: string
+        blob_hashes:
           items:
-            $ref: '#/components/schemas/TransactionRequest'
+            type: string
+          nullable: true
           type: array
-        userop_transaction:
+        v:
+          type: string
+        r:
+          type: string
+        s:
           type: string
         name:
           type: string
@@ -4373,9 +4580,6 @@ components:
           type: string
         isApprovedForAll:
           type: string
-      required:
-      - signed_transaction
-      - transaction_hash
       type: object
     AccountControllerResponse:
       additionalProperties: false
@@ -4698,26 +4902,25 @@ components:
             value: value
           transaction_hash: transaction_hash
           transaction:
-            key:
-              gas_price: gas_price
-              blob_hashes:
-              - blob_hashes
-              - blob_hashes
-              chain_id: 5.637376656633329
-              data: data
-              gas_fee_cap: gas_fee_cap
-              type: 5.962133916683182
-              blob_gas_fee_cap: blob_gas_fee_cap
-              nonce: 2.3021358869347655
-              r: r
-              gas_tip_cap: gas_tip_cap
-              s: s
-              v: v
-              gas: gas
-              blob_gas: blob_gas
-              from: from
-              to: to
-              value: value
+            gas_price: gas_price
+            blob_hashes:
+            - blob_hashes
+            - blob_hashes
+            chain_id: 5.637376656633329
+            data: data
+            gas_fee_cap: gas_fee_cap
+            type: 5.962133916683182
+            blob_gas_fee_cap: blob_gas_fee_cap
+            nonce: 2.3021358869347655
+            r: r
+            gas_tip_cap: gas_tip_cap
+            s: s
+            v: v
+            gas: gas
+            blob_gas: blob_gas
+            from: from
+            to: to
+            value: value
         tx:
           data: data
           gas: gas
@@ -4746,28 +4949,33 @@ components:
         signed:
           signed_transaction: signed_transaction
           raw_transaction: raw_transaction
+          data: data
           moon_scan_url: moon_scan_url
           signature: signature
-          signed_message: signed_message
-          userop_transaction: userop_transaction
-          userOps:
-          - data: data
-            maxPriorityFeePerGas: maxPriorityFeePerGas
-            from: from
-            to: to
-            maxFeePerGas: maxFeePerGas
-            nonce: nonce
-            value: value
-          - data: data
-            maxPriorityFeePerGas: maxPriorityFeePerGas
-            from: from
-            to: to
-            maxFeePerGas: maxFeePerGas
-            nonce: nonce
-            value: value
-          transaction_hash: transaction_hash
-          transaction:
-            key:
+          transactions:
+          - signed_transaction: signed_transaction
+            raw_transaction: raw_transaction
+            moon_scan_url: moon_scan_url
+            signature: signature
+            signed_message: signed_message
+            userop_transaction: userop_transaction
+            userOps:
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            transaction_hash: transaction_hash
+            transaction:
               gas_price: gas_price
               blob_hashes:
               - blob_hashes
@@ -4787,6 +4995,85 @@ components:
               from: from
               to: to
               value: value
+          - signed_transaction: signed_transaction
+            raw_transaction: raw_transaction
+            moon_scan_url: moon_scan_url
+            signature: signature
+            signed_message: signed_message
+            userop_transaction: userop_transaction
+            userOps:
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            transaction_hash: transaction_hash
+            transaction:
+              gas_price: gas_price
+              blob_hashes:
+              - blob_hashes
+              - blob_hashes
+              chain_id: 5.637376656633329
+              data: data
+              gas_fee_cap: gas_fee_cap
+              type: 5.962133916683182
+              blob_gas_fee_cap: blob_gas_fee_cap
+              nonce: 2.3021358869347655
+              r: r
+              gas_tip_cap: gas_tip_cap
+              s: s
+              v: v
+              gas: gas
+              blob_gas: blob_gas
+              from: from
+              to: to
+              value: value
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
+            gas_price: gas_price
+            blob_hashes:
+            - blob_hashes
+            - blob_hashes
+            chain_id: 5.637376656633329
+            data: data
+            gas_fee_cap: gas_fee_cap
+            type: 5.962133916683182
+            blob_gas_fee_cap: blob_gas_fee_cap
+            nonce: 2.3021358869347655
+            r: r
+            gas_tip_cap: gas_tip_cap
+            s: s
+            v: v
+            gas: gas
+            blob_gas: blob_gas
+            from: from
+            to: to
+            value: value
         message: message
       properties:
         input:
@@ -4794,7 +5081,7 @@ components:
         convey:
           $ref: '#/components/schemas/TransactionResponse'
         data:
-          $ref: '#/components/schemas/Transaction'
+          $ref: '#/components/schemas/TransactionData'
         tx:
           $ref: '#/components/schemas/TransactionResponse_tx'
         signed:
@@ -6363,28 +6650,33 @@ components:
         txs:
         - signed_transaction: signed_transaction
           raw_transaction: raw_transaction
+          data: data
           moon_scan_url: moon_scan_url
           signature: signature
-          signed_message: signed_message
-          userop_transaction: userop_transaction
-          userOps:
-          - data: data
-            maxPriorityFeePerGas: maxPriorityFeePerGas
-            from: from
-            to: to
-            maxFeePerGas: maxFeePerGas
-            nonce: nonce
-            value: value
-          - data: data
-            maxPriorityFeePerGas: maxPriorityFeePerGas
-            from: from
-            to: to
-            maxFeePerGas: maxFeePerGas
-            nonce: nonce
-            value: value
-          transaction_hash: transaction_hash
-          transaction:
-            key:
+          transactions:
+          - signed_transaction: signed_transaction
+            raw_transaction: raw_transaction
+            moon_scan_url: moon_scan_url
+            signature: signature
+            signed_message: signed_message
+            userop_transaction: userop_transaction
+            userOps:
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            transaction_hash: transaction_hash
+            transaction:
               gas_price: gas_price
               blob_hashes:
               - blob_hashes
@@ -6404,30 +6696,114 @@ components:
               from: from
               to: to
               value: value
+          - signed_transaction: signed_transaction
+            raw_transaction: raw_transaction
+            moon_scan_url: moon_scan_url
+            signature: signature
+            signed_message: signed_message
+            userop_transaction: userop_transaction
+            userOps:
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            transaction_hash: transaction_hash
+            transaction:
+              gas_price: gas_price
+              blob_hashes:
+              - blob_hashes
+              - blob_hashes
+              chain_id: 5.637376656633329
+              data: data
+              gas_fee_cap: gas_fee_cap
+              type: 5.962133916683182
+              blob_gas_fee_cap: blob_gas_fee_cap
+              nonce: 2.3021358869347655
+              r: r
+              gas_tip_cap: gas_tip_cap
+              s: s
+              v: v
+              gas: gas
+              blob_gas: blob_gas
+              from: from
+              to: to
+              value: value
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
+            gas_price: gas_price
+            blob_hashes:
+            - blob_hashes
+            - blob_hashes
+            chain_id: 5.637376656633329
+            data: data
+            gas_fee_cap: gas_fee_cap
+            type: 5.962133916683182
+            blob_gas_fee_cap: blob_gas_fee_cap
+            nonce: 2.3021358869347655
+            r: r
+            gas_tip_cap: gas_tip_cap
+            s: s
+            v: v
+            gas: gas
+            blob_gas: blob_gas
+            from: from
+            to: to
+            value: value
         - signed_transaction: signed_transaction
           raw_transaction: raw_transaction
+          data: data
           moon_scan_url: moon_scan_url
           signature: signature
-          signed_message: signed_message
-          userop_transaction: userop_transaction
-          userOps:
-          - data: data
-            maxPriorityFeePerGas: maxPriorityFeePerGas
-            from: from
-            to: to
-            maxFeePerGas: maxFeePerGas
-            nonce: nonce
-            value: value
-          - data: data
-            maxPriorityFeePerGas: maxPriorityFeePerGas
-            from: from
-            to: to
-            maxFeePerGas: maxFeePerGas
-            nonce: nonce
-            value: value
-          transaction_hash: transaction_hash
-          transaction:
-            key:
+          transactions:
+          - signed_transaction: signed_transaction
+            raw_transaction: raw_transaction
+            moon_scan_url: moon_scan_url
+            signature: signature
+            signed_message: signed_message
+            userop_transaction: userop_transaction
+            userOps:
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            transaction_hash: transaction_hash
+            transaction:
               gas_price: gas_price
               blob_hashes:
               - blob_hashes
@@ -6447,6 +6823,85 @@ components:
               from: from
               to: to
               value: value
+          - signed_transaction: signed_transaction
+            raw_transaction: raw_transaction
+            moon_scan_url: moon_scan_url
+            signature: signature
+            signed_message: signed_message
+            userop_transaction: userop_transaction
+            userOps:
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            - data: data
+              maxPriorityFeePerGas: maxPriorityFeePerGas
+              from: from
+              to: to
+              maxFeePerGas: maxFeePerGas
+              nonce: nonce
+              value: value
+            transaction_hash: transaction_hash
+            transaction:
+              gas_price: gas_price
+              blob_hashes:
+              - blob_hashes
+              - blob_hashes
+              chain_id: 5.637376656633329
+              data: data
+              gas_fee_cap: gas_fee_cap
+              type: 5.962133916683182
+              blob_gas_fee_cap: blob_gas_fee_cap
+              nonce: 2.3021358869347655
+              r: r
+              gas_tip_cap: gas_tip_cap
+              s: s
+              v: v
+              gas: gas
+              blob_gas: blob_gas
+              from: from
+              to: to
+              value: value
+          userop_transaction: userop_transaction
+          userOps:
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          - data: data
+            maxPriorityFeePerGas: maxPriorityFeePerGas
+            from: from
+            to: to
+            maxFeePerGas: maxFeePerGas
+            nonce: nonce
+            value: value
+          transaction_hash: transaction_hash
+          transaction:
+            gas_price: gas_price
+            blob_hashes:
+            - blob_hashes
+            - blob_hashes
+            chain_id: 5.637376656633329
+            data: data
+            gas_fee_cap: gas_fee_cap
+            type: 5.962133916683182
+            blob_gas_fee_cap: blob_gas_fee_cap
+            nonce: 2.3021358869347655
+            r: r
+            gas_tip_cap: gas_tip_cap
+            s: s
+            v: v
+            gas: gas
+            blob_gas: blob_gas
+            from: from
+            to: to
+            value: value
         retries: 0.8008281904610115
         nftTokenApprovals:
         - logIndex: logIndex

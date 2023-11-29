@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the Erc721Response type satisfies the MappedNullable interface at compile time
@@ -20,15 +19,23 @@ var _ MappedNullable = &Erc721Response{}
 
 // Erc721Response struct for Erc721Response
 type Erc721Response struct {
-	MoonScanUrl *string `json:"moon_scan_url,omitempty"`
-	TransactionHash string `json:"transaction_hash"`
-	SignedTransaction string `json:"signed_transaction"`
-	SignedMessage *string `json:"signed_message,omitempty"`
-	RawTransaction *string `json:"raw_transaction,omitempty"`
-	Signature *string `json:"signature,omitempty"`
-	Transaction *map[string]Tx `json:"transaction,omitempty"`
-	UserOps []TransactionRequest `json:"userOps,omitempty"`
-	UseropTransaction *string `json:"userop_transaction,omitempty"`
+	Type *float64 `json:"type,omitempty"`
+	ChainId *float64 `json:"chain_id,omitempty"`
+	Data *string `json:"data,omitempty"`
+	Gas *string `json:"gas,omitempty"`
+	GasPrice *string `json:"gas_price,omitempty"`
+	GasTipCap NullableString `json:"gas_tip_cap,omitempty"`
+	GasFeeCap NullableString `json:"gas_fee_cap,omitempty"`
+	Value *string `json:"value,omitempty"`
+	Nonce *float64 `json:"nonce,omitempty"`
+	From *string `json:"from,omitempty"`
+	To NullableString `json:"to,omitempty"`
+	BlobGas NullableString `json:"blob_gas,omitempty"`
+	BlobGasFeeCap NullableString `json:"blob_gas_fee_cap,omitempty"`
+	BlobHashes []string `json:"blob_hashes,omitempty"`
+	V *string `json:"v,omitempty"`
+	R *string `json:"r,omitempty"`
+	S *string `json:"s,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Symbol *string `json:"symbol,omitempty"`
 	BalanceOf *string `json:"balance_of,omitempty"`
@@ -38,16 +45,12 @@ type Erc721Response struct {
 	IsApprovedForAll *string `json:"isApprovedForAll,omitempty"`
 }
 
-type _Erc721Response Erc721Response
-
 // NewErc721Response instantiates a new Erc721Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewErc721Response(transactionHash string, signedTransaction string) *Erc721Response {
+func NewErc721Response() *Erc721Response {
 	this := Erc721Response{}
-	this.TransactionHash = transactionHash
-	this.SignedTransaction = signedTransaction
 	return &this
 }
 
@@ -59,276 +62,599 @@ func NewErc721ResponseWithDefaults() *Erc721Response {
 	return &this
 }
 
-// GetMoonScanUrl returns the MoonScanUrl field value if set, zero value otherwise.
-func (o *Erc721Response) GetMoonScanUrl() string {
-	if o == nil || IsNil(o.MoonScanUrl) {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *Erc721Response) GetType() float64 {
+	if o == nil || IsNil(o.Type) {
+		var ret float64
 		return ret
 	}
-	return *o.MoonScanUrl
+	return *o.Type
 }
 
-// GetMoonScanUrlOk returns a tuple with the MoonScanUrl field value if set, nil otherwise
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Erc721Response) GetMoonScanUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.MoonScanUrl) {
+func (o *Erc721Response) GetTypeOk() (*float64, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.MoonScanUrl, true
+	return o.Type, true
 }
 
-// HasMoonScanUrl returns a boolean if a field has been set.
-func (o *Erc721Response) HasMoonScanUrl() bool {
-	if o != nil && !IsNil(o.MoonScanUrl) {
+// HasType returns a boolean if a field has been set.
+func (o *Erc721Response) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetMoonScanUrl gets a reference to the given string and assigns it to the MoonScanUrl field.
-func (o *Erc721Response) SetMoonScanUrl(v string) {
-	o.MoonScanUrl = &v
+// SetType gets a reference to the given float64 and assigns it to the Type field.
+func (o *Erc721Response) SetType(v float64) {
+	o.Type = &v
 }
 
-// GetTransactionHash returns the TransactionHash field value
-func (o *Erc721Response) GetTransactionHash() string {
+// GetChainId returns the ChainId field value if set, zero value otherwise.
+func (o *Erc721Response) GetChainId() float64 {
+	if o == nil || IsNil(o.ChainId) {
+		var ret float64
+		return ret
+	}
+	return *o.ChainId
+}
+
+// GetChainIdOk returns a tuple with the ChainId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Erc721Response) GetChainIdOk() (*float64, bool) {
+	if o == nil || IsNil(o.ChainId) {
+		return nil, false
+	}
+	return o.ChainId, true
+}
+
+// HasChainId returns a boolean if a field has been set.
+func (o *Erc721Response) HasChainId() bool {
+	if o != nil && !IsNil(o.ChainId) {
+		return true
+	}
+
+	return false
+}
+
+// SetChainId gets a reference to the given float64 and assigns it to the ChainId field.
+func (o *Erc721Response) SetChainId(v float64) {
+	o.ChainId = &v
+}
+
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *Erc721Response) GetData() string {
+	if o == nil || IsNil(o.Data) {
+		var ret string
+		return ret
+	}
+	return *o.Data
+}
+
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Erc721Response) GetDataOk() (*string, bool) {
+	if o == nil || IsNil(o.Data) {
+		return nil, false
+	}
+	return o.Data, true
+}
+
+// HasData returns a boolean if a field has been set.
+func (o *Erc721Response) HasData() bool {
+	if o != nil && !IsNil(o.Data) {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given string and assigns it to the Data field.
+func (o *Erc721Response) SetData(v string) {
+	o.Data = &v
+}
+
+// GetGas returns the Gas field value if set, zero value otherwise.
+func (o *Erc721Response) GetGas() string {
+	if o == nil || IsNil(o.Gas) {
+		var ret string
+		return ret
+	}
+	return *o.Gas
+}
+
+// GetGasOk returns a tuple with the Gas field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Erc721Response) GetGasOk() (*string, bool) {
+	if o == nil || IsNil(o.Gas) {
+		return nil, false
+	}
+	return o.Gas, true
+}
+
+// HasGas returns a boolean if a field has been set.
+func (o *Erc721Response) HasGas() bool {
+	if o != nil && !IsNil(o.Gas) {
+		return true
+	}
+
+	return false
+}
+
+// SetGas gets a reference to the given string and assigns it to the Gas field.
+func (o *Erc721Response) SetGas(v string) {
+	o.Gas = &v
+}
+
+// GetGasPrice returns the GasPrice field value if set, zero value otherwise.
+func (o *Erc721Response) GetGasPrice() string {
+	if o == nil || IsNil(o.GasPrice) {
+		var ret string
+		return ret
+	}
+	return *o.GasPrice
+}
+
+// GetGasPriceOk returns a tuple with the GasPrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Erc721Response) GetGasPriceOk() (*string, bool) {
+	if o == nil || IsNil(o.GasPrice) {
+		return nil, false
+	}
+	return o.GasPrice, true
+}
+
+// HasGasPrice returns a boolean if a field has been set.
+func (o *Erc721Response) HasGasPrice() bool {
+	if o != nil && !IsNil(o.GasPrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetGasPrice gets a reference to the given string and assigns it to the GasPrice field.
+func (o *Erc721Response) SetGasPrice(v string) {
+	o.GasPrice = &v
+}
+
+// GetGasTipCap returns the GasTipCap field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Erc721Response) GetGasTipCap() string {
+	if o == nil || IsNil(o.GasTipCap.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.GasTipCap.Get()
+}
+
+// GetGasTipCapOk returns a tuple with the GasTipCap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Erc721Response) GetGasTipCapOk() (*string, bool) {
 	if o == nil {
+		return nil, false
+	}
+	return o.GasTipCap.Get(), o.GasTipCap.IsSet()
+}
+
+// HasGasTipCap returns a boolean if a field has been set.
+func (o *Erc721Response) HasGasTipCap() bool {
+	if o != nil && o.GasTipCap.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetGasTipCap gets a reference to the given NullableString and assigns it to the GasTipCap field.
+func (o *Erc721Response) SetGasTipCap(v string) {
+	o.GasTipCap.Set(&v)
+}
+// SetGasTipCapNil sets the value for GasTipCap to be an explicit nil
+func (o *Erc721Response) SetGasTipCapNil() {
+	o.GasTipCap.Set(nil)
+}
+
+// UnsetGasTipCap ensures that no value is present for GasTipCap, not even an explicit nil
+func (o *Erc721Response) UnsetGasTipCap() {
+	o.GasTipCap.Unset()
+}
+
+// GetGasFeeCap returns the GasFeeCap field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Erc721Response) GetGasFeeCap() string {
+	if o == nil || IsNil(o.GasFeeCap.Get()) {
 		var ret string
 		return ret
 	}
-
-	return o.TransactionHash
+	return *o.GasFeeCap.Get()
 }
 
-// GetTransactionHashOk returns a tuple with the TransactionHash field value
+// GetGasFeeCapOk returns a tuple with the GasFeeCap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Erc721Response) GetTransactionHashOk() (*string, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Erc721Response) GetGasFeeCapOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.TransactionHash, true
+	return o.GasFeeCap.Get(), o.GasFeeCap.IsSet()
 }
 
-// SetTransactionHash sets field value
-func (o *Erc721Response) SetTransactionHash(v string) {
-	o.TransactionHash = v
+// HasGasFeeCap returns a boolean if a field has been set.
+func (o *Erc721Response) HasGasFeeCap() bool {
+	if o != nil && o.GasFeeCap.IsSet() {
+		return true
+	}
+
+	return false
 }
 
-// GetSignedTransaction returns the SignedTransaction field value
-func (o *Erc721Response) GetSignedTransaction() string {
+// SetGasFeeCap gets a reference to the given NullableString and assigns it to the GasFeeCap field.
+func (o *Erc721Response) SetGasFeeCap(v string) {
+	o.GasFeeCap.Set(&v)
+}
+// SetGasFeeCapNil sets the value for GasFeeCap to be an explicit nil
+func (o *Erc721Response) SetGasFeeCapNil() {
+	o.GasFeeCap.Set(nil)
+}
+
+// UnsetGasFeeCap ensures that no value is present for GasFeeCap, not even an explicit nil
+func (o *Erc721Response) UnsetGasFeeCap() {
+	o.GasFeeCap.Unset()
+}
+
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *Erc721Response) GetValue() string {
+	if o == nil || IsNil(o.Value) {
+		var ret string
+		return ret
+	}
+	return *o.Value
+}
+
+// GetValueOk returns a tuple with the Value field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Erc721Response) GetValueOk() (*string, bool) {
+	if o == nil || IsNil(o.Value) {
+		return nil, false
+	}
+	return o.Value, true
+}
+
+// HasValue returns a boolean if a field has been set.
+func (o *Erc721Response) HasValue() bool {
+	if o != nil && !IsNil(o.Value) {
+		return true
+	}
+
+	return false
+}
+
+// SetValue gets a reference to the given string and assigns it to the Value field.
+func (o *Erc721Response) SetValue(v string) {
+	o.Value = &v
+}
+
+// GetNonce returns the Nonce field value if set, zero value otherwise.
+func (o *Erc721Response) GetNonce() float64 {
+	if o == nil || IsNil(o.Nonce) {
+		var ret float64
+		return ret
+	}
+	return *o.Nonce
+}
+
+// GetNonceOk returns a tuple with the Nonce field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Erc721Response) GetNonceOk() (*float64, bool) {
+	if o == nil || IsNil(o.Nonce) {
+		return nil, false
+	}
+	return o.Nonce, true
+}
+
+// HasNonce returns a boolean if a field has been set.
+func (o *Erc721Response) HasNonce() bool {
+	if o != nil && !IsNil(o.Nonce) {
+		return true
+	}
+
+	return false
+}
+
+// SetNonce gets a reference to the given float64 and assigns it to the Nonce field.
+func (o *Erc721Response) SetNonce(v float64) {
+	o.Nonce = &v
+}
+
+// GetFrom returns the From field value if set, zero value otherwise.
+func (o *Erc721Response) GetFrom() string {
+	if o == nil || IsNil(o.From) {
+		var ret string
+		return ret
+	}
+	return *o.From
+}
+
+// GetFromOk returns a tuple with the From field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Erc721Response) GetFromOk() (*string, bool) {
+	if o == nil || IsNil(o.From) {
+		return nil, false
+	}
+	return o.From, true
+}
+
+// HasFrom returns a boolean if a field has been set.
+func (o *Erc721Response) HasFrom() bool {
+	if o != nil && !IsNil(o.From) {
+		return true
+	}
+
+	return false
+}
+
+// SetFrom gets a reference to the given string and assigns it to the From field.
+func (o *Erc721Response) SetFrom(v string) {
+	o.From = &v
+}
+
+// GetTo returns the To field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Erc721Response) GetTo() string {
+	if o == nil || IsNil(o.To.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.To.Get()
+}
+
+// GetToOk returns a tuple with the To field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Erc721Response) GetToOk() (*string, bool) {
 	if o == nil {
+		return nil, false
+	}
+	return o.To.Get(), o.To.IsSet()
+}
+
+// HasTo returns a boolean if a field has been set.
+func (o *Erc721Response) HasTo() bool {
+	if o != nil && o.To.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTo gets a reference to the given NullableString and assigns it to the To field.
+func (o *Erc721Response) SetTo(v string) {
+	o.To.Set(&v)
+}
+// SetToNil sets the value for To to be an explicit nil
+func (o *Erc721Response) SetToNil() {
+	o.To.Set(nil)
+}
+
+// UnsetTo ensures that no value is present for To, not even an explicit nil
+func (o *Erc721Response) UnsetTo() {
+	o.To.Unset()
+}
+
+// GetBlobGas returns the BlobGas field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Erc721Response) GetBlobGas() string {
+	if o == nil || IsNil(o.BlobGas.Get()) {
 		var ret string
 		return ret
 	}
-
-	return o.SignedTransaction
+	return *o.BlobGas.Get()
 }
 
-// GetSignedTransactionOk returns a tuple with the SignedTransaction field value
+// GetBlobGasOk returns a tuple with the BlobGas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Erc721Response) GetSignedTransactionOk() (*string, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Erc721Response) GetBlobGasOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.SignedTransaction, true
+	return o.BlobGas.Get(), o.BlobGas.IsSet()
 }
 
-// SetSignedTransaction sets field value
-func (o *Erc721Response) SetSignedTransaction(v string) {
-	o.SignedTransaction = v
+// HasBlobGas returns a boolean if a field has been set.
+func (o *Erc721Response) HasBlobGas() bool {
+	if o != nil && o.BlobGas.IsSet() {
+		return true
+	}
+
+	return false
 }
 
-// GetSignedMessage returns the SignedMessage field value if set, zero value otherwise.
-func (o *Erc721Response) GetSignedMessage() string {
-	if o == nil || IsNil(o.SignedMessage) {
+// SetBlobGas gets a reference to the given NullableString and assigns it to the BlobGas field.
+func (o *Erc721Response) SetBlobGas(v string) {
+	o.BlobGas.Set(&v)
+}
+// SetBlobGasNil sets the value for BlobGas to be an explicit nil
+func (o *Erc721Response) SetBlobGasNil() {
+	o.BlobGas.Set(nil)
+}
+
+// UnsetBlobGas ensures that no value is present for BlobGas, not even an explicit nil
+func (o *Erc721Response) UnsetBlobGas() {
+	o.BlobGas.Unset()
+}
+
+// GetBlobGasFeeCap returns the BlobGasFeeCap field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Erc721Response) GetBlobGasFeeCap() string {
+	if o == nil || IsNil(o.BlobGasFeeCap.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SignedMessage
+	return *o.BlobGasFeeCap.Get()
 }
 
-// GetSignedMessageOk returns a tuple with the SignedMessage field value if set, nil otherwise
+// GetBlobGasFeeCapOk returns a tuple with the BlobGasFeeCap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Erc721Response) GetSignedMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.SignedMessage) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Erc721Response) GetBlobGasFeeCapOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SignedMessage, true
+	return o.BlobGasFeeCap.Get(), o.BlobGasFeeCap.IsSet()
 }
 
-// HasSignedMessage returns a boolean if a field has been set.
-func (o *Erc721Response) HasSignedMessage() bool {
-	if o != nil && !IsNil(o.SignedMessage) {
+// HasBlobGasFeeCap returns a boolean if a field has been set.
+func (o *Erc721Response) HasBlobGasFeeCap() bool {
+	if o != nil && o.BlobGasFeeCap.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSignedMessage gets a reference to the given string and assigns it to the SignedMessage field.
-func (o *Erc721Response) SetSignedMessage(v string) {
-	o.SignedMessage = &v
+// SetBlobGasFeeCap gets a reference to the given NullableString and assigns it to the BlobGasFeeCap field.
+func (o *Erc721Response) SetBlobGasFeeCap(v string) {
+	o.BlobGasFeeCap.Set(&v)
+}
+// SetBlobGasFeeCapNil sets the value for BlobGasFeeCap to be an explicit nil
+func (o *Erc721Response) SetBlobGasFeeCapNil() {
+	o.BlobGasFeeCap.Set(nil)
 }
 
-// GetRawTransaction returns the RawTransaction field value if set, zero value otherwise.
-func (o *Erc721Response) GetRawTransaction() string {
-	if o == nil || IsNil(o.RawTransaction) {
+// UnsetBlobGasFeeCap ensures that no value is present for BlobGasFeeCap, not even an explicit nil
+func (o *Erc721Response) UnsetBlobGasFeeCap() {
+	o.BlobGasFeeCap.Unset()
+}
+
+// GetBlobHashes returns the BlobHashes field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Erc721Response) GetBlobHashes() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+	return o.BlobHashes
+}
+
+// GetBlobHashesOk returns a tuple with the BlobHashes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Erc721Response) GetBlobHashesOk() ([]string, bool) {
+	if o == nil || IsNil(o.BlobHashes) {
+		return nil, false
+	}
+	return o.BlobHashes, true
+}
+
+// HasBlobHashes returns a boolean if a field has been set.
+func (o *Erc721Response) HasBlobHashes() bool {
+	if o != nil && IsNil(o.BlobHashes) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlobHashes gets a reference to the given []string and assigns it to the BlobHashes field.
+func (o *Erc721Response) SetBlobHashes(v []string) {
+	o.BlobHashes = v
+}
+
+// GetV returns the V field value if set, zero value otherwise.
+func (o *Erc721Response) GetV() string {
+	if o == nil || IsNil(o.V) {
 		var ret string
 		return ret
 	}
-	return *o.RawTransaction
+	return *o.V
 }
 
-// GetRawTransactionOk returns a tuple with the RawTransaction field value if set, nil otherwise
+// GetVOk returns a tuple with the V field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Erc721Response) GetRawTransactionOk() (*string, bool) {
-	if o == nil || IsNil(o.RawTransaction) {
+func (o *Erc721Response) GetVOk() (*string, bool) {
+	if o == nil || IsNil(o.V) {
 		return nil, false
 	}
-	return o.RawTransaction, true
+	return o.V, true
 }
 
-// HasRawTransaction returns a boolean if a field has been set.
-func (o *Erc721Response) HasRawTransaction() bool {
-	if o != nil && !IsNil(o.RawTransaction) {
+// HasV returns a boolean if a field has been set.
+func (o *Erc721Response) HasV() bool {
+	if o != nil && !IsNil(o.V) {
 		return true
 	}
 
 	return false
 }
 
-// SetRawTransaction gets a reference to the given string and assigns it to the RawTransaction field.
-func (o *Erc721Response) SetRawTransaction(v string) {
-	o.RawTransaction = &v
+// SetV gets a reference to the given string and assigns it to the V field.
+func (o *Erc721Response) SetV(v string) {
+	o.V = &v
 }
 
-// GetSignature returns the Signature field value if set, zero value otherwise.
-func (o *Erc721Response) GetSignature() string {
-	if o == nil || IsNil(o.Signature) {
+// GetR returns the R field value if set, zero value otherwise.
+func (o *Erc721Response) GetR() string {
+	if o == nil || IsNil(o.R) {
 		var ret string
 		return ret
 	}
-	return *o.Signature
+	return *o.R
 }
 
-// GetSignatureOk returns a tuple with the Signature field value if set, nil otherwise
+// GetROk returns a tuple with the R field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Erc721Response) GetSignatureOk() (*string, bool) {
-	if o == nil || IsNil(o.Signature) {
+func (o *Erc721Response) GetROk() (*string, bool) {
+	if o == nil || IsNil(o.R) {
 		return nil, false
 	}
-	return o.Signature, true
+	return o.R, true
 }
 
-// HasSignature returns a boolean if a field has been set.
-func (o *Erc721Response) HasSignature() bool {
-	if o != nil && !IsNil(o.Signature) {
+// HasR returns a boolean if a field has been set.
+func (o *Erc721Response) HasR() bool {
+	if o != nil && !IsNil(o.R) {
 		return true
 	}
 
 	return false
 }
 
-// SetSignature gets a reference to the given string and assigns it to the Signature field.
-func (o *Erc721Response) SetSignature(v string) {
-	o.Signature = &v
+// SetR gets a reference to the given string and assigns it to the R field.
+func (o *Erc721Response) SetR(v string) {
+	o.R = &v
 }
 
-// GetTransaction returns the Transaction field value if set, zero value otherwise.
-func (o *Erc721Response) GetTransaction() map[string]Tx {
-	if o == nil || IsNil(o.Transaction) {
-		var ret map[string]Tx
-		return ret
-	}
-	return *o.Transaction
-}
-
-// GetTransactionOk returns a tuple with the Transaction field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Erc721Response) GetTransactionOk() (*map[string]Tx, bool) {
-	if o == nil || IsNil(o.Transaction) {
-		return nil, false
-	}
-	return o.Transaction, true
-}
-
-// HasTransaction returns a boolean if a field has been set.
-func (o *Erc721Response) HasTransaction() bool {
-	if o != nil && !IsNil(o.Transaction) {
-		return true
-	}
-
-	return false
-}
-
-// SetTransaction gets a reference to the given map[string]Tx and assigns it to the Transaction field.
-func (o *Erc721Response) SetTransaction(v map[string]Tx) {
-	o.Transaction = &v
-}
-
-// GetUserOps returns the UserOps field value if set, zero value otherwise.
-func (o *Erc721Response) GetUserOps() []TransactionRequest {
-	if o == nil || IsNil(o.UserOps) {
-		var ret []TransactionRequest
-		return ret
-	}
-	return o.UserOps
-}
-
-// GetUserOpsOk returns a tuple with the UserOps field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Erc721Response) GetUserOpsOk() ([]TransactionRequest, bool) {
-	if o == nil || IsNil(o.UserOps) {
-		return nil, false
-	}
-	return o.UserOps, true
-}
-
-// HasUserOps returns a boolean if a field has been set.
-func (o *Erc721Response) HasUserOps() bool {
-	if o != nil && !IsNil(o.UserOps) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserOps gets a reference to the given []TransactionRequest and assigns it to the UserOps field.
-func (o *Erc721Response) SetUserOps(v []TransactionRequest) {
-	o.UserOps = v
-}
-
-// GetUseropTransaction returns the UseropTransaction field value if set, zero value otherwise.
-func (o *Erc721Response) GetUseropTransaction() string {
-	if o == nil || IsNil(o.UseropTransaction) {
+// GetS returns the S field value if set, zero value otherwise.
+func (o *Erc721Response) GetS() string {
+	if o == nil || IsNil(o.S) {
 		var ret string
 		return ret
 	}
-	return *o.UseropTransaction
+	return *o.S
 }
 
-// GetUseropTransactionOk returns a tuple with the UseropTransaction field value if set, nil otherwise
+// GetSOk returns a tuple with the S field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Erc721Response) GetUseropTransactionOk() (*string, bool) {
-	if o == nil || IsNil(o.UseropTransaction) {
+func (o *Erc721Response) GetSOk() (*string, bool) {
+	if o == nil || IsNil(o.S) {
 		return nil, false
 	}
-	return o.UseropTransaction, true
+	return o.S, true
 }
 
-// HasUseropTransaction returns a boolean if a field has been set.
-func (o *Erc721Response) HasUseropTransaction() bool {
-	if o != nil && !IsNil(o.UseropTransaction) {
+// HasS returns a boolean if a field has been set.
+func (o *Erc721Response) HasS() bool {
+	if o != nil && !IsNil(o.S) {
 		return true
 	}
 
 	return false
 }
 
-// SetUseropTransaction gets a reference to the given string and assigns it to the UseropTransaction field.
-func (o *Erc721Response) SetUseropTransaction(v string) {
-	o.UseropTransaction = &v
+// SetS gets a reference to the given string and assigns it to the S field.
+func (o *Erc721Response) SetS(v string) {
+	o.S = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -565,28 +891,56 @@ func (o Erc721Response) MarshalJSON() ([]byte, error) {
 
 func (o Erc721Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MoonScanUrl) {
-		toSerialize["moon_scan_url"] = o.MoonScanUrl
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
-	toSerialize["transaction_hash"] = o.TransactionHash
-	toSerialize["signed_transaction"] = o.SignedTransaction
-	if !IsNil(o.SignedMessage) {
-		toSerialize["signed_message"] = o.SignedMessage
+	if !IsNil(o.ChainId) {
+		toSerialize["chain_id"] = o.ChainId
 	}
-	if !IsNil(o.RawTransaction) {
-		toSerialize["raw_transaction"] = o.RawTransaction
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
 	}
-	if !IsNil(o.Signature) {
-		toSerialize["signature"] = o.Signature
+	if !IsNil(o.Gas) {
+		toSerialize["gas"] = o.Gas
 	}
-	if !IsNil(o.Transaction) {
-		toSerialize["transaction"] = o.Transaction
+	if !IsNil(o.GasPrice) {
+		toSerialize["gas_price"] = o.GasPrice
 	}
-	if !IsNil(o.UserOps) {
-		toSerialize["userOps"] = o.UserOps
+	if o.GasTipCap.IsSet() {
+		toSerialize["gas_tip_cap"] = o.GasTipCap.Get()
 	}
-	if !IsNil(o.UseropTransaction) {
-		toSerialize["userop_transaction"] = o.UseropTransaction
+	if o.GasFeeCap.IsSet() {
+		toSerialize["gas_fee_cap"] = o.GasFeeCap.Get()
+	}
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
+	}
+	if !IsNil(o.Nonce) {
+		toSerialize["nonce"] = o.Nonce
+	}
+	if !IsNil(o.From) {
+		toSerialize["from"] = o.From
+	}
+	if o.To.IsSet() {
+		toSerialize["to"] = o.To.Get()
+	}
+	if o.BlobGas.IsSet() {
+		toSerialize["blob_gas"] = o.BlobGas.Get()
+	}
+	if o.BlobGasFeeCap.IsSet() {
+		toSerialize["blob_gas_fee_cap"] = o.BlobGasFeeCap.Get()
+	}
+	if o.BlobHashes != nil {
+		toSerialize["blob_hashes"] = o.BlobHashes
+	}
+	if !IsNil(o.V) {
+		toSerialize["v"] = o.V
+	}
+	if !IsNil(o.R) {
+		toSerialize["r"] = o.R
+	}
+	if !IsNil(o.S) {
+		toSerialize["s"] = o.S
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -610,42 +964,6 @@ func (o Erc721Response) ToMap() (map[string]interface{}, error) {
 		toSerialize["isApprovedForAll"] = o.IsApprovedForAll
 	}
 	return toSerialize, nil
-}
-
-func (o *Erc721Response) UnmarshalJSON(bytes []byte) (err error) {
-    // This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"transaction_hash",
-		"signed_transaction",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(bytes, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varErc721Response := _Erc721Response{}
-
-	err = json.Unmarshal(bytes, &varErc721Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Erc721Response(varErc721Response)
-
-	return err
 }
 
 type NullableErc721Response struct {

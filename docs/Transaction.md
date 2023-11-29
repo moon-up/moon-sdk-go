@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MoonScanUrl** | Pointer to **string** |  | [optional] 
-**TransactionHash** | **string** |  | 
-**SignedTransaction** | **string** |  | 
-**SignedMessage** | Pointer to **string** |  | [optional] 
+**TransactionHash** | Pointer to **string** |  | [optional] 
+**SignedTransaction** | Pointer to **string** |  | [optional] 
 **RawTransaction** | Pointer to **string** |  | [optional] 
+**Data** | Pointer to **string** |  | [optional] 
+**Transactions** | Pointer to [**[]TransactionData**](TransactionData.md) |  | [optional] 
+**MoonScanUrl** | Pointer to **string** |  | [optional] 
 **Signature** | Pointer to **string** |  | [optional] 
-**Transaction** | Pointer to [**map[string]Tx**](Tx.md) |  | [optional] 
+**Transaction** | Pointer to [**Tx**](Tx.md) |  | [optional] 
 **UserOps** | Pointer to [**[]TransactionRequest**](TransactionRequest.md) |  | [optional] 
 **UseropTransaction** | Pointer to **string** |  | [optional] 
 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewTransaction
 
-`func NewTransaction(transactionHash string, signedTransaction string, ) *Transaction`
+`func NewTransaction() *Transaction`
 
 NewTransaction instantiates a new Transaction object
 This constructor will assign default values to properties that have it defined,
@@ -32,31 +33,6 @@ will change when the set of required properties is changed
 NewTransactionWithDefaults instantiates a new Transaction object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMoonScanUrl
-
-`func (o *Transaction) GetMoonScanUrl() string`
-
-GetMoonScanUrl returns the MoonScanUrl field if non-nil, zero value otherwise.
-
-### GetMoonScanUrlOk
-
-`func (o *Transaction) GetMoonScanUrlOk() (*string, bool)`
-
-GetMoonScanUrlOk returns a tuple with the MoonScanUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMoonScanUrl
-
-`func (o *Transaction) SetMoonScanUrl(v string)`
-
-SetMoonScanUrl sets MoonScanUrl field to given value.
-
-### HasMoonScanUrl
-
-`func (o *Transaction) HasMoonScanUrl() bool`
-
-HasMoonScanUrl returns a boolean if a field has been set.
 
 ### GetTransactionHash
 
@@ -77,6 +53,11 @@ and a boolean to check if the value has been set.
 
 SetTransactionHash sets TransactionHash field to given value.
 
+### HasTransactionHash
+
+`func (o *Transaction) HasTransactionHash() bool`
+
+HasTransactionHash returns a boolean if a field has been set.
 
 ### GetSignedTransaction
 
@@ -97,31 +78,11 @@ and a boolean to check if the value has been set.
 
 SetSignedTransaction sets SignedTransaction field to given value.
 
+### HasSignedTransaction
 
-### GetSignedMessage
+`func (o *Transaction) HasSignedTransaction() bool`
 
-`func (o *Transaction) GetSignedMessage() string`
-
-GetSignedMessage returns the SignedMessage field if non-nil, zero value otherwise.
-
-### GetSignedMessageOk
-
-`func (o *Transaction) GetSignedMessageOk() (*string, bool)`
-
-GetSignedMessageOk returns a tuple with the SignedMessage field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSignedMessage
-
-`func (o *Transaction) SetSignedMessage(v string)`
-
-SetSignedMessage sets SignedMessage field to given value.
-
-### HasSignedMessage
-
-`func (o *Transaction) HasSignedMessage() bool`
-
-HasSignedMessage returns a boolean if a field has been set.
+HasSignedTransaction returns a boolean if a field has been set.
 
 ### GetRawTransaction
 
@@ -147,6 +108,81 @@ SetRawTransaction sets RawTransaction field to given value.
 `func (o *Transaction) HasRawTransaction() bool`
 
 HasRawTransaction returns a boolean if a field has been set.
+
+### GetData
+
+`func (o *Transaction) GetData() string`
+
+GetData returns the Data field if non-nil, zero value otherwise.
+
+### GetDataOk
+
+`func (o *Transaction) GetDataOk() (*string, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetData
+
+`func (o *Transaction) SetData(v string)`
+
+SetData sets Data field to given value.
+
+### HasData
+
+`func (o *Transaction) HasData() bool`
+
+HasData returns a boolean if a field has been set.
+
+### GetTransactions
+
+`func (o *Transaction) GetTransactions() []TransactionData`
+
+GetTransactions returns the Transactions field if non-nil, zero value otherwise.
+
+### GetTransactionsOk
+
+`func (o *Transaction) GetTransactionsOk() (*[]TransactionData, bool)`
+
+GetTransactionsOk returns a tuple with the Transactions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransactions
+
+`func (o *Transaction) SetTransactions(v []TransactionData)`
+
+SetTransactions sets Transactions field to given value.
+
+### HasTransactions
+
+`func (o *Transaction) HasTransactions() bool`
+
+HasTransactions returns a boolean if a field has been set.
+
+### GetMoonScanUrl
+
+`func (o *Transaction) GetMoonScanUrl() string`
+
+GetMoonScanUrl returns the MoonScanUrl field if non-nil, zero value otherwise.
+
+### GetMoonScanUrlOk
+
+`func (o *Transaction) GetMoonScanUrlOk() (*string, bool)`
+
+GetMoonScanUrlOk returns a tuple with the MoonScanUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMoonScanUrl
+
+`func (o *Transaction) SetMoonScanUrl(v string)`
+
+SetMoonScanUrl sets MoonScanUrl field to given value.
+
+### HasMoonScanUrl
+
+`func (o *Transaction) HasMoonScanUrl() bool`
+
+HasMoonScanUrl returns a boolean if a field has been set.
 
 ### GetSignature
 
@@ -175,20 +211,20 @@ HasSignature returns a boolean if a field has been set.
 
 ### GetTransaction
 
-`func (o *Transaction) GetTransaction() map[string]Tx`
+`func (o *Transaction) GetTransaction() Tx`
 
 GetTransaction returns the Transaction field if non-nil, zero value otherwise.
 
 ### GetTransactionOk
 
-`func (o *Transaction) GetTransactionOk() (*map[string]Tx, bool)`
+`func (o *Transaction) GetTransactionOk() (*Tx, bool)`
 
 GetTransactionOk returns a tuple with the Transaction field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTransaction
 
-`func (o *Transaction) SetTransaction(v map[string]Tx)`
+`func (o *Transaction) SetTransaction(v Tx)`
 
 SetTransaction sets Transaction field to given value.
 

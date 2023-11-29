@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Input** | Pointer to [**InputBody**](InputBody.md) |  | [optional] 
 **Convey** | Pointer to [**TransactionResponse**](TransactionResponse.md) |  | [optional] 
-**Data** | Pointer to [**Transaction**](Transaction.md) |  | [optional] 
+**Data** | Pointer to [**TransactionData**](TransactionData.md) |  | [optional] 
 **Tx** | Pointer to [**TransactionResponseTx**](TransactionResponseTx.md) |  | [optional] 
 **Signed** | Pointer to [**Transaction**](Transaction.md) |  | [optional] 
 **Success** | **bool** |  | 
@@ -83,20 +83,20 @@ HasConvey returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *ConveyorFinanceControllerResponse) GetData() Transaction`
+`func (o *ConveyorFinanceControllerResponse) GetData() TransactionData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ConveyorFinanceControllerResponse) GetDataOk() (*Transaction, bool)`
+`func (o *ConveyorFinanceControllerResponse) GetDataOk() (*TransactionData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ConveyorFinanceControllerResponse) SetData(v Transaction)`
+`func (o *ConveyorFinanceControllerResponse) SetData(v TransactionData)`
 
 SetData sets Data field to given value.
 
