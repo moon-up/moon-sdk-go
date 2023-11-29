@@ -6,7 +6,7 @@ info:
   title: moon-vault-api
   version: 1.0.0
 servers:
-- url: https://vault-api.usemoon.ai/
+- url: https://vault-api.usemoon.ai
 paths:
   /oneinch/tokens:
     post:
