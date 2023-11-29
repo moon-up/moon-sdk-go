@@ -19,16 +19,16 @@ var _ MappedNullable = &Transaction{}
 
 // Transaction struct for Transaction
 type Transaction struct {
-	TransactionHash *string `json:"transaction_hash,omitempty"`
-	SignedTransaction *string `json:"signed_transaction,omitempty"`
-	RawTransaction *string `json:"raw_transaction,omitempty"`
-	Data *string `json:"data,omitempty"`
-	Transactions []TransactionData `json:"transactions,omitempty"`
-	MoonScanUrl *string `json:"moon_scan_url,omitempty"`
-	Signature *string `json:"signature,omitempty"`
-	Transaction *Tx `json:"transaction,omitempty"`
-	UserOps []TransactionRequest `json:"userOps,omitempty"`
 	UseropTransaction *string `json:"userop_transaction,omitempty"`
+	UserOps []TransactionRequest `json:"userOps,omitempty"`
+	Transaction *Tx `json:"transaction,omitempty"`
+	Signature *string `json:"signature,omitempty"`
+	MoonScanUrl *string `json:"moon_scan_url,omitempty"`
+	Transactions []TransactionData `json:"transactions,omitempty"`
+	Data NullableString `json:"data,omitempty"`
+	RawTransaction *string `json:"raw_transaction,omitempty"`
+	SignedTransaction *string `json:"signed_transaction,omitempty"`
+	TransactionHash *string `json:"transaction_hash,omitempty"`
 }
 
 // NewTransaction instantiates a new Transaction object
@@ -46,294 +46,6 @@ func NewTransaction() *Transaction {
 func NewTransactionWithDefaults() *Transaction {
 	this := Transaction{}
 	return &this
-}
-
-// GetTransactionHash returns the TransactionHash field value if set, zero value otherwise.
-func (o *Transaction) GetTransactionHash() string {
-	if o == nil || IsNil(o.TransactionHash) {
-		var ret string
-		return ret
-	}
-	return *o.TransactionHash
-}
-
-// GetTransactionHashOk returns a tuple with the TransactionHash field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetTransactionHashOk() (*string, bool) {
-	if o == nil || IsNil(o.TransactionHash) {
-		return nil, false
-	}
-	return o.TransactionHash, true
-}
-
-// HasTransactionHash returns a boolean if a field has been set.
-func (o *Transaction) HasTransactionHash() bool {
-	if o != nil && !IsNil(o.TransactionHash) {
-		return true
-	}
-
-	return false
-}
-
-// SetTransactionHash gets a reference to the given string and assigns it to the TransactionHash field.
-func (o *Transaction) SetTransactionHash(v string) {
-	o.TransactionHash = &v
-}
-
-// GetSignedTransaction returns the SignedTransaction field value if set, zero value otherwise.
-func (o *Transaction) GetSignedTransaction() string {
-	if o == nil || IsNil(o.SignedTransaction) {
-		var ret string
-		return ret
-	}
-	return *o.SignedTransaction
-}
-
-// GetSignedTransactionOk returns a tuple with the SignedTransaction field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetSignedTransactionOk() (*string, bool) {
-	if o == nil || IsNil(o.SignedTransaction) {
-		return nil, false
-	}
-	return o.SignedTransaction, true
-}
-
-// HasSignedTransaction returns a boolean if a field has been set.
-func (o *Transaction) HasSignedTransaction() bool {
-	if o != nil && !IsNil(o.SignedTransaction) {
-		return true
-	}
-
-	return false
-}
-
-// SetSignedTransaction gets a reference to the given string and assigns it to the SignedTransaction field.
-func (o *Transaction) SetSignedTransaction(v string) {
-	o.SignedTransaction = &v
-}
-
-// GetRawTransaction returns the RawTransaction field value if set, zero value otherwise.
-func (o *Transaction) GetRawTransaction() string {
-	if o == nil || IsNil(o.RawTransaction) {
-		var ret string
-		return ret
-	}
-	return *o.RawTransaction
-}
-
-// GetRawTransactionOk returns a tuple with the RawTransaction field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetRawTransactionOk() (*string, bool) {
-	if o == nil || IsNil(o.RawTransaction) {
-		return nil, false
-	}
-	return o.RawTransaction, true
-}
-
-// HasRawTransaction returns a boolean if a field has been set.
-func (o *Transaction) HasRawTransaction() bool {
-	if o != nil && !IsNil(o.RawTransaction) {
-		return true
-	}
-
-	return false
-}
-
-// SetRawTransaction gets a reference to the given string and assigns it to the RawTransaction field.
-func (o *Transaction) SetRawTransaction(v string) {
-	o.RawTransaction = &v
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *Transaction) GetData() string {
-	if o == nil || IsNil(o.Data) {
-		var ret string
-		return ret
-	}
-	return *o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetDataOk() (*string, bool) {
-	if o == nil || IsNil(o.Data) {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// HasData returns a boolean if a field has been set.
-func (o *Transaction) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given string and assigns it to the Data field.
-func (o *Transaction) SetData(v string) {
-	o.Data = &v
-}
-
-// GetTransactions returns the Transactions field value if set, zero value otherwise.
-func (o *Transaction) GetTransactions() []TransactionData {
-	if o == nil || IsNil(o.Transactions) {
-		var ret []TransactionData
-		return ret
-	}
-	return o.Transactions
-}
-
-// GetTransactionsOk returns a tuple with the Transactions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetTransactionsOk() ([]TransactionData, bool) {
-	if o == nil || IsNil(o.Transactions) {
-		return nil, false
-	}
-	return o.Transactions, true
-}
-
-// HasTransactions returns a boolean if a field has been set.
-func (o *Transaction) HasTransactions() bool {
-	if o != nil && !IsNil(o.Transactions) {
-		return true
-	}
-
-	return false
-}
-
-// SetTransactions gets a reference to the given []TransactionData and assigns it to the Transactions field.
-func (o *Transaction) SetTransactions(v []TransactionData) {
-	o.Transactions = v
-}
-
-// GetMoonScanUrl returns the MoonScanUrl field value if set, zero value otherwise.
-func (o *Transaction) GetMoonScanUrl() string {
-	if o == nil || IsNil(o.MoonScanUrl) {
-		var ret string
-		return ret
-	}
-	return *o.MoonScanUrl
-}
-
-// GetMoonScanUrlOk returns a tuple with the MoonScanUrl field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetMoonScanUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.MoonScanUrl) {
-		return nil, false
-	}
-	return o.MoonScanUrl, true
-}
-
-// HasMoonScanUrl returns a boolean if a field has been set.
-func (o *Transaction) HasMoonScanUrl() bool {
-	if o != nil && !IsNil(o.MoonScanUrl) {
-		return true
-	}
-
-	return false
-}
-
-// SetMoonScanUrl gets a reference to the given string and assigns it to the MoonScanUrl field.
-func (o *Transaction) SetMoonScanUrl(v string) {
-	o.MoonScanUrl = &v
-}
-
-// GetSignature returns the Signature field value if set, zero value otherwise.
-func (o *Transaction) GetSignature() string {
-	if o == nil || IsNil(o.Signature) {
-		var ret string
-		return ret
-	}
-	return *o.Signature
-}
-
-// GetSignatureOk returns a tuple with the Signature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetSignatureOk() (*string, bool) {
-	if o == nil || IsNil(o.Signature) {
-		return nil, false
-	}
-	return o.Signature, true
-}
-
-// HasSignature returns a boolean if a field has been set.
-func (o *Transaction) HasSignature() bool {
-	if o != nil && !IsNil(o.Signature) {
-		return true
-	}
-
-	return false
-}
-
-// SetSignature gets a reference to the given string and assigns it to the Signature field.
-func (o *Transaction) SetSignature(v string) {
-	o.Signature = &v
-}
-
-// GetTransaction returns the Transaction field value if set, zero value otherwise.
-func (o *Transaction) GetTransaction() Tx {
-	if o == nil || IsNil(o.Transaction) {
-		var ret Tx
-		return ret
-	}
-	return *o.Transaction
-}
-
-// GetTransactionOk returns a tuple with the Transaction field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetTransactionOk() (*Tx, bool) {
-	if o == nil || IsNil(o.Transaction) {
-		return nil, false
-	}
-	return o.Transaction, true
-}
-
-// HasTransaction returns a boolean if a field has been set.
-func (o *Transaction) HasTransaction() bool {
-	if o != nil && !IsNil(o.Transaction) {
-		return true
-	}
-
-	return false
-}
-
-// SetTransaction gets a reference to the given Tx and assigns it to the Transaction field.
-func (o *Transaction) SetTransaction(v Tx) {
-	o.Transaction = &v
-}
-
-// GetUserOps returns the UserOps field value if set, zero value otherwise.
-func (o *Transaction) GetUserOps() []TransactionRequest {
-	if o == nil || IsNil(o.UserOps) {
-		var ret []TransactionRequest
-		return ret
-	}
-	return o.UserOps
-}
-
-// GetUserOpsOk returns a tuple with the UserOps field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Transaction) GetUserOpsOk() ([]TransactionRequest, bool) {
-	if o == nil || IsNil(o.UserOps) {
-		return nil, false
-	}
-	return o.UserOps, true
-}
-
-// HasUserOps returns a boolean if a field has been set.
-func (o *Transaction) HasUserOps() bool {
-	if o != nil && !IsNil(o.UserOps) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserOps gets a reference to the given []TransactionRequest and assigns it to the UserOps field.
-func (o *Transaction) SetUserOps(v []TransactionRequest) {
-	o.UserOps = v
 }
 
 // GetUseropTransaction returns the UseropTransaction field value if set, zero value otherwise.
@@ -368,6 +80,304 @@ func (o *Transaction) SetUseropTransaction(v string) {
 	o.UseropTransaction = &v
 }
 
+// GetUserOps returns the UserOps field value if set, zero value otherwise.
+func (o *Transaction) GetUserOps() []TransactionRequest {
+	if o == nil || IsNil(o.UserOps) {
+		var ret []TransactionRequest
+		return ret
+	}
+	return o.UserOps
+}
+
+// GetUserOpsOk returns a tuple with the UserOps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetUserOpsOk() ([]TransactionRequest, bool) {
+	if o == nil || IsNil(o.UserOps) {
+		return nil, false
+	}
+	return o.UserOps, true
+}
+
+// HasUserOps returns a boolean if a field has been set.
+func (o *Transaction) HasUserOps() bool {
+	if o != nil && !IsNil(o.UserOps) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserOps gets a reference to the given []TransactionRequest and assigns it to the UserOps field.
+func (o *Transaction) SetUserOps(v []TransactionRequest) {
+	o.UserOps = v
+}
+
+// GetTransaction returns the Transaction field value if set, zero value otherwise.
+func (o *Transaction) GetTransaction() Tx {
+	if o == nil || IsNil(o.Transaction) {
+		var ret Tx
+		return ret
+	}
+	return *o.Transaction
+}
+
+// GetTransactionOk returns a tuple with the Transaction field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetTransactionOk() (*Tx, bool) {
+	if o == nil || IsNil(o.Transaction) {
+		return nil, false
+	}
+	return o.Transaction, true
+}
+
+// HasTransaction returns a boolean if a field has been set.
+func (o *Transaction) HasTransaction() bool {
+	if o != nil && !IsNil(o.Transaction) {
+		return true
+	}
+
+	return false
+}
+
+// SetTransaction gets a reference to the given Tx and assigns it to the Transaction field.
+func (o *Transaction) SetTransaction(v Tx) {
+	o.Transaction = &v
+}
+
+// GetSignature returns the Signature field value if set, zero value otherwise.
+func (o *Transaction) GetSignature() string {
+	if o == nil || IsNil(o.Signature) {
+		var ret string
+		return ret
+	}
+	return *o.Signature
+}
+
+// GetSignatureOk returns a tuple with the Signature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetSignatureOk() (*string, bool) {
+	if o == nil || IsNil(o.Signature) {
+		return nil, false
+	}
+	return o.Signature, true
+}
+
+// HasSignature returns a boolean if a field has been set.
+func (o *Transaction) HasSignature() bool {
+	if o != nil && !IsNil(o.Signature) {
+		return true
+	}
+
+	return false
+}
+
+// SetSignature gets a reference to the given string and assigns it to the Signature field.
+func (o *Transaction) SetSignature(v string) {
+	o.Signature = &v
+}
+
+// GetMoonScanUrl returns the MoonScanUrl field value if set, zero value otherwise.
+func (o *Transaction) GetMoonScanUrl() string {
+	if o == nil || IsNil(o.MoonScanUrl) {
+		var ret string
+		return ret
+	}
+	return *o.MoonScanUrl
+}
+
+// GetMoonScanUrlOk returns a tuple with the MoonScanUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetMoonScanUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.MoonScanUrl) {
+		return nil, false
+	}
+	return o.MoonScanUrl, true
+}
+
+// HasMoonScanUrl returns a boolean if a field has been set.
+func (o *Transaction) HasMoonScanUrl() bool {
+	if o != nil && !IsNil(o.MoonScanUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetMoonScanUrl gets a reference to the given string and assigns it to the MoonScanUrl field.
+func (o *Transaction) SetMoonScanUrl(v string) {
+	o.MoonScanUrl = &v
+}
+
+// GetTransactions returns the Transactions field value if set, zero value otherwise.
+func (o *Transaction) GetTransactions() []TransactionData {
+	if o == nil || IsNil(o.Transactions) {
+		var ret []TransactionData
+		return ret
+	}
+	return o.Transactions
+}
+
+// GetTransactionsOk returns a tuple with the Transactions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetTransactionsOk() ([]TransactionData, bool) {
+	if o == nil || IsNil(o.Transactions) {
+		return nil, false
+	}
+	return o.Transactions, true
+}
+
+// HasTransactions returns a boolean if a field has been set.
+func (o *Transaction) HasTransactions() bool {
+	if o != nil && !IsNil(o.Transactions) {
+		return true
+	}
+
+	return false
+}
+
+// SetTransactions gets a reference to the given []TransactionData and assigns it to the Transactions field.
+func (o *Transaction) SetTransactions(v []TransactionData) {
+	o.Transactions = v
+}
+
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Transaction) GetData() string {
+	if o == nil || IsNil(o.Data.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Data.Get()
+}
+
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Transaction) GetDataOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Data.Get(), o.Data.IsSet()
+}
+
+// HasData returns a boolean if a field has been set.
+func (o *Transaction) HasData() bool {
+	if o != nil && o.Data.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given NullableString and assigns it to the Data field.
+func (o *Transaction) SetData(v string) {
+	o.Data.Set(&v)
+}
+// SetDataNil sets the value for Data to be an explicit nil
+func (o *Transaction) SetDataNil() {
+	o.Data.Set(nil)
+}
+
+// UnsetData ensures that no value is present for Data, not even an explicit nil
+func (o *Transaction) UnsetData() {
+	o.Data.Unset()
+}
+
+// GetRawTransaction returns the RawTransaction field value if set, zero value otherwise.
+func (o *Transaction) GetRawTransaction() string {
+	if o == nil || IsNil(o.RawTransaction) {
+		var ret string
+		return ret
+	}
+	return *o.RawTransaction
+}
+
+// GetRawTransactionOk returns a tuple with the RawTransaction field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetRawTransactionOk() (*string, bool) {
+	if o == nil || IsNil(o.RawTransaction) {
+		return nil, false
+	}
+	return o.RawTransaction, true
+}
+
+// HasRawTransaction returns a boolean if a field has been set.
+func (o *Transaction) HasRawTransaction() bool {
+	if o != nil && !IsNil(o.RawTransaction) {
+		return true
+	}
+
+	return false
+}
+
+// SetRawTransaction gets a reference to the given string and assigns it to the RawTransaction field.
+func (o *Transaction) SetRawTransaction(v string) {
+	o.RawTransaction = &v
+}
+
+// GetSignedTransaction returns the SignedTransaction field value if set, zero value otherwise.
+func (o *Transaction) GetSignedTransaction() string {
+	if o == nil || IsNil(o.SignedTransaction) {
+		var ret string
+		return ret
+	}
+	return *o.SignedTransaction
+}
+
+// GetSignedTransactionOk returns a tuple with the SignedTransaction field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetSignedTransactionOk() (*string, bool) {
+	if o == nil || IsNil(o.SignedTransaction) {
+		return nil, false
+	}
+	return o.SignedTransaction, true
+}
+
+// HasSignedTransaction returns a boolean if a field has been set.
+func (o *Transaction) HasSignedTransaction() bool {
+	if o != nil && !IsNil(o.SignedTransaction) {
+		return true
+	}
+
+	return false
+}
+
+// SetSignedTransaction gets a reference to the given string and assigns it to the SignedTransaction field.
+func (o *Transaction) SetSignedTransaction(v string) {
+	o.SignedTransaction = &v
+}
+
+// GetTransactionHash returns the TransactionHash field value if set, zero value otherwise.
+func (o *Transaction) GetTransactionHash() string {
+	if o == nil || IsNil(o.TransactionHash) {
+		var ret string
+		return ret
+	}
+	return *o.TransactionHash
+}
+
+// GetTransactionHashOk returns a tuple with the TransactionHash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Transaction) GetTransactionHashOk() (*string, bool) {
+	if o == nil || IsNil(o.TransactionHash) {
+		return nil, false
+	}
+	return o.TransactionHash, true
+}
+
+// HasTransactionHash returns a boolean if a field has been set.
+func (o *Transaction) HasTransactionHash() bool {
+	if o != nil && !IsNil(o.TransactionHash) {
+		return true
+	}
+
+	return false
+}
+
+// SetTransactionHash gets a reference to the given string and assigns it to the TransactionHash field.
+func (o *Transaction) SetTransactionHash(v string) {
+	o.TransactionHash = &v
+}
+
 func (o Transaction) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -378,35 +388,35 @@ func (o Transaction) MarshalJSON() ([]byte, error) {
 
 func (o Transaction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TransactionHash) {
-		toSerialize["transaction_hash"] = o.TransactionHash
-	}
-	if !IsNil(o.SignedTransaction) {
-		toSerialize["signed_transaction"] = o.SignedTransaction
-	}
-	if !IsNil(o.RawTransaction) {
-		toSerialize["raw_transaction"] = o.RawTransaction
-	}
-	if !IsNil(o.Data) {
-		toSerialize["data"] = o.Data
-	}
-	if !IsNil(o.Transactions) {
-		toSerialize["transactions"] = o.Transactions
-	}
-	if !IsNil(o.MoonScanUrl) {
-		toSerialize["moon_scan_url"] = o.MoonScanUrl
-	}
-	if !IsNil(o.Signature) {
-		toSerialize["signature"] = o.Signature
-	}
-	if !IsNil(o.Transaction) {
-		toSerialize["transaction"] = o.Transaction
+	if !IsNil(o.UseropTransaction) {
+		toSerialize["userop_transaction"] = o.UseropTransaction
 	}
 	if !IsNil(o.UserOps) {
 		toSerialize["userOps"] = o.UserOps
 	}
-	if !IsNil(o.UseropTransaction) {
-		toSerialize["userop_transaction"] = o.UseropTransaction
+	if !IsNil(o.Transaction) {
+		toSerialize["transaction"] = o.Transaction
+	}
+	if !IsNil(o.Signature) {
+		toSerialize["signature"] = o.Signature
+	}
+	if !IsNil(o.MoonScanUrl) {
+		toSerialize["moon_scan_url"] = o.MoonScanUrl
+	}
+	if !IsNil(o.Transactions) {
+		toSerialize["transactions"] = o.Transactions
+	}
+	if o.Data.IsSet() {
+		toSerialize["data"] = o.Data.Get()
+	}
+	if !IsNil(o.RawTransaction) {
+		toSerialize["raw_transaction"] = o.RawTransaction
+	}
+	if !IsNil(o.SignedTransaction) {
+		toSerialize["signed_transaction"] = o.SignedTransaction
+	}
+	if !IsNil(o.TransactionHash) {
+		toSerialize["transaction_hash"] = o.TransactionHash
 	}
 	return toSerialize, nil
 }

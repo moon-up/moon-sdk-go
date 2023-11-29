@@ -4142,13 +4142,13 @@ components:
       - transaction_hash
       type: object
     Transaction:
-      additionalProperties: false
       example:
         signed_transaction: signed_transaction
-        raw_transaction: raw_transaction
         data: data
-        moon_scan_url: moon_scan_url
+        raw_transaction: raw_transaction
         signature: signature
+        moon_scan_url: moon_scan_url
+        userop_transaction: userop_transaction
         transactions:
         - signed_transaction: signed_transaction
           raw_transaction: raw_transaction
@@ -4234,7 +4234,6 @@ components:
             from: from
             to: to
             value: value
-        userop_transaction: userop_transaction
         userOps:
         - data: data
           maxPriorityFeePerGas: maxPriorityFeePerGas
@@ -4250,7 +4249,6 @@ components:
           maxFeePerGas: maxFeePerGas
           nonce: nonce
           value: value
-        transaction_hash: transaction_hash
         transaction:
           gas_price: gas_price
           blob_hashes:
@@ -4271,30 +4269,32 @@ components:
           from: from
           to: to
           value: value
+        transaction_hash: transaction_hash
       properties:
-        transaction_hash:
+        userop_transaction:
           type: string
-        signed_transaction:
+        userOps:
+          items:
+            $ref: '#/components/schemas/TransactionRequest'
+          type: array
+        transaction:
+          $ref: '#/components/schemas/Tx'
+        signature:
           type: string
-        raw_transaction:
-          type: string
-        data:
+        moon_scan_url:
           type: string
         transactions:
           items:
             $ref: '#/components/schemas/TransactionData'
           type: array
-        moon_scan_url:
+        data:
+          nullable: true
           type: string
-        signature:
+        raw_transaction:
           type: string
-        transaction:
-          $ref: '#/components/schemas/Tx'
-        userOps:
-          items:
-            $ref: '#/components/schemas/TransactionRequest'
-          type: array
-        userop_transaction:
+        signed_transaction:
+          type: string
+        transaction_hash:
           type: string
       type: object
     AccountResponse:
@@ -4948,10 +4948,11 @@ components:
             affiliateAggregator: affiliateAggregator
         signed:
           signed_transaction: signed_transaction
-          raw_transaction: raw_transaction
           data: data
-          moon_scan_url: moon_scan_url
+          raw_transaction: raw_transaction
           signature: signature
+          moon_scan_url: moon_scan_url
+          userop_transaction: userop_transaction
           transactions:
           - signed_transaction: signed_transaction
             raw_transaction: raw_transaction
@@ -5037,7 +5038,6 @@ components:
               from: from
               to: to
               value: value
-          userop_transaction: userop_transaction
           userOps:
           - data: data
             maxPriorityFeePerGas: maxPriorityFeePerGas
@@ -5053,7 +5053,6 @@ components:
             maxFeePerGas: maxFeePerGas
             nonce: nonce
             value: value
-          transaction_hash: transaction_hash
           transaction:
             gas_price: gas_price
             blob_hashes:
@@ -5074,6 +5073,7 @@ components:
             from: from
             to: to
             value: value
+          transaction_hash: transaction_hash
         message: message
       properties:
         input:
@@ -6649,10 +6649,11 @@ components:
         confirmed: true
         txs:
         - signed_transaction: signed_transaction
-          raw_transaction: raw_transaction
           data: data
-          moon_scan_url: moon_scan_url
+          raw_transaction: raw_transaction
           signature: signature
+          moon_scan_url: moon_scan_url
+          userop_transaction: userop_transaction
           transactions:
           - signed_transaction: signed_transaction
             raw_transaction: raw_transaction
@@ -6738,7 +6739,6 @@ components:
               from: from
               to: to
               value: value
-          userop_transaction: userop_transaction
           userOps:
           - data: data
             maxPriorityFeePerGas: maxPriorityFeePerGas
@@ -6754,7 +6754,6 @@ components:
             maxFeePerGas: maxFeePerGas
             nonce: nonce
             value: value
-          transaction_hash: transaction_hash
           transaction:
             gas_price: gas_price
             blob_hashes:
@@ -6775,11 +6774,13 @@ components:
             from: from
             to: to
             value: value
+          transaction_hash: transaction_hash
         - signed_transaction: signed_transaction
-          raw_transaction: raw_transaction
           data: data
-          moon_scan_url: moon_scan_url
+          raw_transaction: raw_transaction
           signature: signature
+          moon_scan_url: moon_scan_url
+          userop_transaction: userop_transaction
           transactions:
           - signed_transaction: signed_transaction
             raw_transaction: raw_transaction
@@ -6865,7 +6866,6 @@ components:
               from: from
               to: to
               value: value
-          userop_transaction: userop_transaction
           userOps:
           - data: data
             maxPriorityFeePerGas: maxPriorityFeePerGas
@@ -6881,7 +6881,6 @@ components:
             maxFeePerGas: maxFeePerGas
             nonce: nonce
             value: value
-          transaction_hash: transaction_hash
           transaction:
             gas_price: gas_price
             blob_hashes:
@@ -6902,6 +6901,7 @@ components:
             from: from
             to: to
             value: value
+          transaction_hash: transaction_hash
         retries: 0.8008281904610115
         nftTokenApprovals:
         - logIndex: logIndex
