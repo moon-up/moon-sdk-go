@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UseropTransaction** | Pointer to **string** |  | [optional] 
-**UserOps** | Pointer to [**[]TransactionRequest**](TransactionRequest.md) |  | [optional] 
-**Transaction** | Pointer to [**Tx**](Tx.md) |  | [optional] 
-**Signature** | Pointer to **string** |  | [optional] 
-**MoonScanUrl** | Pointer to **string** |  | [optional] 
-**Transactions** | Pointer to [**[]TransactionData**](TransactionData.md) |  | [optional] 
-**Data** | Pointer to **NullableString** |  | [optional] 
-**RawTransaction** | Pointer to **string** |  | [optional] 
-**SignedTransaction** | Pointer to **string** |  | [optional] 
 **TransactionHash** | Pointer to **string** |  | [optional] 
+**SignedTransaction** | Pointer to **string** |  | [optional] 
+**RawTransaction** | Pointer to **string** |  | [optional] 
+**Data** | Pointer to **NullableString** |  | [optional] 
+**Transactions** | Pointer to [**[]TransactionData**](TransactionData.md) |  | [optional] 
+**MoonScanUrl** | Pointer to **string** |  | [optional] 
+**Signature** | Pointer to **string** |  | [optional] 
+**Transaction** | Pointer to [**Tx**](Tx.md) |  | [optional] 
+**UserOps** | Pointer to [**[]TransactionRequest**](TransactionRequest.md) |  | [optional] 
+**UseropTransaction** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -34,155 +34,80 @@ NewTransactionWithDefaults instantiates a new Transaction object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUseropTransaction
+### GetTransactionHash
 
-`func (o *Transaction) GetUseropTransaction() string`
+`func (o *Transaction) GetTransactionHash() string`
 
-GetUseropTransaction returns the UseropTransaction field if non-nil, zero value otherwise.
+GetTransactionHash returns the TransactionHash field if non-nil, zero value otherwise.
 
-### GetUseropTransactionOk
+### GetTransactionHashOk
 
-`func (o *Transaction) GetUseropTransactionOk() (*string, bool)`
+`func (o *Transaction) GetTransactionHashOk() (*string, bool)`
 
-GetUseropTransactionOk returns a tuple with the UseropTransaction field if it's non-nil, zero value otherwise
+GetTransactionHashOk returns a tuple with the TransactionHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseropTransaction
+### SetTransactionHash
 
-`func (o *Transaction) SetUseropTransaction(v string)`
+`func (o *Transaction) SetTransactionHash(v string)`
 
-SetUseropTransaction sets UseropTransaction field to given value.
+SetTransactionHash sets TransactionHash field to given value.
 
-### HasUseropTransaction
+### HasTransactionHash
 
-`func (o *Transaction) HasUseropTransaction() bool`
+`func (o *Transaction) HasTransactionHash() bool`
 
-HasUseropTransaction returns a boolean if a field has been set.
+HasTransactionHash returns a boolean if a field has been set.
 
-### GetUserOps
+### GetSignedTransaction
 
-`func (o *Transaction) GetUserOps() []TransactionRequest`
+`func (o *Transaction) GetSignedTransaction() string`
 
-GetUserOps returns the UserOps field if non-nil, zero value otherwise.
+GetSignedTransaction returns the SignedTransaction field if non-nil, zero value otherwise.
 
-### GetUserOpsOk
+### GetSignedTransactionOk
 
-`func (o *Transaction) GetUserOpsOk() (*[]TransactionRequest, bool)`
+`func (o *Transaction) GetSignedTransactionOk() (*string, bool)`
 
-GetUserOpsOk returns a tuple with the UserOps field if it's non-nil, zero value otherwise
+GetSignedTransactionOk returns a tuple with the SignedTransaction field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserOps
+### SetSignedTransaction
 
-`func (o *Transaction) SetUserOps(v []TransactionRequest)`
+`func (o *Transaction) SetSignedTransaction(v string)`
 
-SetUserOps sets UserOps field to given value.
+SetSignedTransaction sets SignedTransaction field to given value.
 
-### HasUserOps
+### HasSignedTransaction
 
-`func (o *Transaction) HasUserOps() bool`
+`func (o *Transaction) HasSignedTransaction() bool`
 
-HasUserOps returns a boolean if a field has been set.
+HasSignedTransaction returns a boolean if a field has been set.
 
-### GetTransaction
+### GetRawTransaction
 
-`func (o *Transaction) GetTransaction() Tx`
+`func (o *Transaction) GetRawTransaction() string`
 
-GetTransaction returns the Transaction field if non-nil, zero value otherwise.
+GetRawTransaction returns the RawTransaction field if non-nil, zero value otherwise.
 
-### GetTransactionOk
+### GetRawTransactionOk
 
-`func (o *Transaction) GetTransactionOk() (*Tx, bool)`
+`func (o *Transaction) GetRawTransactionOk() (*string, bool)`
 
-GetTransactionOk returns a tuple with the Transaction field if it's non-nil, zero value otherwise
+GetRawTransactionOk returns a tuple with the RawTransaction field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTransaction
+### SetRawTransaction
 
-`func (o *Transaction) SetTransaction(v Tx)`
+`func (o *Transaction) SetRawTransaction(v string)`
 
-SetTransaction sets Transaction field to given value.
+SetRawTransaction sets RawTransaction field to given value.
 
-### HasTransaction
+### HasRawTransaction
 
-`func (o *Transaction) HasTransaction() bool`
+`func (o *Transaction) HasRawTransaction() bool`
 
-HasTransaction returns a boolean if a field has been set.
-
-### GetSignature
-
-`func (o *Transaction) GetSignature() string`
-
-GetSignature returns the Signature field if non-nil, zero value otherwise.
-
-### GetSignatureOk
-
-`func (o *Transaction) GetSignatureOk() (*string, bool)`
-
-GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSignature
-
-`func (o *Transaction) SetSignature(v string)`
-
-SetSignature sets Signature field to given value.
-
-### HasSignature
-
-`func (o *Transaction) HasSignature() bool`
-
-HasSignature returns a boolean if a field has been set.
-
-### GetMoonScanUrl
-
-`func (o *Transaction) GetMoonScanUrl() string`
-
-GetMoonScanUrl returns the MoonScanUrl field if non-nil, zero value otherwise.
-
-### GetMoonScanUrlOk
-
-`func (o *Transaction) GetMoonScanUrlOk() (*string, bool)`
-
-GetMoonScanUrlOk returns a tuple with the MoonScanUrl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMoonScanUrl
-
-`func (o *Transaction) SetMoonScanUrl(v string)`
-
-SetMoonScanUrl sets MoonScanUrl field to given value.
-
-### HasMoonScanUrl
-
-`func (o *Transaction) HasMoonScanUrl() bool`
-
-HasMoonScanUrl returns a boolean if a field has been set.
-
-### GetTransactions
-
-`func (o *Transaction) GetTransactions() []TransactionData`
-
-GetTransactions returns the Transactions field if non-nil, zero value otherwise.
-
-### GetTransactionsOk
-
-`func (o *Transaction) GetTransactionsOk() (*[]TransactionData, bool)`
-
-GetTransactionsOk returns a tuple with the Transactions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTransactions
-
-`func (o *Transaction) SetTransactions(v []TransactionData)`
-
-SetTransactions sets Transactions field to given value.
-
-### HasTransactions
-
-`func (o *Transaction) HasTransactions() bool`
-
-HasTransactions returns a boolean if a field has been set.
+HasRawTransaction returns a boolean if a field has been set.
 
 ### GetData
 
@@ -219,80 +144,155 @@ HasData returns a boolean if a field has been set.
 `func (o *Transaction) UnsetData()`
 
 UnsetData ensures that no value is present for Data, not even an explicit nil
-### GetRawTransaction
+### GetTransactions
 
-`func (o *Transaction) GetRawTransaction() string`
+`func (o *Transaction) GetTransactions() []TransactionData`
 
-GetRawTransaction returns the RawTransaction field if non-nil, zero value otherwise.
+GetTransactions returns the Transactions field if non-nil, zero value otherwise.
 
-### GetRawTransactionOk
+### GetTransactionsOk
 
-`func (o *Transaction) GetRawTransactionOk() (*string, bool)`
+`func (o *Transaction) GetTransactionsOk() (*[]TransactionData, bool)`
 
-GetRawTransactionOk returns a tuple with the RawTransaction field if it's non-nil, zero value otherwise
+GetTransactionsOk returns a tuple with the Transactions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRawTransaction
+### SetTransactions
 
-`func (o *Transaction) SetRawTransaction(v string)`
+`func (o *Transaction) SetTransactions(v []TransactionData)`
 
-SetRawTransaction sets RawTransaction field to given value.
+SetTransactions sets Transactions field to given value.
 
-### HasRawTransaction
+### HasTransactions
 
-`func (o *Transaction) HasRawTransaction() bool`
+`func (o *Transaction) HasTransactions() bool`
 
-HasRawTransaction returns a boolean if a field has been set.
+HasTransactions returns a boolean if a field has been set.
 
-### GetSignedTransaction
+### GetMoonScanUrl
 
-`func (o *Transaction) GetSignedTransaction() string`
+`func (o *Transaction) GetMoonScanUrl() string`
 
-GetSignedTransaction returns the SignedTransaction field if non-nil, zero value otherwise.
+GetMoonScanUrl returns the MoonScanUrl field if non-nil, zero value otherwise.
 
-### GetSignedTransactionOk
+### GetMoonScanUrlOk
 
-`func (o *Transaction) GetSignedTransactionOk() (*string, bool)`
+`func (o *Transaction) GetMoonScanUrlOk() (*string, bool)`
 
-GetSignedTransactionOk returns a tuple with the SignedTransaction field if it's non-nil, zero value otherwise
+GetMoonScanUrlOk returns a tuple with the MoonScanUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSignedTransaction
+### SetMoonScanUrl
 
-`func (o *Transaction) SetSignedTransaction(v string)`
+`func (o *Transaction) SetMoonScanUrl(v string)`
 
-SetSignedTransaction sets SignedTransaction field to given value.
+SetMoonScanUrl sets MoonScanUrl field to given value.
 
-### HasSignedTransaction
+### HasMoonScanUrl
 
-`func (o *Transaction) HasSignedTransaction() bool`
+`func (o *Transaction) HasMoonScanUrl() bool`
 
-HasSignedTransaction returns a boolean if a field has been set.
+HasMoonScanUrl returns a boolean if a field has been set.
 
-### GetTransactionHash
+### GetSignature
 
-`func (o *Transaction) GetTransactionHash() string`
+`func (o *Transaction) GetSignature() string`
 
-GetTransactionHash returns the TransactionHash field if non-nil, zero value otherwise.
+GetSignature returns the Signature field if non-nil, zero value otherwise.
 
-### GetTransactionHashOk
+### GetSignatureOk
 
-`func (o *Transaction) GetTransactionHashOk() (*string, bool)`
+`func (o *Transaction) GetSignatureOk() (*string, bool)`
 
-GetTransactionHashOk returns a tuple with the TransactionHash field if it's non-nil, zero value otherwise
+GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTransactionHash
+### SetSignature
 
-`func (o *Transaction) SetTransactionHash(v string)`
+`func (o *Transaction) SetSignature(v string)`
 
-SetTransactionHash sets TransactionHash field to given value.
+SetSignature sets Signature field to given value.
 
-### HasTransactionHash
+### HasSignature
 
-`func (o *Transaction) HasTransactionHash() bool`
+`func (o *Transaction) HasSignature() bool`
 
-HasTransactionHash returns a boolean if a field has been set.
+HasSignature returns a boolean if a field has been set.
+
+### GetTransaction
+
+`func (o *Transaction) GetTransaction() Tx`
+
+GetTransaction returns the Transaction field if non-nil, zero value otherwise.
+
+### GetTransactionOk
+
+`func (o *Transaction) GetTransactionOk() (*Tx, bool)`
+
+GetTransactionOk returns a tuple with the Transaction field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransaction
+
+`func (o *Transaction) SetTransaction(v Tx)`
+
+SetTransaction sets Transaction field to given value.
+
+### HasTransaction
+
+`func (o *Transaction) HasTransaction() bool`
+
+HasTransaction returns a boolean if a field has been set.
+
+### GetUserOps
+
+`func (o *Transaction) GetUserOps() []TransactionRequest`
+
+GetUserOps returns the UserOps field if non-nil, zero value otherwise.
+
+### GetUserOpsOk
+
+`func (o *Transaction) GetUserOpsOk() (*[]TransactionRequest, bool)`
+
+GetUserOpsOk returns a tuple with the UserOps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserOps
+
+`func (o *Transaction) SetUserOps(v []TransactionRequest)`
+
+SetUserOps sets UserOps field to given value.
+
+### HasUserOps
+
+`func (o *Transaction) HasUserOps() bool`
+
+HasUserOps returns a boolean if a field has been set.
+
+### GetUseropTransaction
+
+`func (o *Transaction) GetUseropTransaction() string`
+
+GetUseropTransaction returns the UseropTransaction field if non-nil, zero value otherwise.
+
+### GetUseropTransactionOk
+
+`func (o *Transaction) GetUseropTransactionOk() (*string, bool)`
+
+GetUseropTransactionOk returns a tuple with the UseropTransaction field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseropTransaction
+
+`func (o *Transaction) SetUseropTransaction(v string)`
+
+SetUseropTransaction sets UseropTransaction field to given value.
+
+### HasUseropTransaction
+
+`func (o *Transaction) HasUseropTransaction() bool`
+
+HasUseropTransaction returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
