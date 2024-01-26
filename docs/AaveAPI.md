@@ -23,26 +23,26 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    aaveInput := *openapiclient.NewAaveInput() // AaveInput | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	aaveInput := *openapiclient.NewAaveInput() // AaveInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AaveAPI.Borrow(context.Background(), name).Authorization(authorization).AaveInput(aaveInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AaveAPI.Borrow``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Borrow`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AaveAPI.Borrow`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AaveAPI.Borrow(context.Background(), name).Authorization(authorization).AaveInput(aaveInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AaveAPI.Borrow``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Borrow`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AaveAPI.Borrow`: %v\n", resp)
 }
 ```
 
@@ -95,26 +95,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    aaveInput := *openapiclient.NewAaveInput() // AaveInput | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	aaveInput := *openapiclient.NewAaveInput() // AaveInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AaveAPI.Lend(context.Background(), name).Authorization(authorization).AaveInput(aaveInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AaveAPI.Lend``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Lend`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AaveAPI.Lend`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AaveAPI.Lend(context.Background(), name).Authorization(authorization).AaveInput(aaveInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AaveAPI.Lend``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Lend`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AaveAPI.Lend`: %v\n", resp)
 }
 ```
 
@@ -167,26 +167,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    aaveInput := *openapiclient.NewAaveInput() // AaveInput | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	aaveInput := *openapiclient.NewAaveInput() // AaveInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AaveAPI.Repay(context.Background(), name).Authorization(authorization).AaveInput(aaveInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AaveAPI.Repay``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Repay`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AaveAPI.Repay`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AaveAPI.Repay(context.Background(), name).Authorization(authorization).AaveInput(aaveInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AaveAPI.Repay``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Repay`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AaveAPI.Repay`: %v\n", resp)
 }
 ```
 
@@ -239,26 +239,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    aaveInput := *openapiclient.NewAaveInput() // AaveInput | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	aaveInput := *openapiclient.NewAaveInput() // AaveInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AaveAPI.UserReserveData(context.Background(), name).Authorization(authorization).AaveInput(aaveInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AaveAPI.UserReserveData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UserReserveData`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AaveAPI.UserReserveData`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AaveAPI.UserReserveData(context.Background(), name).Authorization(authorization).AaveInput(aaveInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AaveAPI.UserReserveData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserReserveData`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AaveAPI.UserReserveData`: %v\n", resp)
 }
 ```
 

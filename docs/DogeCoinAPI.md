@@ -23,25 +23,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    dogeCoinInput := *openapiclient.NewDogeCoinInput() // DogeCoinInput | 
+	authorization := "authorization_example" // string | 
+	dogeCoinInput := *openapiclient.NewDogeCoinInput() // DogeCoinInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DogeCoinAPI.CreateDogeCoinAccount(context.Background()).Authorization(authorization).DogeCoinInput(dogeCoinInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DogeCoinAPI.CreateDogeCoinAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateDogeCoinAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `DogeCoinAPI.CreateDogeCoinAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DogeCoinAPI.CreateDogeCoinAccount(context.Background()).Authorization(authorization).DogeCoinInput(dogeCoinInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DogeCoinAPI.CreateDogeCoinAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateDogeCoinAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `DogeCoinAPI.CreateDogeCoinAccount`: %v\n", resp)
 }
 ```
 
@@ -89,25 +89,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DogeCoinAPI.GetDogeCoinAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DogeCoinAPI.GetDogeCoinAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetDogeCoinAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `DogeCoinAPI.GetDogeCoinAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DogeCoinAPI.GetDogeCoinAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DogeCoinAPI.GetDogeCoinAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDogeCoinAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `DogeCoinAPI.GetDogeCoinAccount`: %v\n", resp)
 }
 ```
 
@@ -159,24 +159,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DogeCoinAPI.ListDogeCoinAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DogeCoinAPI.ListDogeCoinAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListDogeCoinAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `DogeCoinAPI.ListDogeCoinAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DogeCoinAPI.ListDogeCoinAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DogeCoinAPI.ListDogeCoinAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListDogeCoinAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `DogeCoinAPI.ListDogeCoinAccounts`: %v\n", resp)
 }
 ```
 
@@ -223,26 +223,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    dogeCoinTransactionInput := *openapiclient.NewDogeCoinTransactionInput() // DogeCoinTransactionInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	dogeCoinTransactionInput := *openapiclient.NewDogeCoinTransactionInput() // DogeCoinTransactionInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DogeCoinAPI.SignDogeCoinTransaction(context.Background(), accountName).Authorization(authorization).DogeCoinTransactionInput(dogeCoinTransactionInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DogeCoinAPI.SignDogeCoinTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignDogeCoinTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `DogeCoinAPI.SignDogeCoinTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DogeCoinAPI.SignDogeCoinTransaction(context.Background(), accountName).Authorization(authorization).DogeCoinTransactionInput(dogeCoinTransactionInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DogeCoinAPI.SignDogeCoinTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignDogeCoinTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `DogeCoinAPI.SignDogeCoinTransaction`: %v\n", resp)
 }
 ```
 

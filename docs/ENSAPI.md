@@ -20,25 +20,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    ensResolveInput := *openapiclient.NewEnsResolveInput("Domain_example", "ChainId_example") // EnsResolveInput | 
+	authorization := "authorization_example" // string | 
+	ensResolveInput := *openapiclient.NewEnsResolveInput("Domain_example", "ChainId_example") // EnsResolveInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ENSAPI.Resolve(context.Background()).Authorization(authorization).EnsResolveInput(ensResolveInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ENSAPI.Resolve``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Resolve`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ENSAPI.Resolve`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ENSAPI.Resolve(context.Background()).Authorization(authorization).EnsResolveInput(ensResolveInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ENSAPI.Resolve``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Resolve`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `ENSAPI.Resolve`: %v\n", resp)
 }
 ```
 

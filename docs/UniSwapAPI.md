@@ -23,26 +23,26 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    uniswapInput := *openapiclient.NewUniswapInput() // UniswapInput | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	uniswapInput := *openapiclient.NewUniswapInput() // UniswapInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UniSwapAPI.AddLiquidity(context.Background(), name).Authorization(authorization).UniswapInput(uniswapInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UniSwapAPI.AddLiquidity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddLiquidity`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `UniSwapAPI.AddLiquidity`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UniSwapAPI.AddLiquidity(context.Background(), name).Authorization(authorization).UniswapInput(uniswapInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UniSwapAPI.AddLiquidity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddLiquidity`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `UniSwapAPI.AddLiquidity`: %v\n", resp)
 }
 ```
 
@@ -95,26 +95,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    uniswapInput := *openapiclient.NewUniswapInput() // UniswapInput | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	uniswapInput := *openapiclient.NewUniswapInput() // UniswapInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UniSwapAPI.RemoveLiquidity(context.Background(), name).Authorization(authorization).UniswapInput(uniswapInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UniSwapAPI.RemoveLiquidity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RemoveLiquidity`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `UniSwapAPI.RemoveLiquidity`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UniSwapAPI.RemoveLiquidity(context.Background(), name).Authorization(authorization).UniswapInput(uniswapInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UniSwapAPI.RemoveLiquidity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RemoveLiquidity`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `UniSwapAPI.RemoveLiquidity`: %v\n", resp)
 }
 ```
 
@@ -167,26 +167,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    uniswapInput := *openapiclient.NewUniswapInput() // UniswapInput | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	uniswapInput := *openapiclient.NewUniswapInput() // UniswapInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UniSwapAPI.SwapExactETHForTokens(context.Background(), name).Authorization(authorization).UniswapInput(uniswapInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UniSwapAPI.SwapExactETHForTokens``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SwapExactETHForTokens`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `UniSwapAPI.SwapExactETHForTokens`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UniSwapAPI.SwapExactETHForTokens(context.Background(), name).Authorization(authorization).UniswapInput(uniswapInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UniSwapAPI.SwapExactETHForTokens``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SwapExactETHForTokens`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `UniSwapAPI.SwapExactETHForTokens`: %v\n", resp)
 }
 ```
 
@@ -239,26 +239,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    uniswapInput := *openapiclient.NewUniswapInput() // UniswapInput | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	uniswapInput := *openapiclient.NewUniswapInput() // UniswapInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UniSwapAPI.SwapExactTokensForTokens(context.Background(), name).Authorization(authorization).UniswapInput(uniswapInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UniSwapAPI.SwapExactTokensForTokens``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SwapExactTokensForTokens`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `UniSwapAPI.SwapExactTokensForTokens`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UniSwapAPI.SwapExactTokensForTokens(context.Background(), name).Authorization(authorization).UniswapInput(uniswapInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UniSwapAPI.SwapExactTokensForTokens``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SwapExactTokensForTokens`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `UniSwapAPI.SwapExactTokensForTokens`: %v\n", resp)
 }
 ```
 

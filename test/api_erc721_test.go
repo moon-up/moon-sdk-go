@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/moon-up/moon-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func Test_openapi_Erc721APIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService Approve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -38,7 +39,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService BalanceOf", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -52,7 +53,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService GetApproved", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -66,7 +67,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService IsApprovedForAll", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -80,7 +81,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService Name", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -94,7 +95,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService OwnerOf", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -108,7 +109,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService SafeTransferFrom", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -122,7 +123,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService SetApprovalForAll", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -136,7 +137,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService Symbol", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -150,7 +151,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService TokenUri", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -164,7 +165,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService Transfer", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -178,7 +179,7 @@ func Test_openapi_Erc721APIService(t *testing.T) {
 
 	t.Run("Test Erc721APIService TransferFrom", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 

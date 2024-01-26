@@ -23,25 +23,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    rippleInput := *openapiclient.NewRippleInput() // RippleInput | 
+	authorization := "authorization_example" // string | 
+	rippleInput := *openapiclient.NewRippleInput() // RippleInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RippleAPI.CreateRippleAccount(context.Background()).Authorization(authorization).RippleInput(rippleInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RippleAPI.CreateRippleAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateRippleAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `RippleAPI.CreateRippleAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RippleAPI.CreateRippleAccount(context.Background()).Authorization(authorization).RippleInput(rippleInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RippleAPI.CreateRippleAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateRippleAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `RippleAPI.CreateRippleAccount`: %v\n", resp)
 }
 ```
 
@@ -89,25 +89,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RippleAPI.GetRippleAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RippleAPI.GetRippleAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetRippleAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `RippleAPI.GetRippleAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RippleAPI.GetRippleAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RippleAPI.GetRippleAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRippleAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `RippleAPI.GetRippleAccount`: %v\n", resp)
 }
 ```
 
@@ -159,24 +159,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RippleAPI.ListRippleAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RippleAPI.ListRippleAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListRippleAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `RippleAPI.ListRippleAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RippleAPI.ListRippleAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RippleAPI.ListRippleAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListRippleAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `RippleAPI.ListRippleAccounts`: %v\n", resp)
 }
 ```
 
@@ -223,26 +223,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    rippleTransactionInput := *openapiclient.NewRippleTransactionInput() // RippleTransactionInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	rippleTransactionInput := *openapiclient.NewRippleTransactionInput() // RippleTransactionInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RippleAPI.SignRippleTransaction(context.Background(), accountName).Authorization(authorization).RippleTransactionInput(rippleTransactionInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RippleAPI.SignRippleTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignRippleTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `RippleAPI.SignRippleTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RippleAPI.SignRippleTransaction(context.Background(), accountName).Authorization(authorization).RippleTransactionInput(rippleTransactionInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RippleAPI.SignRippleTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignRippleTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `RippleAPI.SignRippleTransaction`: %v\n", resp)
 }
 ```
 

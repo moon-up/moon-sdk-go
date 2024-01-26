@@ -31,26 +31,26 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    broadcastInput := *openapiclient.NewBroadcastInput("ChainId_example", "RawTransaction_example") // BroadcastInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	broadcastInput := *openapiclient.NewBroadcastInput("ChainId_example", "RawTransaction_example") // BroadcastInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.BroadcastTx(context.Background(), accountName).Authorization(authorization).BroadcastInput(broadcastInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.BroadcastTx``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `BroadcastTx`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.BroadcastTx`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.BroadcastTx(context.Background(), accountName).Authorization(authorization).BroadcastInput(broadcastInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.BroadcastTx``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BroadcastTx`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.BroadcastTx`: %v\n", resp)
 }
 ```
 
@@ -103,25 +103,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    createAccountInput := *openapiclient.NewCreateAccountInput() // CreateAccountInput | 
+	authorization := "authorization_example" // string | 
+	createAccountInput := *openapiclient.NewCreateAccountInput() // CreateAccountInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.CreateAccount(context.Background()).Authorization(authorization).CreateAccountInput(createAccountInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.CreateAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.CreateAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.CreateAccount(context.Background()).Authorization(authorization).CreateAccountInput(createAccountInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.CreateAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.CreateAccount`: %v\n", resp)
 }
 ```
 
@@ -169,25 +169,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.DeleteAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.DeleteAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DeleteAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.DeleteAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.DeleteAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.DeleteAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.DeleteAccount`: %v\n", resp)
 }
 ```
 
@@ -239,26 +239,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    deployInput := *openapiclient.NewDeployInput("Abi_example", "Bytecode_example") // DeployInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	deployInput := *openapiclient.NewDeployInput("Abi_example", "Bytecode_example") // DeployInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.DeployContract(context.Background(), accountName).Authorization(authorization).DeployInput(deployInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.DeployContract``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DeployContract`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.DeployContract`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.DeployContract(context.Background(), accountName).Authorization(authorization).DeployInput(deployInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.DeployContract``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeployContract`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.DeployContract`: %v\n", resp)
 }
 ```
 
@@ -311,25 +311,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.GetAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.GetAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.GetAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.GetAccount`: %v\n", resp)
 }
 ```
 
@@ -381,26 +381,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    accountName := "accountName_example" // string | 
-    authorization := "authorization_example" // string | 
-    chainId := "chainId_example" // string | 
+	accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	chainId := "chainId_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.GetBalance(context.Background(), accountName).Authorization(authorization).ChainId(chainId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetBalance``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetBalance`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.GetBalance`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.GetBalance(context.Background(), accountName).Authorization(authorization).ChainId(chainId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetBalance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBalance`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.GetBalance`: %v\n", resp)
 }
 ```
 
@@ -453,25 +453,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    accountName := "accountName_example" // string | 
-    authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.GetNonce(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetNonce``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetNonce`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.GetNonce`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.GetNonce(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetNonce``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetNonce`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.GetNonce`: %v\n", resp)
 }
 ```
 
@@ -523,24 +523,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.ListAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.ListAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.ListAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.ListAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.ListAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.ListAccounts`: %v\n", resp)
 }
 ```
 
@@ -587,26 +587,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    accountName := "accountName_example" // string | 
-    authorization := "authorization_example" // string | 
-    signMessage := *openapiclient.NewSignMessage("Data_example") // SignMessage | 
+	accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	signMessage := *openapiclient.NewSignMessage("Data_example") // SignMessage | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.SignMessage(context.Background(), accountName).Authorization(authorization).SignMessage(signMessage).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.SignMessage``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignMessage`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.SignMessage`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.SignMessage(context.Background(), accountName).Authorization(authorization).SignMessage(signMessage).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.SignMessage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignMessage`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.SignMessage`: %v\n", resp)
 }
 ```
 
@@ -659,26 +659,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    accountName := "accountName_example" // string | 
-    authorization := "authorization_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.SignTransaction(context.Background(), accountName).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.SignTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.SignTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.SignTransaction(context.Background(), accountName).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.SignTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.SignTransaction`: %v\n", resp)
 }
 ```
 
@@ -731,26 +731,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    accountName := "accountName_example" // string | 
-    authorization := "authorization_example" // string | 
-    signTypedData := *openapiclient.NewSignTypedData("Data_example") // SignTypedData | 
+	accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	signTypedData := *openapiclient.NewSignTypedData("Data_example") // SignTypedData | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.SignTypedData(context.Background(), accountName).Authorization(authorization).SignTypedData(signTypedData).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.SignTypedData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignTypedData`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.SignTypedData`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.SignTypedData(context.Background(), accountName).Authorization(authorization).SignTypedData(signTypedData).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.SignTypedData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignTypedData`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.SignTypedData`: %v\n", resp)
 }
 ```
 
@@ -803,26 +803,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    accountName := "accountName_example" // string | 
-    authorization := "authorization_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccountsAPI.TransferEth(context.Background(), accountName).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.TransferEth``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TransferEth`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.TransferEth`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.TransferEth(context.Background(), accountName).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.TransferEth``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TransferEth`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.TransferEth`: %v\n", resp)
 }
 ```
 

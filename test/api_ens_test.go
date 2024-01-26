@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/moon-up/moon-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func Test_openapi_ENSAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_ENSAPIService(t *testing.T) {
 
 	t.Run("Test ENSAPIService Resolve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ENSAPI.Resolve(context.Background()).Execute()
 

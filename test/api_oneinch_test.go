@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/moon-up/moon-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func Test_openapi_OneinchAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_OneinchAPIService(t *testing.T) {
 
 	t.Run("Test OneinchAPIService ApproveCallData", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OneinchAPI.ApproveCallData(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_openapi_OneinchAPIService(t *testing.T) {
 
 	t.Run("Test OneinchAPIService ApproveSpender", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OneinchAPI.ApproveSpender(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_openapi_OneinchAPIService(t *testing.T) {
 
 	t.Run("Test OneinchAPIService Protocols", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OneinchAPI.Protocols(context.Background()).Execute()
 
@@ -60,7 +61,7 @@ func Test_openapi_OneinchAPIService(t *testing.T) {
 
 	t.Run("Test OneinchAPIService Quote", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OneinchAPI.Quote(context.Background()).Execute()
 
@@ -72,7 +73,7 @@ func Test_openapi_OneinchAPIService(t *testing.T) {
 
 	t.Run("Test OneinchAPIService Swap", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountName string
 
@@ -86,7 +87,7 @@ func Test_openapi_OneinchAPIService(t *testing.T) {
 
 	t.Run("Test OneinchAPIService Tokens", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OneinchAPI.Tokens(context.Background()).Execute()
 

@@ -23,25 +23,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    litecoinInput := *openapiclient.NewLitecoinInput() // LitecoinInput | 
+	authorization := "authorization_example" // string | 
+	litecoinInput := *openapiclient.NewLitecoinInput() // LitecoinInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LitecoinAPI.CreateLitecoinAccount(context.Background()).Authorization(authorization).LitecoinInput(litecoinInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LitecoinAPI.CreateLitecoinAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateLitecoinAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `LitecoinAPI.CreateLitecoinAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LitecoinAPI.CreateLitecoinAccount(context.Background()).Authorization(authorization).LitecoinInput(litecoinInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LitecoinAPI.CreateLitecoinAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateLitecoinAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `LitecoinAPI.CreateLitecoinAccount`: %v\n", resp)
 }
 ```
 
@@ -89,25 +89,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LitecoinAPI.GetLitecoinAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LitecoinAPI.GetLitecoinAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetLitecoinAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `LitecoinAPI.GetLitecoinAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LitecoinAPI.GetLitecoinAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LitecoinAPI.GetLitecoinAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLitecoinAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `LitecoinAPI.GetLitecoinAccount`: %v\n", resp)
 }
 ```
 
@@ -159,24 +159,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LitecoinAPI.ListLitecoinAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LitecoinAPI.ListLitecoinAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListLitecoinAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `LitecoinAPI.ListLitecoinAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LitecoinAPI.ListLitecoinAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LitecoinAPI.ListLitecoinAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListLitecoinAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `LitecoinAPI.ListLitecoinAccounts`: %v\n", resp)
 }
 ```
 
@@ -223,26 +223,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    litecoinTransactionInput := *openapiclient.NewLitecoinTransactionInput() // LitecoinTransactionInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	litecoinTransactionInput := *openapiclient.NewLitecoinTransactionInput() // LitecoinTransactionInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LitecoinAPI.SignLitecoinTransaction(context.Background(), accountName).Authorization(authorization).LitecoinTransactionInput(litecoinTransactionInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LitecoinAPI.SignLitecoinTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignLitecoinTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `LitecoinAPI.SignLitecoinTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LitecoinAPI.SignLitecoinTransaction(context.Background(), accountName).Authorization(authorization).LitecoinTransactionInput(litecoinTransactionInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LitecoinAPI.SignLitecoinTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignLitecoinTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `LitecoinAPI.SignLitecoinTransaction`: %v\n", resp)
 }
 ```
 

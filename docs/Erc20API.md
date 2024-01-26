@@ -28,26 +28,26 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.AllowanceErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.AllowanceErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AllowanceErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.AllowanceErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.AllowanceErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.AllowanceErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AllowanceErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.AllowanceErc20`: %v\n", resp)
 }
 ```
 
@@ -100,26 +100,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.ApproveErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.ApproveErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ApproveErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.ApproveErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.ApproveErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.ApproveErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ApproveErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.ApproveErc20`: %v\n", resp)
 }
 ```
 
@@ -172,26 +172,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.BalanceOfErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.BalanceOfErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `BalanceOfErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.BalanceOfErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.BalanceOfErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.BalanceOfErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BalanceOfErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.BalanceOfErc20`: %v\n", resp)
 }
 ```
 
@@ -244,26 +244,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.DecimalsErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.DecimalsErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DecimalsErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.DecimalsErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.DecimalsErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.DecimalsErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DecimalsErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.DecimalsErc20`: %v\n", resp)
 }
 ```
 
@@ -316,26 +316,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.NameErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.NameErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `NameErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.NameErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.NameErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.NameErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `NameErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.NameErc20`: %v\n", resp)
 }
 ```
 
@@ -388,26 +388,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.SymbolErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.SymbolErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SymbolErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.SymbolErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.SymbolErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.SymbolErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SymbolErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.SymbolErc20`: %v\n", resp)
 }
 ```
 
@@ -460,26 +460,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.TotalSupplyErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.TotalSupplyErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TotalSupplyErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.TotalSupplyErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.TotalSupplyErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.TotalSupplyErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TotalSupplyErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.TotalSupplyErc20`: %v\n", resp)
 }
 ```
 
@@ -532,26 +532,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.TransferErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.TransferErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TransferErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.TransferErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.TransferErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.TransferErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TransferErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.TransferErc20`: %v\n", resp)
 }
 ```
 
@@ -604,26 +604,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc20API.TransferFromErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.TransferFromErc20``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TransferFromErc20`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc20API.TransferFromErc20`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc20API.TransferFromErc20(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc20API.TransferFromErc20``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TransferFromErc20`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc20API.TransferFromErc20`: %v\n", resp)
 }
 ```
 

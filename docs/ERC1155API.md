@@ -25,26 +25,26 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    authorization := "authorization_example" // string | 
-    erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
+	name := "name_example" // string | 
+	authorization := "authorization_example" // string | 
+	erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ERC1155API.BalanceOf(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.BalanceOf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `BalanceOf`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ERC1155API.BalanceOf`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ERC1155API.BalanceOf(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.BalanceOf``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BalanceOf`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `ERC1155API.BalanceOf`: %v\n", resp)
 }
 ```
 
@@ -97,26 +97,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    authorization := "authorization_example" // string | 
-    erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
+	name := "name_example" // string | 
+	authorization := "authorization_example" // string | 
+	erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ERC1155API.BalanceOfBatch(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.BalanceOfBatch``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `BalanceOfBatch`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ERC1155API.BalanceOfBatch`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ERC1155API.BalanceOfBatch(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.BalanceOfBatch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BalanceOfBatch`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `ERC1155API.BalanceOfBatch`: %v\n", resp)
 }
 ```
 
@@ -169,26 +169,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    authorization := "authorization_example" // string | 
-    erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
+	name := "name_example" // string | 
+	authorization := "authorization_example" // string | 
+	erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ERC1155API.IsApprovedForAll(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.IsApprovedForAll``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `IsApprovedForAll`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ERC1155API.IsApprovedForAll`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ERC1155API.IsApprovedForAll(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.IsApprovedForAll``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `IsApprovedForAll`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `ERC1155API.IsApprovedForAll`: %v\n", resp)
 }
 ```
 
@@ -241,26 +241,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    authorization := "authorization_example" // string | 
-    erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
+	name := "name_example" // string | 
+	authorization := "authorization_example" // string | 
+	erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ERC1155API.SafeBatchTransferFrom(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.SafeBatchTransferFrom``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SafeBatchTransferFrom`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ERC1155API.SafeBatchTransferFrom`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ERC1155API.SafeBatchTransferFrom(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.SafeBatchTransferFrom``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SafeBatchTransferFrom`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `ERC1155API.SafeBatchTransferFrom`: %v\n", resp)
 }
 ```
 
@@ -313,26 +313,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    authorization := "authorization_example" // string | 
-    erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
+	name := "name_example" // string | 
+	authorization := "authorization_example" // string | 
+	erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ERC1155API.SafeTransferFrom(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.SafeTransferFrom``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SafeTransferFrom`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ERC1155API.SafeTransferFrom`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ERC1155API.SafeTransferFrom(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.SafeTransferFrom``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SafeTransferFrom`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `ERC1155API.SafeTransferFrom`: %v\n", resp)
 }
 ```
 
@@ -385,26 +385,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    name := "name_example" // string | 
-    authorization := "authorization_example" // string | 
-    erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
+	name := "name_example" // string | 
+	authorization := "authorization_example" // string | 
+	erc1155Request := *openapiclient.NewErc1155Request() // Erc1155Request | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ERC1155API.SetApprovalForAll(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.SetApprovalForAll``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SetApprovalForAll`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ERC1155API.SetApprovalForAll`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ERC1155API.SetApprovalForAll(context.Background(), name).Authorization(authorization).Erc1155Request(erc1155Request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ERC1155API.SetApprovalForAll``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SetApprovalForAll`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `ERC1155API.SetApprovalForAll`: %v\n", resp)
 }
 ```
 

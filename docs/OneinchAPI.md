@@ -25,24 +25,24 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    body := interface{}(987) // interface{} | 
+	body := interface{}(987) // interface{} | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OneinchAPI.ApproveCallData(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.ApproveCallData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ApproveCallData`: interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.ApproveCallData`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OneinchAPI.ApproveCallData(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.ApproveCallData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ApproveCallData`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.ApproveCallData`: %v\n", resp)
 }
 ```
 
@@ -89,24 +89,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    body := interface{}(987) // interface{} | 
+	body := interface{}(987) // interface{} | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OneinchAPI.ApproveSpender(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.ApproveSpender``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ApproveSpender`: interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.ApproveSpender`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OneinchAPI.ApproveSpender(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.ApproveSpender``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ApproveSpender`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.ApproveSpender`: %v\n", resp)
 }
 ```
 
@@ -153,24 +153,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    body := interface{}(987) // interface{} | 
+	body := interface{}(987) // interface{} | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OneinchAPI.Protocols(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.Protocols``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Protocols`: interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.Protocols`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OneinchAPI.Protocols(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.Protocols``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Protocols`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.Protocols`: %v\n", resp)
 }
 ```
 
@@ -217,24 +217,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    body := interface{}(987) // interface{} | 
+	body := interface{}(987) // interface{} | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OneinchAPI.Quote(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.Quote``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Quote`: interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.Quote`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OneinchAPI.Quote(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.Quote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Quote`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.Quote`: %v\n", resp)
 }
 ```
 
@@ -281,26 +281,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    accountName := "accountName_example" // string | 
-    authorization := "authorization_example" // string | 
-    getSwapDto := *openapiclient.NewGetSwapDto("Src_example", "Dst_example", "Amount_example", "From_example", float64(123)) // GetSwapDto | 
+	accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	getSwapDto := *openapiclient.NewGetSwapDto("Src_example", "Dst_example", "Amount_example", "From_example", float64(123)) // GetSwapDto | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OneinchAPI.Swap(context.Background(), accountName).Authorization(authorization).GetSwapDto(getSwapDto).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.Swap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Swap`: interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.Swap`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OneinchAPI.Swap(context.Background(), accountName).Authorization(authorization).GetSwapDto(getSwapDto).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.Swap``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Swap`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.Swap`: %v\n", resp)
 }
 ```
 
@@ -353,24 +353,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    body := interface{}(987) // interface{} | 
+	body := interface{}(987) // interface{} | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OneinchAPI.Tokens(context.Background()).Body(body).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.Tokens``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `Tokens`: interface{}
-    fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.Tokens`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OneinchAPI.Tokens(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OneinchAPI.Tokens``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Tokens`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `OneinchAPI.Tokens`: %v\n", resp)
 }
 ```
 

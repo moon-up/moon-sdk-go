@@ -23,25 +23,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    tronInput := *openapiclient.NewTronInput() // TronInput | 
+	authorization := "authorization_example" // string | 
+	tronInput := *openapiclient.NewTronInput() // TronInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TronAPI.CreateTronAccount(context.Background()).Authorization(authorization).TronInput(tronInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TronAPI.CreateTronAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateTronAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `TronAPI.CreateTronAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TronAPI.CreateTronAccount(context.Background()).Authorization(authorization).TronInput(tronInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TronAPI.CreateTronAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTronAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `TronAPI.CreateTronAccount`: %v\n", resp)
 }
 ```
 
@@ -89,25 +89,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TronAPI.GetTronAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TronAPI.GetTronAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetTronAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `TronAPI.GetTronAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TronAPI.GetTronAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TronAPI.GetTronAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTronAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `TronAPI.GetTronAccount`: %v\n", resp)
 }
 ```
 
@@ -159,24 +159,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TronAPI.ListTronAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TronAPI.ListTronAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListTronAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `TronAPI.ListTronAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TronAPI.ListTronAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TronAPI.ListTronAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListTronAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `TronAPI.ListTronAccounts`: %v\n", resp)
 }
 ```
 
@@ -223,26 +223,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    tronTransactionInput := *openapiclient.NewTronTransactionInput() // TronTransactionInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	tronTransactionInput := *openapiclient.NewTronTransactionInput() // TronTransactionInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TronAPI.SignTronTransaction(context.Background(), accountName).Authorization(authorization).TronTransactionInput(tronTransactionInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TronAPI.SignTronTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignTronTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `TronAPI.SignTronTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TronAPI.SignTronTransaction(context.Background(), accountName).Authorization(authorization).TronTransactionInput(tronTransactionInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TronAPI.SignTronTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignTronTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `TronAPI.SignTronTransaction`: %v\n", resp)
 }
 ```
 

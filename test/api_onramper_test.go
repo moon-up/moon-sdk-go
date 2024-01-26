@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/moon-up/moon-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func Test_openapi_OnramperAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperCheckout", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountName string
 
@@ -38,7 +39,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperGetQuotesBuy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OnramperAPI.OnRamperGetQuotesBuy(context.Background()).Execute()
 
@@ -50,7 +51,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperGetQuotesSell", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OnramperAPI.OnRamperGetQuotesSell(context.Background()).Execute()
 
@@ -62,7 +63,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperGetSupportedAssets", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OnramperAPI.OnRamperGetSupportedAssets(context.Background()).Execute()
 
@@ -74,7 +75,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperGetSupportedCurrencies", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OnramperAPI.OnRamperGetSupportedCurrencies(context.Background()).Execute()
 
@@ -86,7 +87,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperGetSupportedDefaultsAll", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OnramperAPI.OnRamperGetSupportedDefaultsAll(context.Background()).Execute()
 
@@ -98,7 +99,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperGetSupportedOnRampsAll", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OnramperAPI.OnRamperGetSupportedOnRampsAll(context.Background()).Execute()
 
@@ -110,7 +111,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperGetSupportedPaymentTypes", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OnramperAPI.OnRamperGetSupportedPaymentTypes(context.Background()).Execute()
 
@@ -122,7 +123,7 @@ func Test_openapi_OnramperAPIService(t *testing.T) {
 
 	t.Run("Test OnramperAPIService OnRamperGetSupportedPaymentTypesFiat", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.OnramperAPI.OnRamperGetSupportedPaymentTypesFiat(context.Background()).Execute()
 

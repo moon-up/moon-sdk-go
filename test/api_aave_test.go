@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/moon-up/moon-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func Test_openapi_AaveAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_AaveAPIService(t *testing.T) {
 
 	t.Run("Test AaveAPIService Borrow", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -38,7 +39,7 @@ func Test_openapi_AaveAPIService(t *testing.T) {
 
 	t.Run("Test AaveAPIService Lend", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -52,7 +53,7 @@ func Test_openapi_AaveAPIService(t *testing.T) {
 
 	t.Run("Test AaveAPIService Repay", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -66,7 +67,7 @@ func Test_openapi_AaveAPIService(t *testing.T) {
 
 	t.Run("Test AaveAPIService UserReserveData", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 

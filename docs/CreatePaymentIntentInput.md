@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Config** | Pointer to **string** |  | [optional] 
 **Metadata** | **map[string]string** |  | 
 **Network** | Pointer to **string** |  | [optional] 
 **Amount** | **float64** |  | 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewCreatePaymentIntentInputWithDefaults instantiates a new CreatePaymentIntentInput object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetConfig
+
+`func (o *CreatePaymentIntentInput) GetConfig() string`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *CreatePaymentIntentInput) GetConfigOk() (*string, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *CreatePaymentIntentInput) SetConfig(v string)`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *CreatePaymentIntentInput) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
 
 ### GetMetadata
 

@@ -125,6 +125,7 @@ docs/SupportedDefaultResponseDefaults.md
 docs/SupportedDefaultResponseDefaultsId.md
 docs/SupportedPaymentTypesCurrencyResponse.md
 docs/SupportedPaymentTypesMessage.md
+docs/TatumTransactionEvent.md
 docs/TokenSwapParams.md
 docs/Transaction.md
 docs/TransactionData.md
@@ -228,6 +229,7 @@ model_supported_default_response_defaults.go
 model_supported_default_response_defaults_id.go
 model_supported_payment_types_currency_response.go
 model_supported_payment_types_message.go
+model_tatum_transaction_event.go
 model_token_swap_params.go
 model_transaction.go
 model_transaction_data.go

@@ -23,26 +23,26 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.YearnAPI.AddLiquidity(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `YearnAPI.AddLiquidity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddLiquidity`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `YearnAPI.AddLiquidity`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.YearnAPI.AddLiquidity(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `YearnAPI.AddLiquidity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddLiquidity`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `YearnAPI.AddLiquidity`: %v\n", resp)
 }
 ```
 
@@ -95,26 +95,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.YearnAPI.AddLiquidityWeth(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `YearnAPI.AddLiquidityWeth``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AddLiquidityWeth`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `YearnAPI.AddLiquidityWeth`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.YearnAPI.AddLiquidityWeth(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `YearnAPI.AddLiquidityWeth``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddLiquidityWeth`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `YearnAPI.AddLiquidityWeth`: %v\n", resp)
 }
 ```
 
@@ -167,26 +167,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.YearnAPI.RemoveLiquidity(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `YearnAPI.RemoveLiquidity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RemoveLiquidity`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `YearnAPI.RemoveLiquidity`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.YearnAPI.RemoveLiquidity(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `YearnAPI.RemoveLiquidity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RemoveLiquidity`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `YearnAPI.RemoveLiquidity`: %v\n", resp)
 }
 ```
 
@@ -239,26 +239,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    name := "name_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	name := "name_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.YearnAPI.RemoveLiquidityWeth(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `YearnAPI.RemoveLiquidityWeth``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RemoveLiquidityWeth`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `YearnAPI.RemoveLiquidityWeth`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.YearnAPI.RemoveLiquidityWeth(context.Background(), name).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `YearnAPI.RemoveLiquidityWeth``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RemoveLiquidityWeth`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `YearnAPI.RemoveLiquidityWeth`: %v\n", resp)
 }
 ```
 

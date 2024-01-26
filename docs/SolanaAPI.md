@@ -23,25 +23,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    solanaInput := *openapiclient.NewSolanaInput() // SolanaInput | 
+	authorization := "authorization_example" // string | 
+	solanaInput := *openapiclient.NewSolanaInput() // SolanaInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SolanaAPI.CreateSolanaAccount(context.Background()).Authorization(authorization).SolanaInput(solanaInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SolanaAPI.CreateSolanaAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateSolanaAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `SolanaAPI.CreateSolanaAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SolanaAPI.CreateSolanaAccount(context.Background()).Authorization(authorization).SolanaInput(solanaInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SolanaAPI.CreateSolanaAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSolanaAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `SolanaAPI.CreateSolanaAccount`: %v\n", resp)
 }
 ```
 
@@ -89,25 +89,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SolanaAPI.GetSolanaAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SolanaAPI.GetSolanaAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetSolanaAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `SolanaAPI.GetSolanaAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SolanaAPI.GetSolanaAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SolanaAPI.GetSolanaAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSolanaAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `SolanaAPI.GetSolanaAccount`: %v\n", resp)
 }
 ```
 
@@ -159,24 +159,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SolanaAPI.ListSolanaAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SolanaAPI.ListSolanaAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListSolanaAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `SolanaAPI.ListSolanaAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SolanaAPI.ListSolanaAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SolanaAPI.ListSolanaAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSolanaAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `SolanaAPI.ListSolanaAccounts`: %v\n", resp)
 }
 ```
 
@@ -223,26 +223,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    solanaTransactionInput := *openapiclient.NewSolanaTransactionInput() // SolanaTransactionInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	solanaTransactionInput := *openapiclient.NewSolanaTransactionInput() // SolanaTransactionInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SolanaAPI.SignSolanaTransaction(context.Background(), accountName).Authorization(authorization).SolanaTransactionInput(solanaTransactionInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SolanaAPI.SignSolanaTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignSolanaTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `SolanaAPI.SignSolanaTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SolanaAPI.SignSolanaTransaction(context.Background(), accountName).Authorization(authorization).SolanaTransactionInput(solanaTransactionInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SolanaAPI.SignSolanaTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignSolanaTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `SolanaAPI.SignSolanaTransaction`: %v\n", resp)
 }
 ```
 

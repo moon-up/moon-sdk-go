@@ -23,25 +23,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    bitcoinInput := *openapiclient.NewBitcoinInput() // BitcoinInput | 
+	authorization := "authorization_example" // string | 
+	bitcoinInput := *openapiclient.NewBitcoinInput() // BitcoinInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BitcoinAPI.CreateBitcoinAccount(context.Background()).Authorization(authorization).BitcoinInput(bitcoinInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BitcoinAPI.CreateBitcoinAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateBitcoinAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `BitcoinAPI.CreateBitcoinAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BitcoinAPI.CreateBitcoinAccount(context.Background()).Authorization(authorization).BitcoinInput(bitcoinInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BitcoinAPI.CreateBitcoinAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateBitcoinAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `BitcoinAPI.CreateBitcoinAccount`: %v\n", resp)
 }
 ```
 
@@ -89,25 +89,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BitcoinAPI.GetBitcoinAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BitcoinAPI.GetBitcoinAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetBitcoinAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `BitcoinAPI.GetBitcoinAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BitcoinAPI.GetBitcoinAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BitcoinAPI.GetBitcoinAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBitcoinAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `BitcoinAPI.GetBitcoinAccount`: %v\n", resp)
 }
 ```
 
@@ -159,24 +159,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BitcoinAPI.ListBitcoinAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BitcoinAPI.ListBitcoinAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListBitcoinAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `BitcoinAPI.ListBitcoinAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BitcoinAPI.ListBitcoinAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BitcoinAPI.ListBitcoinAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListBitcoinAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `BitcoinAPI.ListBitcoinAccounts`: %v\n", resp)
 }
 ```
 
@@ -223,26 +223,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    bitcoinTransactionInput := *openapiclient.NewBitcoinTransactionInput() // BitcoinTransactionInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	bitcoinTransactionInput := *openapiclient.NewBitcoinTransactionInput() // BitcoinTransactionInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BitcoinAPI.SignBitcoinTransaction(context.Background(), accountName).Authorization(authorization).BitcoinTransactionInput(bitcoinTransactionInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BitcoinAPI.SignBitcoinTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignBitcoinTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `BitcoinAPI.SignBitcoinTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BitcoinAPI.SignBitcoinTransaction(context.Background(), accountName).Authorization(authorization).BitcoinTransactionInput(bitcoinTransactionInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BitcoinAPI.SignBitcoinTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignBitcoinTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `BitcoinAPI.SignBitcoinTransaction`: %v\n", resp)
 }
 ```
 

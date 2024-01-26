@@ -23,25 +23,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    cosmosInput := *openapiclient.NewCosmosInput() // CosmosInput | 
+	authorization := "authorization_example" // string | 
+	cosmosInput := *openapiclient.NewCosmosInput() // CosmosInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CosmosAPI.CreateCosmosAccount(context.Background()).Authorization(authorization).CosmosInput(cosmosInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CosmosAPI.CreateCosmosAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCosmosAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `CosmosAPI.CreateCosmosAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CosmosAPI.CreateCosmosAccount(context.Background()).Authorization(authorization).CosmosInput(cosmosInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CosmosAPI.CreateCosmosAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCosmosAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `CosmosAPI.CreateCosmosAccount`: %v\n", resp)
 }
 ```
 
@@ -89,25 +89,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CosmosAPI.GetCosmosAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CosmosAPI.GetCosmosAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCosmosAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `CosmosAPI.GetCosmosAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CosmosAPI.GetCosmosAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CosmosAPI.GetCosmosAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCosmosAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `CosmosAPI.GetCosmosAccount`: %v\n", resp)
 }
 ```
 
@@ -159,24 +159,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CosmosAPI.ListCosmosAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CosmosAPI.ListCosmosAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListCosmosAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `CosmosAPI.ListCosmosAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CosmosAPI.ListCosmosAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CosmosAPI.ListCosmosAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListCosmosAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `CosmosAPI.ListCosmosAccounts`: %v\n", resp)
 }
 ```
 
@@ -223,26 +223,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    cosmosTransactionInput := *openapiclient.NewCosmosTransactionInput() // CosmosTransactionInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	cosmosTransactionInput := *openapiclient.NewCosmosTransactionInput() // CosmosTransactionInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CosmosAPI.SignCosmosTransaction(context.Background(), accountName).Authorization(authorization).CosmosTransactionInput(cosmosTransactionInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CosmosAPI.SignCosmosTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignCosmosTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `CosmosAPI.SignCosmosTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CosmosAPI.SignCosmosTransaction(context.Background(), accountName).Authorization(authorization).CosmosTransactionInput(cosmosTransactionInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CosmosAPI.SignCosmosTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignCosmosTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `CosmosAPI.SignCosmosTransaction`: %v\n", resp)
 }
 ```
 

@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/moon-up/moon-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func Test_openapi_Erc4337APIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_Erc4337APIService(t *testing.T) {
 
 	t.Run("Test Erc4337APIService GetAddress", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountName string
 
@@ -38,7 +39,7 @@ func Test_openapi_Erc4337APIService(t *testing.T) {
 
 	t.Run("Test Erc4337APIService SignBroadcastUserOpTx", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var accountName string
 

@@ -23,25 +23,25 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    bitcoinCashInput := *openapiclient.NewBitcoinCashInput() // BitcoinCashInput | 
+	authorization := "authorization_example" // string | 
+	bitcoinCashInput := *openapiclient.NewBitcoinCashInput() // BitcoinCashInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BitcoincashAPI.CreateBitcoinCashAccount(context.Background()).Authorization(authorization).BitcoinCashInput(bitcoinCashInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BitcoincashAPI.CreateBitcoinCashAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateBitcoinCashAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `BitcoincashAPI.CreateBitcoinCashAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BitcoincashAPI.CreateBitcoinCashAccount(context.Background()).Authorization(authorization).BitcoinCashInput(bitcoinCashInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BitcoincashAPI.CreateBitcoinCashAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateBitcoinCashAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `BitcoincashAPI.CreateBitcoinCashAccount`: %v\n", resp)
 }
 ```
 
@@ -89,25 +89,25 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BitcoincashAPI.GetBitcoinCashAccount(context.Background(), accountName).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BitcoincashAPI.GetBitcoinCashAccount``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetBitcoinCashAccount`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `BitcoincashAPI.GetBitcoinCashAccount`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BitcoincashAPI.GetBitcoinCashAccount(context.Background(), accountName).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BitcoincashAPI.GetBitcoinCashAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBitcoinCashAccount`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `BitcoincashAPI.GetBitcoinCashAccount`: %v\n", resp)
 }
 ```
 
@@ -159,24 +159,24 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
+	authorization := "authorization_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BitcoincashAPI.ListBitcoinCashAccounts(context.Background()).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BitcoincashAPI.ListBitcoinCashAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListBitcoinCashAccounts`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `BitcoincashAPI.ListBitcoinCashAccounts`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BitcoincashAPI.ListBitcoinCashAccounts(context.Background()).Authorization(authorization).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BitcoincashAPI.ListBitcoinCashAccounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListBitcoinCashAccounts`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `BitcoincashAPI.ListBitcoinCashAccounts`: %v\n", resp)
 }
 ```
 
@@ -223,26 +223,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    bitcoinCashTransactionInput := *openapiclient.NewBitcoinCashTransactionInput() // BitcoinCashTransactionInput | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	bitcoinCashTransactionInput := *openapiclient.NewBitcoinCashTransactionInput() // BitcoinCashTransactionInput | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BitcoincashAPI.SignBitcoinCashTransaction(context.Background(), accountName).Authorization(authorization).BitcoinCashTransactionInput(bitcoinCashTransactionInput).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BitcoincashAPI.SignBitcoinCashTransaction``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignBitcoinCashTransaction`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `BitcoincashAPI.SignBitcoinCashTransaction`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BitcoincashAPI.SignBitcoinCashTransaction(context.Background(), accountName).Authorization(authorization).BitcoinCashTransactionInput(bitcoinCashTransactionInput).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BitcoincashAPI.SignBitcoinCashTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignBitcoinCashTransaction`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `BitcoincashAPI.SignBitcoinCashTransaction`: %v\n", resp)
 }
 ```
 

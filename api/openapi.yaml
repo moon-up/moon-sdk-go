@@ -3174,10 +3174,159 @@ paths:
       - ApiKeyAuth: []
       tags:
       - payment
-  /payment/tatum/webhook/{id}:
+  /payment/webhook/tatum/{id}:
     post:
       operationId: TatumWebhook
       parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TatumTransactionEvent'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+  /payment/config:
+    get:
+      operationId: GetAllPaymentIntentConfigs
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/PaymentIntentResponse'
+                type: array
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+    post:
+      operationId: CreatePaymentIntentConfig
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+  /payment/config/{id}:
+    delete:
+      operationId: DeletePaymentIntentConfig
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+    get:
+      operationId: GetOnePaymentIntentConfigs
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
+          description: Ok
+      security:
+      - BearerAuth: []
+      - Oauth2: []
+      - ApiKeyAuth: []
+      tags:
+      - payment
+    put:
+      operationId: UpdatePaymentIntentConfig
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+        style: simple
       - explode: false
         in: path
         name: id
@@ -3194,7 +3343,8 @@ paths:
         "200":
           content:
             application/json:
-              schema: {}
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
           description: Ok
       security:
       - BearerAuth: []
@@ -5963,8 +6113,11 @@ components:
           key: metadata
         amount: 0.8008281904610115
         currency: currency
+        config: config
         network: network
       properties:
+        config:
+          type: string
         metadata:
           additionalProperties:
             type: string
@@ -7063,6 +7216,52 @@ components:
       - tag
       - txs
       - txsInternal
+      type: object
+    TatumTransactionEvent:
+      example:
+        amount: amount
+        chain: chain
+        address: address
+        test: true
+        mempool: true
+        subscriptionType: subscriptionType
+        blockNumber: 0.8008281904610115
+        txId: txId
+        currency: currency
+        counterAddress: counterAddress
+      properties:
+        amount:
+          type: string
+        test:
+          type: boolean
+        counterAddress:
+          type: string
+        address:
+          type: string
+        mempool:
+          type: boolean
+        subscriptionType:
+          type: string
+        blockNumber:
+          format: double
+          type: number
+        txId:
+          type: string
+        chain:
+          type: string
+        currency:
+          type: string
+      required:
+      - address
+      - amount
+      - blockNumber
+      - chain
+      - counterAddress
+      - currency
+      - mempool
+      - subscriptionType
+      - test
+      - txId
       type: object
     PingResponse:
       additionalProperties: false

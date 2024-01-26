@@ -21,26 +21,26 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc4337API.GetAddress(context.Background(), accountName).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc4337API.GetAddress``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetAddress`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc4337API.GetAddress`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc4337API.GetAddress(context.Background(), accountName).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc4337API.GetAddress``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAddress`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc4337API.GetAddress`: %v\n", resp)
 }
 ```
 
@@ -93,26 +93,26 @@ Name | Type | Description  | Notes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/moon-up/moon-sdk-go"
 )
 
 func main() {
-    authorization := "authorization_example" // string | 
-    accountName := "accountName_example" // string | 
-    inputBody := *openapiclient.NewInputBody() // InputBody | 
+	authorization := "authorization_example" // string | 
+	accountName := "accountName_example" // string | 
+	inputBody := *openapiclient.NewInputBody() // InputBody | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Erc4337API.SignBroadcastUserOpTx(context.Background(), accountName).Authorization(authorization).InputBody(inputBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Erc4337API.SignBroadcastUserOpTx``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SignBroadcastUserOpTx`: AccountControllerResponse
-    fmt.Fprintf(os.Stdout, "Response from `Erc4337API.SignBroadcastUserOpTx`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Erc4337API.SignBroadcastUserOpTx(context.Background(), accountName).Authorization(authorization).InputBody(inputBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Erc4337API.SignBroadcastUserOpTx``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SignBroadcastUserOpTx`: AccountControllerResponse
+	fmt.Fprintf(os.Stdout, "Response from `Erc4337API.SignBroadcastUserOpTx`: %v\n", resp)
 }
 ```
 

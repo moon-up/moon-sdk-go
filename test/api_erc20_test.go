@@ -11,10 +11,11 @@ package openapi
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/moon-up/moon-sdk-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func Test_openapi_Erc20APIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService AllowanceErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -38,7 +39,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService ApproveErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -52,7 +53,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService BalanceOfErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -66,7 +67,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService DecimalsErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -80,7 +81,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService NameErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -94,7 +95,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService SymbolErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -108,7 +109,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService TotalSupplyErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -122,7 +123,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService TransferErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
@@ -136,7 +137,7 @@ func Test_openapi_Erc20APIService(t *testing.T) {
 
 	t.Run("Test Erc20APIService TransferFromErc20", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var name string
 
